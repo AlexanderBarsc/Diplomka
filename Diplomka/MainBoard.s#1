@@ -471,6 +471,11 @@ W = angled&lt;p&gt;
 <sheets>
 <sheet>
 <plain>
+<wire x1="10.16" y1="167.64" x2="10.16" y2="83.82" width="0.1524" layer="94" style="longdash"/>
+<wire x1="10.16" y1="83.82" x2="68.58" y2="83.82" width="0.1524" layer="94" style="longdash"/>
+<wire x1="68.58" y1="83.82" x2="68.58" y2="167.64" width="0.1524" layer="94" style="longdash"/>
+<wire x1="68.58" y1="167.64" x2="10.16" y2="167.64" width="0.1524" layer="94" style="longdash"/>
+<text x="20.32" y="160.02" size="1.778" layer="94" font="vector">To UART Converter Pinout</text>
 </plain>
 <instances>
 <instance part="U1" gate="G$1" x="119.38" y="86.36" smashed="yes">
@@ -482,14 +487,56 @@ W = angled&lt;p&gt;
 <attribute name="LAST_DATE_TIME" x="217.17" y="10.16" size="2.286" layer="94"/>
 <attribute name="SHEET" x="230.505" y="5.08" size="2.54" layer="94"/>
 </instance>
-<instance part="SV1" gate="G$1" x="33.02" y="160.02" smashed="yes" rot="R270">
-<attribute name="VALUE" x="22.86" y="161.29" size="1.778" layer="96" rot="R270"/>
-<attribute name="NAME" x="43.942" y="161.29" size="1.778" layer="95" rot="R270"/>
+<instance part="SV1" gate="G$1" x="38.1" y="154.94" smashed="yes" rot="R270">
+<attribute name="VALUE" x="27.94" y="156.21" size="1.778" layer="96" rot="R270"/>
+<attribute name="NAME" x="49.022" y="156.21" size="1.778" layer="95" rot="R270"/>
 </instance>
 </instances>
 <busses>
 </busses>
 <nets>
+<net name="3V3" class="0">
+<segment>
+<pinref part="SV1" gate="G$1" pin="1"/>
+<wire x1="33.02" y1="147.32" x2="33.02" y2="142.24" width="0.1524" layer="91"/>
+<label x="33.02" y="142.24" size="1.778" layer="95" rot="R270" xref="yes"/>
+</segment>
+</net>
+<net name="GND" class="0">
+<segment>
+<pinref part="SV1" gate="G$1" pin="2"/>
+<wire x1="35.56" y1="147.32" x2="35.56" y2="134.62" width="0.1524" layer="91"/>
+<label x="35.56" y="134.62" size="1.778" layer="95" rot="R270" xref="yes"/>
+</segment>
+</net>
+<net name="5V" class="0">
+<segment>
+<pinref part="SV1" gate="G$1" pin="3"/>
+<wire x1="38.1" y1="147.32" x2="38.1" y2="124.46" width="0.1524" layer="91"/>
+<label x="38.1" y="124.46" size="1.778" layer="95" rot="R270" xref="yes"/>
+</segment>
+</net>
+<net name="TXT" class="0">
+<segment>
+<pinref part="SV1" gate="G$1" pin="4"/>
+<wire x1="40.64" y1="147.32" x2="40.64" y2="116.84" width="0.1524" layer="91"/>
+<label x="40.64" y="116.84" size="1.778" layer="95" rot="R270" xref="yes"/>
+</segment>
+</net>
+<net name="RXD" class="0">
+<segment>
+<pinref part="SV1" gate="G$1" pin="5"/>
+<wire x1="43.18" y1="147.32" x2="43.18" y2="109.22" width="0.1524" layer="91"/>
+<label x="43.18" y="109.22" size="1.778" layer="95" rot="R270" xref="yes"/>
+</segment>
+</net>
+<net name="DTR" class="0">
+<segment>
+<pinref part="SV1" gate="G$1" pin="6"/>
+<wire x1="45.72" y1="147.32" x2="45.72" y2="99.06" width="0.1524" layer="91"/>
+<label x="45.72" y="99.06" size="1.778" layer="95" rot="R270" xref="yes"/>
+</segment>
+</net>
 </nets>
 </sheet>
 </sheets>
