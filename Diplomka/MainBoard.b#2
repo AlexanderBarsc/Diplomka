@@ -68,10 +68,6 @@
 <layer number="105" name="tPlate" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="106" name="bPlate" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="107" name="Crop" color="7" fill="1" visible="yes" active="yes"/>
-<layer number="110" name="wago-seda" color="7" fill="8" visible="yes" active="yes"/>
-<layer number="111" name="wago-cervena" color="12" fill="8" visible="yes" active="yes"/>
-<layer number="112" name="wago-zelena" color="2" fill="8" visible="yes" active="yes"/>
-<layer number="113" name="wago-modra" color="1" fill="8" visible="yes" active="yes"/>
 <layer number="116" name="Patch_BOT" color="9" fill="4" visible="yes" active="yes"/>
 <layer number="121" name="_tsilk" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="122" name="_bsilk" color="7" fill="1" visible="yes" active="yes"/>
@@ -189,55 +185,6 @@
 <pad name="39_19" x="0.835" y="-3.1575" drill="0.2" diameter="0.3"/>
 <pad name="39_20" x="-1.9175" y="-4.075" drill="0.2" diameter="0.3"/>
 <pad name="39_21" x="-0.0825" y="-4.075" drill="0.2" diameter="0.3"/>
-</package>
-</packages>
-</library>
-<library name="#PaJa_konektory">
-<description>&lt;B&gt;PaJa_konektory&lt;/B&gt; - knihovna   &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; 
-&lt;I&gt;(vytvoreno 1.1.2014)&lt;/I&gt;&lt;BR&gt;
-Knihovna konektoru do Eagle &lt;I&gt;(od verze 5.6)&lt;/I&gt;&lt;BR&gt;
-&lt;BR&gt;
-Knihovna obsahuje: 98 soucastek na DPS, 98 do SCHematu&lt;BR&gt;
-&lt;BR&gt;
-&lt;Author&gt;Copyright (C) PaJa 2011-2014&lt;BR&gt;
-www.paja-trb.cz&lt;BR&gt;
-paja@paja-trb.cz
-&lt;/author&gt;</description>
-<packages>
-<package name="ARK550/2">
-<description>&lt;B&gt;Svorkovnice&lt;/B&gt; - dvojita - roztec 3,5mm</description>
-<wire x1="-1.7463" y1="-3.6512" x2="5.2388" y2="-3.6512" width="0.127" layer="21"/>
-<wire x1="-1.7463" y1="-3.6512" x2="-1.7463" y2="3.175" width="0.127" layer="21"/>
-<wire x1="5.2388" y1="-3.6512" x2="5.2388" y2="1.905" width="0.127" layer="21"/>
-<wire x1="5.2388" y1="1.905" x2="5.2388" y2="3.175" width="0.127" layer="21"/>
-<wire x1="-1.7463" y1="3.175" x2="5.2388" y2="3.175" width="0.127" layer="21"/>
-<wire x1="-1.7462" y1="1.905" x2="5.2388" y2="1.905" width="0.127" layer="21"/>
-<wire x1="-1.7462" y1="-1.7463" x2="5.2387" y2="-1.7462" width="0.127" layer="21"/>
-<circle x="3.4925" y="0" radius="1.27" width="0.127" layer="51"/>
-<circle x="0" y="0" radius="1.27" width="0.127" layer="51"/>
-<circle x="0" y="0" radius="0.5724" width="0.127" layer="102"/>
-<circle x="3.4925" y="0" radius="0.5724" width="0.127" layer="102"/>
-<pad name="1" x="0" y="0" drill="1.016" diameter="2.54" shape="octagon"/>
-<pad name="2" x="3.4925" y="0" drill="1.016" diameter="2.54" shape="octagon"/>
-<text x="-0.9487" y="-3.3343" size="1.27" layer="25">&gt;NAME</text>
-<text x="4.4409" y="-3.8138" size="1.016" layer="27" rot="R180">&gt;VALUE</text>
-<text x="-0.1582" y="2.1431" size="0.8128" layer="21" ratio="12">1</text>
-<text x="3.1754" y="2.1432" size="0.8128" layer="21" ratio="12">2</text>
-<text x="1.2693" y="2.2262" size="0.254" layer="100">PaJa</text>
-<text x="5.3103" y="-1.8235" size="0.6096" layer="101" rot="R270">draty</text>
-<rectangle x1="1.5081" y1="-1.5081" x2="1.9844" y2="1.6669" layer="21"/>
-<polygon width="0.127" layer="51">
-<vertex x="4.2069" y="1.0319"/>
-<vertex x="2.4606" y="-0.7144"/>
-<vertex x="2.7781" y="-1.0319"/>
-<vertex x="4.5244" y="0.7144"/>
-</polygon>
-<polygon width="0.127" layer="51">
-<vertex x="0.7144" y="1.0319"/>
-<vertex x="-1.0319" y="-0.7144"/>
-<vertex x="-0.7144" y="-1.0319"/>
-<vertex x="1.0319" y="0.7144"/>
-</polygon>
 </package>
 </packages>
 </library>
@@ -446,14 +393,6 @@ design rules under a new name.</description>
 <attribute name="SNAPEDA_LINK" value="https://www.snapeda.com/parts/ESP32-WROOM-32/Espressif+Systems/view-part/?ref=snap" x="0" y="0" size="1.778" layer="27" display="off"/>
 <attribute name="VALUE" x="-32.36" y="1.51" size="1.27" layer="27"/>
 </element>
-<element name="K1" library="#PaJa_konektory" package="ARK550/2" value="ARK550/2" x="-39.37" y="6.35" smashed="yes">
-<attribute name="NAME" x="-40.3187" y="3.0157" size="1.27" layer="25"/>
-<attribute name="VALUE" x="-34.9291" y="2.5362" size="1.016" layer="27" rot="R180"/>
-</element>
-<element name="K2" library="#PaJa_konektory" package="ARK550/2" value="ARK550/2" x="-48.26" y="6.35" smashed="yes">
-<attribute name="NAME" x="-49.2087" y="3.0157" size="1.27" layer="25"/>
-<attribute name="VALUE" x="-43.8191" y="2.5362" size="1.016" layer="27" rot="R180"/>
-</element>
 </elements>
 <signals>
 <signal name="GND">
@@ -481,8 +420,6 @@ design rules under a new name.</description>
 <contactref element="U1" pad="39_19"/>
 <contactref element="U1" pad="39_20"/>
 <contactref element="U1" pad="39_21"/>
-<contactref element="K1" pad="2"/>
-<wire x1="-28.575" y1="4.26" x2="-35.8775" y2="6.35" width="0" layer="19" extent="1-1"/>
 <wire x1="-25.695" y1="12.435" x2="-28.575" y2="4.26" width="0" layer="19" extent="1-1"/>
 <wire x1="-25.695" y1="13.3525" x2="-25.695" y2="12.435" width="0" layer="19" extent="1-1"/>
 <wire x1="-25.695" y1="14.27" x2="-25.695" y2="13.3525" width="0" layer="19" extent="1-1"/>
@@ -509,19 +446,6 @@ design rules under a new name.</description>
 </signal>
 <signal name="3V3">
 <contactref element="U1" pad="2"/>
-</signal>
-<signal name="5V">
-<contactref element="K1" pad="1"/>
-</signal>
-<signal name="TXD0">
-<contactref element="K2" pad="2"/>
-<contactref element="U1" pad="35"/>
-<wire x1="-14.36" y1="17.96" x2="-44.7675" y2="6.35" width="0" layer="19" extent="1-1"/>
-</signal>
-<signal name="RXD0">
-<contactref element="K2" pad="1"/>
-<contactref element="U1" pad="34"/>
-<wire x1="-14.36" y1="16.69" x2="-48.26" y2="6.35" width="0" layer="19" extent="1-1"/>
 </signal>
 </signals>
 <mfgpreviewcolors>
