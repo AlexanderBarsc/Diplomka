@@ -49,6 +49,7 @@
 <layer number="53" name="tGND_GNDA" color="7" fill="9" visible="no" active="no"/>
 <layer number="54" name="bGND_GNDA" color="1" fill="9" visible="no" active="no"/>
 <layer number="56" name="wert" color="7" fill="1" visible="no" active="no"/>
+<layer number="57" name="tCAD" color="7" fill="1" visible="no" active="no"/>
 <layer number="88" name="SimResults" color="9" fill="1" visible="yes" active="yes"/>
 <layer number="89" name="SimProbes" color="9" fill="1" visible="yes" active="yes"/>
 <layer number="90" name="Modules" color="5" fill="1" visible="yes" active="yes"/>
@@ -60,6 +61,7 @@
 <layer number="96" name="Values" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="97" name="Info" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="98" name="Guide" color="6" fill="1" visible="yes" active="yes"/>
+<layer number="99" name="SpiceOrder" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="100" name="Muster" color="7" fill="1" visible="no" active="no"/>
 <layer number="101" name="Hidden" color="15" fill="1" visible="yes" active="yes"/>
 <layer number="102" name="Changes" color="12" fill="1" visible="yes" active="yes"/>
@@ -68,6 +70,8 @@
 <layer number="105" name="tPlate" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="106" name="bPlate" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="107" name="Crop" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="108" name="tplace-old" color="10" fill="1" visible="yes" active="yes"/>
+<layer number="109" name="ref-old" color="11" fill="1" visible="yes" active="yes"/>
 <layer number="110" name="wago-seda" color="7" fill="8" visible="yes" active="yes"/>
 <layer number="111" name="wago-cervena" color="12" fill="8" visible="yes" active="yes"/>
 <layer number="112" name="wago-zelena" color="2" fill="8" visible="yes" active="yes"/>
@@ -75,7 +79,22 @@
 <layer number="116" name="Patch_BOT" color="9" fill="4" visible="yes" active="yes"/>
 <layer number="121" name="_tsilk" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="122" name="_bsilk" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="123" name="tTestmark" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="124" name="bTestmark" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="125" name="_tNames" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="126" name="_bNames" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="127" name="_tValues" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="128" name="_bValues" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="131" name="tAdjust" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="132" name="bAdjust" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="144" name="Drill_legend" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="150" name="Notes" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="151" name="HeatSink" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="152" name="_bDocu" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="153" name="FabDoc1" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="154" name="FabDoc2" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="155" name="FabDoc3" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="199" name="Contour" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="200" name="200bmp" color="1" fill="10" visible="yes" active="yes"/>
 <layer number="201" name="201bmp" color="2" fill="10" visible="yes" active="yes"/>
 <layer number="202" name="202bmp" color="3" fill="10" visible="yes" active="yes"/>
@@ -85,9 +104,35 @@
 <layer number="206" name="206bmp" color="7" fill="10" visible="yes" active="yes"/>
 <layer number="207" name="207bmp" color="8" fill="10" visible="yes" active="yes"/>
 <layer number="208" name="208bmp" color="9" fill="10" visible="yes" active="yes"/>
+<layer number="209" name="209bmp" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="210" name="210bmp" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="211" name="211bmp" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="212" name="212bmp" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="213" name="213bmp" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="214" name="214bmp" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="215" name="215bmp" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="216" name="216bmp" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="217" name="217bmp" color="18" fill="1" visible="no" active="no"/>
+<layer number="218" name="218bmp" color="19" fill="1" visible="no" active="no"/>
+<layer number="219" name="219bmp" color="20" fill="1" visible="no" active="no"/>
+<layer number="220" name="220bmp" color="21" fill="1" visible="no" active="no"/>
+<layer number="221" name="221bmp" color="22" fill="1" visible="no" active="no"/>
+<layer number="222" name="222bmp" color="23" fill="1" visible="no" active="no"/>
+<layer number="223" name="223bmp" color="24" fill="1" visible="no" active="no"/>
+<layer number="224" name="224bmp" color="25" fill="1" visible="no" active="no"/>
+<layer number="225" name="225bmp" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="226" name="226bmp" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="227" name="227bmp" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="228" name="228bmp" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="229" name="229bmp" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="230" name="230bmp" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="231" name="231bmp" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="248" name="Housing" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="249" name="Edge" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="250" name="Descript" color="3" fill="1" visible="no" active="no"/>
 <layer number="251" name="SMDround" color="12" fill="11" visible="no" active="no"/>
 <layer number="254" name="cooling" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="255" name="routoute" color="7" fill="1" visible="yes" active="yes"/>
 </layers>
 <schematic xreflabel="%F%N/%S.%C%R" xrefpart="/%S.%C%R">
 <libraries>
@@ -8453,6 +8498,89 @@ Source: &lt;a href="https://componentsearchengine.com/Datasheets/1/AP2012P3C-P22
 </deviceset>
 </devicesets>
 </library>
+<library name="Sensors_PIR_Lux">
+<description>&lt;b&gt;Sensors&lt;/b&gt;
+&lt;p&gt;
+Alexander Schulz (aka Hexenmeister)&lt;br&gt;
+Hannover / Germany&lt;br&gt;
+http://www.s6z.de&lt;br&gt;&lt;br&gt;
+&lt;author&gt;Created by Alexander Schulz&lt;/author&gt;&lt;/p&gt;&lt;br&gt;</description>
+<packages>
+<package name="HC-SR501">
+<wire x1="1.27" y1="11.43" x2="1.905" y2="12.065" width="0.1524" layer="21"/>
+<wire x1="1.905" y1="12.065" x2="3.175" y2="12.065" width="0.1524" layer="21"/>
+<wire x1="3.175" y1="12.065" x2="3.81" y2="11.43" width="0.1524" layer="21"/>
+<wire x1="3.81" y1="11.43" x2="3.81" y2="10.16" width="0.1524" layer="21"/>
+<wire x1="3.81" y1="10.16" x2="3.175" y2="9.525" width="0.1524" layer="21"/>
+<wire x1="3.175" y1="9.525" x2="1.905" y2="9.525" width="0.1524" layer="21"/>
+<wire x1="1.905" y1="9.525" x2="1.27" y2="10.16" width="0.1524" layer="21"/>
+<wire x1="-3.81" y1="12.065" x2="-1.27" y2="12.065" width="0.1524" layer="21"/>
+<wire x1="-1.27" y1="12.065" x2="-1.27" y2="11.43" width="0.1524" layer="21"/>
+<wire x1="-1.27" y1="11.43" x2="-1.27" y2="10.16" width="0.1524" layer="21"/>
+<wire x1="-1.27" y1="10.16" x2="-1.27" y2="9.525" width="0.1524" layer="21"/>
+<wire x1="-1.27" y1="11.43" x2="-0.635" y2="12.065" width="0.1524" layer="21"/>
+<wire x1="-0.635" y1="12.065" x2="0.635" y2="12.065" width="0.1524" layer="21"/>
+<wire x1="0.635" y1="12.065" x2="1.27" y2="11.43" width="0.1524" layer="21"/>
+<wire x1="1.27" y1="11.43" x2="1.27" y2="10.16" width="0.1524" layer="21"/>
+<wire x1="1.27" y1="10.16" x2="0.635" y2="9.525" width="0.1524" layer="21"/>
+<wire x1="0.635" y1="9.525" x2="-0.635" y2="9.525" width="0.1524" layer="21"/>
+<wire x1="-0.635" y1="9.525" x2="-1.27" y2="10.16" width="0.1524" layer="21"/>
+<wire x1="-3.81" y1="12.065" x2="-3.81" y2="9.525" width="0.1524" layer="21"/>
+<wire x1="-1.27" y1="9.525" x2="-3.81" y2="9.525" width="0.1524" layer="21"/>
+<pad name="VCC" x="-2.54" y="10.795" drill="1.016" diameter="1.8796" shape="square" rot="R90"/>
+<pad name="OUT" x="0" y="10.795" drill="1.016" diameter="1.8796" shape="octagon" rot="R90"/>
+<pad name="GND" x="2.54" y="10.795" drill="1.016" diameter="1.8796" shape="octagon" rot="R90"/>
+<text x="-16.5862" y="13.2588" size="1.27" layer="25" ratio="10">&gt;NAME</text>
+<rectangle x1="2.286" y1="10.541" x2="2.794" y2="11.049" layer="51"/>
+<rectangle x1="-0.254" y1="10.541" x2="0.254" y2="11.049" layer="51"/>
+<rectangle x1="-2.794" y1="10.541" x2="-2.286" y2="11.049" layer="51"/>
+<text x="-15.24" y="10.16" size="1.016" layer="48">HC-SR501</text>
+<wire x1="-16.51" y1="12.7" x2="16.51" y2="12.7" width="0.127" layer="51"/>
+<wire x1="16.51" y1="12.7" x2="16.51" y2="-11.43" width="0.127" layer="51"/>
+<wire x1="16.51" y1="-11.43" x2="-16.51" y2="-11.43" width="0.127" layer="51"/>
+<wire x1="-16.51" y1="12.7" x2="-16.51" y2="-11.43" width="0.127" layer="51"/>
+<text x="-15.24" y="7.62" size="1.016" layer="48">PIR</text>
+<circle x="0" y="0.635" radius="11.5" width="0.127" layer="51"/>
+<text x="-1.5875" y="13.6525" size="0.762" layer="21" rot="R180">VCC</text>
+<text x="0.9525" y="13.6525" size="0.762" layer="21" rot="R180">OUT</text>
+<text x="3.4925" y="13.6525" size="0.762" layer="21" rot="R180">GND</text>
+</package>
+</packages>
+<symbols>
+<symbol name="HC-SR501">
+<wire x1="-8.89" y1="-12.7" x2="8.89" y2="-12.7" width="0.4064" layer="94"/>
+<wire x1="8.89" y1="-12.7" x2="8.89" y2="10.16" width="0.4064" layer="94"/>
+<wire x1="8.89" y1="10.16" x2="-8.89" y2="10.16" width="0.4064" layer="94"/>
+<wire x1="-8.89" y1="10.16" x2="-8.89" y2="-12.7" width="0.4064" layer="94"/>
+<text x="-8.89" y="10.795" size="1.778" layer="95">&gt;NAME</text>
+<pin name="VCC" x="11.43" y="5.08" visible="pin" length="short" direction="pwr" rot="R180"/>
+<pin name="GND" x="11.43" y="0" visible="pin" length="short" direction="pwr" rot="R180"/>
+<pin name="OUT" x="11.43" y="2.54" visible="pin" length="short" rot="R180"/>
+<text x="-7.62" y="7.62" size="1.27" layer="94">HC-SR510</text>
+<text x="-7.62" y="5.08" size="1.27" layer="94">PIR</text>
+</symbol>
+</symbols>
+<devicesets>
+<deviceset name="HC-SR501">
+<description>&lt;b&gt;PIR Module HC-SR501&lt;/b&gt;</description>
+<gates>
+<gate name="G$1" symbol="HC-SR501" x="0" y="0"/>
+</gates>
+<devices>
+<device name="" package="HC-SR501">
+<connects>
+<connect gate="G$1" pin="GND" pad="GND"/>
+<connect gate="G$1" pin="OUT" pad="OUT"/>
+<connect gate="G$1" pin="VCC" pad="VCC"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+</devicesets>
+</library>
 </libraries>
 <attributes>
 </attributes>
@@ -8474,6 +8602,9 @@ Source: &lt;a href="https://componentsearchengine.com/Datasheets/1/AP2012P3C-P22
 <part name="R2" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="1500Ω"/>
 <part name="Q1" library="SamacSys_Parts" deviceset="AP2012P3C-P22" device=""/>
 <part name="GND2" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
+<part name="U$1" library="Sensors_PIR_Lux" deviceset="HC-SR501" device=""/>
+<part name="GND3" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
+<part name="FRAME2" library="frames" library_urn="urn:adsk.eagle:library:229" deviceset="A4L-LOC" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -8484,11 +8615,24 @@ Source: &lt;a href="https://componentsearchengine.com/Datasheets/1/AP2012P3C-P22
 <wire x1="10.16" y1="76.2" x2="63.5" y2="76.2" width="0.1524" layer="94" style="longdash"/>
 <wire x1="63.5" y1="76.2" x2="63.5" y2="15.24" width="0.1524" layer="94" style="longdash"/>
 <wire x1="63.5" y1="15.24" x2="10.16" y2="15.24" width="0.1524" layer="94" style="longdash"/>
+<text x="195.58" y="96.52" size="1.778" layer="94">PIR čidlo</text>
+<wire x1="139.7" y1="124.46" x2="139.7" y2="170.18" width="0.1524" layer="94" style="longdash"/>
+<wire x1="139.7" y1="170.18" x2="241.3" y2="170.18" width="0.1524" layer="94" style="longdash"/>
+<wire x1="241.3" y1="170.18" x2="241.3" y2="124.46" width="0.1524" layer="94" style="longdash"/>
+<wire x1="241.3" y1="124.46" x2="139.7" y2="124.46" width="0.1524" layer="94" style="longdash"/>
+<wire x1="12.7" y1="127" x2="12.7" y2="170.18" width="0.1524" layer="94" style="longdash"/>
+<wire x1="12.7" y1="170.18" x2="66.04" y2="170.18" width="0.1524" layer="94" style="longdash"/>
+<wire x1="66.04" y1="170.18" x2="66.04" y2="127" width="0.1524" layer="94" style="longdash"/>
+<wire x1="66.04" y1="127" x2="12.7" y2="127" width="0.1524" layer="94" style="longdash"/>
+<wire x1="157.48" y1="53.34" x2="157.48" y2="104.14" width="0.1524" layer="94" style="longdash"/>
+<wire x1="157.48" y1="104.14" x2="238.76" y2="104.14" width="0.1524" layer="94" style="longdash"/>
+<wire x1="157.48" y1="53.34" x2="238.76" y2="53.34" width="0.1524" layer="94" style="longdash"/>
+<wire x1="238.76" y1="53.34" x2="238.76" y2="104.14" width="0.1524" layer="94" style="longdash"/>
 </plain>
 <instances>
-<instance part="U1" gate="G$1" x="101.6" y="71.12" smashed="yes">
-<attribute name="NAME" x="86.5641" y="107.7945" size="1.778" layer="95"/>
-<attribute name="VALUE" x="86.3133" y="35.4519" size="1.778" layer="96"/>
+<instance part="U1" gate="G$1" x="116.84" y="78.74" smashed="yes">
+<attribute name="NAME" x="101.8041" y="115.4145" size="1.778" layer="95"/>
+<attribute name="VALUE" x="101.5533" y="43.0719" size="1.778" layer="96"/>
 </instance>
 <instance part="FRAME1" gate="G$1" x="0" y="0" smashed="yes">
 <attribute name="DRAWING_NAME" x="217.17" y="15.24" size="2.54" layer="94"/>
@@ -8529,6 +8673,12 @@ Source: &lt;a href="https://componentsearchengine.com/Datasheets/1/AP2012P3C-P22
 <instance part="GND2" gate="1" x="22.86" y="22.86" smashed="yes">
 <attribute name="VALUE" x="20.32" y="20.32" size="1.778" layer="96"/>
 </instance>
+<instance part="U$1" gate="G$1" x="200.66" y="73.66" smashed="yes" rot="MR0">
+<attribute name="NAME" x="209.55" y="84.455" size="1.778" layer="95" rot="MR0"/>
+</instance>
+<instance part="GND3" gate="1" x="170.18" y="68.58" smashed="yes">
+<attribute name="VALUE" x="167.64" y="66.04" size="1.778" layer="96"/>
+</instance>
 </instances>
 <busses>
 </busses>
@@ -8547,6 +8697,11 @@ Source: &lt;a href="https://componentsearchengine.com/Datasheets/1/AP2012P3C-P22
 <wire x1="157.48" y1="157.48" x2="149.86" y2="157.48" width="0.1524" layer="91"/>
 <junction x="157.48" y="157.48"/>
 <label x="149.86" y="157.48" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="U$1" gate="G$1" pin="VCC"/>
+<wire x1="189.23" y1="78.74" x2="180.34" y2="78.74" width="0.1524" layer="91"/>
+<label x="180.34" y="78.74" size="1.778" layer="95" rot="R180" xref="yes"/>
 </segment>
 </net>
 <net name="GND" class="0">
@@ -8574,6 +8729,12 @@ Source: &lt;a href="https://componentsearchengine.com/Datasheets/1/AP2012P3C-P22
 <pinref part="R2" gate="G$1" pin="1"/>
 <wire x1="22.86" y1="25.4" x2="22.86" y2="30.48" width="0.1524" layer="91"/>
 </segment>
+<segment>
+<pinref part="GND3" gate="1" pin="GND"/>
+<wire x1="170.18" y1="71.12" x2="170.18" y2="73.66" width="0.1524" layer="91"/>
+<pinref part="U$1" gate="G$1" pin="GND"/>
+<wire x1="170.18" y1="73.66" x2="189.23" y2="73.66" width="0.1524" layer="91"/>
+</segment>
 </net>
 <net name="TXD0" class="0">
 <segment>
@@ -8583,8 +8744,8 @@ Source: &lt;a href="https://componentsearchengine.com/Datasheets/1/AP2012P3C-P22
 </segment>
 <segment>
 <pinref part="U1" gate="G$1" pin="TXD0"/>
-<wire x1="81.28" y1="76.2" x2="73.66" y2="76.2" width="0.1524" layer="91"/>
-<label x="73.66" y="76.2" size="1.778" layer="95"/>
+<wire x1="96.52" y1="83.82" x2="88.9" y2="83.82" width="0.1524" layer="91"/>
+<label x="88.9" y="83.82" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="RXD0" class="0">
@@ -8595,8 +8756,8 @@ Source: &lt;a href="https://componentsearchengine.com/Datasheets/1/AP2012P3C-P22
 </segment>
 <segment>
 <pinref part="U1" gate="G$1" pin="RXD0"/>
-<wire x1="81.28" y1="73.66" x2="73.66" y2="73.66" width="0.1524" layer="91"/>
-<label x="73.66" y="73.66" size="1.778" layer="95"/>
+<wire x1="96.52" y1="81.28" x2="88.9" y2="81.28" width="0.1524" layer="91"/>
+<label x="88.9" y="81.28" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="3V3" class="0">
@@ -8611,29 +8772,13 @@ Source: &lt;a href="https://componentsearchengine.com/Datasheets/1/AP2012P3C-P22
 </segment>
 <segment>
 <pinref part="U1" gate="G$1" pin="3V3"/>
-<wire x1="121.92" y1="104.14" x2="129.54" y2="104.14" width="0.1524" layer="91"/>
-<label x="127" y="104.14" size="1.778" layer="95"/>
+<wire x1="137.16" y1="111.76" x2="144.78" y2="111.76" width="0.1524" layer="91"/>
+<label x="144.78" y="111.76" size="1.778" layer="95" xref="yes"/>
 </segment>
 <segment>
 <pinref part="Q1" gate="G$1" pin="C"/>
 <wire x1="22.86" y1="66.04" x2="22.86" y2="71.12" width="0.1524" layer="91"/>
 <label x="22.86" y="71.12" size="1.778" layer="95" xref="yes"/>
-</segment>
-</net>
-<net name="N$1" class="0">
-<segment>
-<wire x1="142.24" y1="121.92" x2="142.24" y2="170.18" width="0.1524" layer="91" style="dashdot"/>
-<wire x1="142.24" y1="170.18" x2="241.3" y2="170.18" width="0.1524" layer="91" style="dashdot"/>
-<wire x1="241.3" y1="170.18" x2="241.3" y2="121.92" width="0.1524" layer="91" style="dashdot"/>
-<wire x1="241.3" y1="121.92" x2="142.24" y2="121.92" width="0.1524" layer="91" style="dashdot"/>
-</segment>
-</net>
-<net name="N$2" class="0">
-<segment>
-<wire x1="15.24" y1="127" x2="15.24" y2="170.18" width="0.1524" layer="91" style="dashdot"/>
-<wire x1="15.24" y1="170.18" x2="76.2" y2="170.18" width="0.1524" layer="91" style="dashdot"/>
-<wire x1="76.2" y1="170.18" x2="76.2" y2="127" width="0.1524" layer="91" style="dashdot"/>
-<wire x1="76.2" y1="127" x2="15.24" y2="127" width="0.1524" layer="91" style="dashdot"/>
 </segment>
 </net>
 <net name="PHOTOTRAN" class="0">
@@ -8648,10 +8793,37 @@ Source: &lt;a href="https://componentsearchengine.com/Datasheets/1/AP2012P3C-P22
 </segment>
 <segment>
 <pinref part="U1" gate="G$1" pin="SENSOR_VP"/>
-<wire x1="81.28" y1="91.44" x2="73.66" y2="91.44" width="0.1524" layer="91"/>
-<label x="73.66" y="91.44" size="1.778" layer="95" rot="R180" xref="yes"/>
+<wire x1="96.52" y1="99.06" x2="88.9" y2="99.06" width="0.1524" layer="91"/>
+<label x="88.9" y="99.06" size="1.778" layer="95" rot="R180" xref="yes"/>
 </segment>
 </net>
+<net name="IO0" class="0">
+<segment>
+<pinref part="U$1" gate="G$1" pin="OUT"/>
+<wire x1="189.23" y1="76.2" x2="172.72" y2="76.2" width="0.1524" layer="91"/>
+<label x="172.72" y="76.2" size="1.778" layer="95" rot="R180" xref="yes"/>
+</segment>
+</net>
+</nets>
+</sheet>
+<sheet>
+<plain>
+<wire x1="-15.24" y1="81.28" x2="-15.24" y2="149.86" width="0.1524" layer="94" style="longdash"/>
+<wire x1="-15.24" y1="149.86" x2="96.52" y2="149.86" width="0.1524" layer="94" style="longdash"/>
+<wire x1="96.52" y1="149.86" x2="96.52" y2="81.28" width="0.1524" layer="94" style="longdash"/>
+<wire x1="96.52" y1="81.28" x2="-15.24" y2="81.28" width="0.1524" layer="94" style="longdash"/>
+<text x="15.24" y="144.78" size="1.778" layer="94">Koliková lišta pro teplotní/vlhkostní sensor</text>
+</plain>
+<instances>
+<instance part="FRAME2" gate="G$1" x="-30.48" y="-15.24" smashed="yes">
+<attribute name="DRAWING_NAME" x="186.69" y="0" size="2.54" layer="94"/>
+<attribute name="LAST_DATE_TIME" x="186.69" y="-5.08" size="2.286" layer="94"/>
+<attribute name="SHEET" x="200.025" y="-10.16" size="2.54" layer="94"/>
+</instance>
+</instances>
+<busses>
+</busses>
+<nets>
 </nets>
 </sheet>
 </sheets>
