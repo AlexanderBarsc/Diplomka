@@ -10977,7 +10977,7 @@ paja@paja-trb.cz
 <part name="C1" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-EU" device="C0805" package3d_urn="urn:adsk.eagle:package:23617/2" value="100n"/>
 <part name="C2" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-EU" device="C0805" package3d_urn="urn:adsk.eagle:package:23617/2" value="100n"/>
 <part name="GND1" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
-<part name="R2" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="1500Ω"/>
+<part name="R2" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="1.5k"/>
 <part name="Q1" library="SamacSys_Parts" deviceset="AP2012P3C-P22" device=""/>
 <part name="GND2" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="U$1" library="Sensors_PIR_Lux" deviceset="HC-SR501" device=""/>
@@ -10990,8 +10990,8 @@ paja@paja-trb.cz
 <part name="R4" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="1K"/>
 <part name="R5" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="2K"/>
 <part name="GND4" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
-<part name="R6" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="1000"/>
-<part name="R7" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="2000"/>
+<part name="R6" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="1k"/>
+<part name="R7" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="2k"/>
 <part name="GND5" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="U$3" library="myParts" deviceset="GY4466" device=""/>
 <part name="U$4" library="myParts" deviceset="BUZZER" device=""/>
@@ -11002,9 +11002,12 @@ paja@paja-trb.cz
 <part name="R9" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="150"/>
 <part name="GND7" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="SW1" library="#PaJa_prepinace" deviceset="P-B1720" device=""/>
-<part name="R10" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="10kΩ"/>
-<part name="R11" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="10kΩ"/>
+<part name="R10" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="10k"/>
+<part name="R11" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="10k"/>
 <part name="SW2" library="#PaJa_prepinace" deviceset="P-B1720" device=""/>
+<part name="R12" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="10k"/>
+<part name="SW3" library="#PaJa_prepinace" deviceset="P-B1720" device=""/>
+<part name="GND8" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -11029,6 +11032,11 @@ paja@paja-trb.cz
 <wire x1="180.34" y1="55.88" x2="251.46" y2="55.88" width="0.1524" layer="94" style="longdash"/>
 <wire x1="251.46" y1="55.88" x2="251.46" y2="114.3" width="0.1524" layer="94" style="longdash"/>
 <text x="12.7" y="76.2" size="2.54" layer="94">Fototranzistor - detekce světla</text>
+<wire x1="76.2" y1="12.7" x2="76.2" y2="40.64" width="0.1524" layer="94" style="longdash"/>
+<wire x1="76.2" y1="40.64" x2="149.86" y2="40.64" width="0.1524" layer="94" style="longdash"/>
+<wire x1="149.86" y1="40.64" x2="149.86" y2="12.7" width="0.1524" layer="94" style="longdash"/>
+<wire x1="149.86" y1="12.7" x2="76.2" y2="12.7" width="0.1524" layer="94" style="longdash"/>
+<text x="101.6" y="35.56" size="1.778" layer="94">Uživatelské tlačítko</text>
 </plain>
 <instances>
 <instance part="U1" gate="G$1" x="104.14" y="81.28" smashed="yes">
@@ -11064,8 +11072,8 @@ paja@paja-trb.cz
 <attribute name="VALUE" x="180.34" y="132.08" size="1.778" layer="96"/>
 </instance>
 <instance part="R2" gate="G$1" x="22.86" y="35.56" smashed="yes" rot="R90">
-<attribute name="NAME" x="34.29" y="36.6014" size="1.778" layer="95" rot="R180"/>
-<attribute name="VALUE" x="34.29" y="33.782" size="1.778" layer="96" rot="R180"/>
+<attribute name="NAME" x="29.21" y="36.6014" size="1.778" layer="95" rot="R180"/>
+<attribute name="VALUE" x="29.21" y="33.782" size="1.778" layer="96" rot="R180"/>
 </instance>
 <instance part="Q1" gate="G$1" x="22.86" y="66.04" smashed="yes">
 <attribute name="NAME" x="26.67" y="59.69" size="1.778" layer="95" align="center-left"/>
@@ -11096,16 +11104,27 @@ paja@paja-trb.cz
 <attribute name="VALUE" x="76.2" y="107.95" size="1.778" layer="96" rot="R180"/>
 </instance>
 <instance part="R10" gate="G$1" x="78.74" y="116.84" smashed="yes" rot="R90">
-<attribute name="NAME" x="87.63" y="120.4214" size="1.778" layer="95" rot="R180"/>
-<attribute name="VALUE" x="87.63" y="117.602" size="1.778" layer="96" rot="R180"/>
+<attribute name="NAME" x="85.09" y="122.9614" size="1.778" layer="95" rot="R180"/>
+<attribute name="VALUE" x="85.09" y="120.142" size="1.778" layer="96" rot="R180"/>
 </instance>
 <instance part="R11" gate="G$1" x="129.54" y="121.92" smashed="yes" rot="R90">
-<attribute name="NAME" x="138.43" y="125.5014" size="1.778" layer="95" rot="R180"/>
-<attribute name="VALUE" x="138.43" y="122.682" size="1.778" layer="96" rot="R180"/>
+<attribute name="NAME" x="135.89" y="125.5014" size="1.778" layer="95" rot="R180"/>
+<attribute name="VALUE" x="135.89" y="122.682" size="1.778" layer="96" rot="R180"/>
 </instance>
 <instance part="SW2" gate="TLAC" x="147.32" y="109.22" smashed="yes">
 <attribute name="NAME" x="147.955" y="111.125" size="1.778" layer="95"/>
 <attribute name="VALUE" x="152.4" y="107.95" size="1.778" layer="96" rot="R180"/>
+</instance>
+<instance part="R12" gate="G$1" x="104.14" y="27.94" smashed="yes" rot="R180">
+<attribute name="NAME" x="102.87" y="24.3586" size="1.778" layer="95"/>
+<attribute name="VALUE" x="102.87" y="22.098" size="1.778" layer="96"/>
+</instance>
+<instance part="SW3" gate="TLAC" x="124.46" y="27.94" smashed="yes">
+<attribute name="NAME" x="125.095" y="29.845" size="1.778" layer="95"/>
+<attribute name="VALUE" x="129.54" y="26.67" size="1.778" layer="96" rot="R180"/>
+</instance>
+<instance part="GND8" gate="1" x="137.16" y="25.4" smashed="yes">
+<attribute name="VALUE" x="134.62" y="22.86" size="1.778" layer="96"/>
 </instance>
 </instances>
 <busses>
@@ -11117,9 +11136,9 @@ paja@paja-trb.cz
 <wire x1="157.48" y1="154.94" x2="157.48" y2="157.48" width="0.1524" layer="91"/>
 <pinref part="U2" gate="G$1" pin="VIN"/>
 <wire x1="157.48" y1="157.48" x2="170.18" y2="157.48" width="0.1524" layer="91"/>
-<wire x1="157.48" y1="157.48" x2="149.86" y2="157.48" width="0.1524" layer="91"/>
+<wire x1="157.48" y1="157.48" x2="152.4" y2="157.48" width="0.1524" layer="91"/>
 <junction x="157.48" y="157.48"/>
-<label x="149.86" y="157.48" size="1.778" layer="95" rot="R180" xref="yes"/>
+<label x="152.4" y="157.48" size="1.778" layer="95" rot="R180" xref="yes"/>
 </segment>
 <segment>
 <pinref part="K1" gate="K" pin="K2"/>
@@ -11186,6 +11205,11 @@ paja@paja-trb.cz
 <wire x1="152.4" y1="109.22" x2="154.94" y2="109.22" width="0.1524" layer="91"/>
 <label x="154.94" y="109.22" size="1.778" layer="95" xref="yes"/>
 </segment>
+<segment>
+<pinref part="GND8" gate="1" pin="GND"/>
+<pinref part="SW3" gate="TLAC" pin="2"/>
+<wire x1="137.16" y1="27.94" x2="129.54" y2="27.94" width="0.1524" layer="91"/>
+</segment>
 </net>
 <net name="TXD0" class="0">
 <segment>
@@ -11243,6 +11267,11 @@ paja@paja-trb.cz
 <wire x1="129.54" y1="127" x2="129.54" y2="129.54" width="0.1524" layer="91"/>
 <label x="129.54" y="129.54" size="1.778" layer="95" rot="R180" xref="yes"/>
 </segment>
+<segment>
+<pinref part="R12" gate="G$1" pin="2"/>
+<wire x1="99.06" y1="27.94" x2="96.52" y2="27.94" width="0.1524" layer="91"/>
+<label x="96.52" y="27.94" size="1.778" layer="95" rot="R180" xref="yes"/>
+</segment>
 </net>
 <net name="PHOTOTRAN" class="0">
 <segment>
@@ -11283,6 +11312,13 @@ paja@paja-trb.cz
 <wire x1="200.66" y1="78.74" x2="200.66" y2="81.28" width="0.1524" layer="91"/>
 <wire x1="200.66" y1="78.74" x2="195.58" y2="78.74" width="0.1524" layer="91"/>
 <label x="195.58" y="78.74" size="1.778" layer="95" rot="R180" xref="yes"/>
+</segment>
+<segment>
+<pinref part="U1" gate="G$1" pin="IO2"/>
+<wire x1="124.46" y1="106.68" x2="132.08" y2="106.68" width="0.1524" layer="91"/>
+<wire x1="132.08" y1="106.68" x2="132.08" y2="101.6" width="0.1524" layer="91"/>
+<wire x1="132.08" y1="101.6" x2="154.94" y2="101.6" width="0.1524" layer="91"/>
+<label x="154.94" y="101.6" size="1.778" layer="95" xref="yes"/>
 </segment>
 </net>
 <net name="N$6" class="0">
@@ -11338,6 +11374,22 @@ paja@paja-trb.cz
 <pinref part="SW2" gate="TLAC" pin="1"/>
 <wire x1="129.54" y1="109.22" x2="142.24" y2="109.22" width="0.1524" layer="91"/>
 <junction x="129.54" y="109.22"/>
+</segment>
+</net>
+<net name="BTN_OUTPUT" class="0">
+<segment>
+<pinref part="SW3" gate="TLAC" pin="1"/>
+<pinref part="R12" gate="G$1" pin="1"/>
+<wire x1="119.38" y1="27.94" x2="114.3" y2="27.94" width="0.1524" layer="91"/>
+<wire x1="114.3" y1="27.94" x2="109.22" y2="27.94" width="0.1524" layer="91"/>
+<wire x1="114.3" y1="27.94" x2="114.3" y2="20.32" width="0.1524" layer="91" style="longdash"/>
+<junction x="114.3" y="27.94"/>
+<label x="114.3" y="20.32" size="1.778" layer="95" xref="yes"/>
+</segment>
+<segment>
+<pinref part="U1" gate="G$1" pin="IO14"/>
+<wire x1="124.46" y1="93.98" x2="154.94" y2="93.98" width="0.1524" layer="91"/>
+<label x="154.94" y="93.98" size="1.778" layer="95" xref="yes"/>
 </segment>
 </net>
 </nets>

@@ -10845,47 +10845,72 @@ www.paja-trb.cz&lt;BR&gt;
 paja@paja-trb.cz
 &lt;/author&gt;</description>
 <packages>
-<package name="P-B1720">
-<description>&lt;B&gt;&amp;micro;-tlacitko&lt;/B&gt;</description>
-<wire x1="-3.0163" y1="1.1113" x2="-3.0163" y2="2.8575" width="0.127" layer="51"/>
-<wire x1="-3.0163" y1="2.8575" x2="-2.8575" y2="3.0163" width="0.127" layer="51" curve="-90"/>
-<wire x1="-2.8575" y1="3.0163" x2="-2.6988" y2="3.0163" width="0.127" layer="51"/>
-<wire x1="-2.6988" y1="3.0163" x2="2.6988" y2="3.0163" width="0.127" layer="21"/>
-<wire x1="2.6988" y1="3.0163" x2="2.8575" y2="3.0163" width="0.127" layer="51"/>
-<wire x1="2.8575" y1="3.0163" x2="3.0163" y2="2.8575" width="0.127" layer="51" curve="-90"/>
-<wire x1="3.0163" y1="2.8575" x2="3.0163" y2="1.1113" width="0.127" layer="51"/>
-<wire x1="3.0163" y1="1.1112" x2="3.0163" y2="-1.1113" width="0.127" layer="21"/>
-<wire x1="3.0163" y1="-1.1113" x2="3.0163" y2="-2.8575" width="0.127" layer="51"/>
-<wire x1="3.0163" y1="-2.8575" x2="2.8576" y2="-3.0162" width="0.127" layer="51" curve="-90"/>
-<wire x1="2.8576" y1="-3.0162" x2="2.6988" y2="-3.0162" width="0.127" layer="51"/>
-<wire x1="2.6986" y1="-3.0164" x2="-2.6987" y2="-3.0163" width="0.127" layer="21"/>
-<wire x1="-2.6988" y1="-3.0163" x2="-2.8575" y2="-3.0163" width="0.127" layer="51"/>
-<wire x1="-2.8575" y1="-3.0163" x2="-3.0163" y2="-2.8575" width="0.127" layer="51" curve="-90"/>
-<wire x1="-3.0163" y1="-2.8575" x2="-3.0163" y2="-1.1113" width="0.127" layer="51"/>
-<wire x1="-3.0163" y1="-1.1112" x2="-3.0163" y2="1.1113" width="0.127" layer="21"/>
-<wire x1="-3.0163" y1="2.2225" x2="3.0163" y2="2.2225" width="0.127" layer="101"/>
-<wire x1="-3.0163" y1="-2.2225" x2="3.0163" y2="-2.2225" width="0.127" layer="101"/>
-<wire x1="0.3175" y1="1.1113" x2="0.3175" y2="2.0638" width="0.127" layer="101"/>
-<wire x1="0.3175" y1="-2.0638" x2="0.3175" y2="-1.1113" width="0.127" layer="101"/>
-<wire x1="-0.1588" y1="-0.9525" x2="-0.1588" y2="0" width="0.254" layer="101"/>
-<wire x1="-0.1588" y1="0" x2="-0.1588" y2="0.9525" width="0.254" layer="101"/>
-<wire x1="-0.1588" y1="0" x2="-1.27" y2="0" width="0.127" layer="101"/>
-<circle x="3.4985" y="-2.2265" radius="0.477" width="0.127" layer="102"/>
-<circle x="3.4885" y="2.2285" radius="0.477" width="0.127" layer="102"/>
-<circle x="-3.4985" y="2.2265" radius="0.477" width="0.127" layer="102"/>
-<circle x="-3.4985" y="-2.2265" radius="0.477" width="0.127" layer="102"/>
-<circle x="0.3265" y="0.9565" radius="0.159" width="0.127" layer="101"/>
-<circle x="0.3265" y="-0.9565" radius="0.159" width="0.127" layer="101"/>
-<circle x="0.3175" y="-2.2225" radius="0.1588" width="0.127" layer="101"/>
-<circle x="0.3175" y="2.2225" radius="0.1587" width="0.127" layer="101"/>
-<circle x="0" y="0" radius="1.5875" width="0.127" layer="51"/>
-<pad name="2" x="-3.4925" y="2.2225" drill="0.8128" diameter="1.9304" shape="octagon"/>
-<pad name="1" x="-3.4925" y="-2.2225" drill="0.8128" diameter="1.9304" shape="octagon"/>
-<pad name="3" x="3.4925" y="-2.2225" drill="0.8128" diameter="1.9304" shape="octagon"/>
-<pad name="4" x="3.4925" y="2.2225" drill="0.8128" diameter="1.9304" shape="octagon"/>
-<text x="-2.3853" y="1.5902" size="1.27" layer="25">&gt;Name</text>
-<text x="-2.3858" y="-2.862" size="1.27" layer="27">&gt;Value</text>
-<text x="0.6352" y="-0.477" size="0.254" layer="100" rot="R90">PaJa</text>
+<package name="TACTB-64K-F">
+<description>microswitch - 0,5A/12V</description>
+<wire x1="-1.27" y1="-2.54" x2="1.27" y2="-2.54" width="0.127" layer="21"/>
+<wire x1="2.54" y1="-1.27" x2="2.54" y2="1.27" width="0.127" layer="21"/>
+<wire x1="1.27" y1="2.54" x2="-1.27" y2="2.54" width="0.127" layer="21"/>
+<wire x1="-2.54" y1="1.27" x2="-2.54" y2="-1.27" width="0.127" layer="21"/>
+<wire x1="-2.2225" y1="-1.5875" x2="-3.175" y2="-1.5875" width="0.127" layer="51"/>
+<wire x1="-3.175" y1="-1.5875" x2="-3.175" y2="-2.2225" width="0.127" layer="51"/>
+<wire x1="-3.175" y1="-2.2225" x2="-1.5875" y2="-2.2225" width="0.127" layer="51"/>
+<wire x1="2.2225" y1="-1.5875" x2="3.175" y2="-1.5875" width="0.127" layer="51"/>
+<wire x1="3.175" y1="-1.5875" x2="3.175" y2="-2.2225" width="0.127" layer="51"/>
+<wire x1="3.175" y1="-2.2225" x2="1.5875" y2="-2.2225" width="0.127" layer="51"/>
+<wire x1="1.5875" y1="2.2225" x2="3.175" y2="2.2225" width="0.127" layer="51"/>
+<wire x1="3.175" y1="2.2225" x2="3.175" y2="1.5875" width="0.127" layer="51"/>
+<wire x1="3.175" y1="1.5875" x2="2.2225" y2="1.5875" width="0.127" layer="51"/>
+<wire x1="-2.2225" y1="1.5875" x2="-3.175" y2="1.5875" width="0.127" layer="51"/>
+<wire x1="-3.175" y1="1.5875" x2="-3.175" y2="2.2225" width="0.127" layer="51"/>
+<wire x1="-3.175" y1="2.2225" x2="-1.5875" y2="2.2225" width="0.127" layer="51"/>
+<wire x1="-0.9525" y1="-1.905" x2="0.9525" y2="-1.905" width="0.127" layer="21"/>
+<wire x1="0.9525" y1="-1.905" x2="1.905" y2="-0.9525" width="0.127" layer="21"/>
+<wire x1="1.905" y1="-0.9525" x2="1.905" y2="0.9525" width="0.127" layer="21"/>
+<wire x1="1.905" y1="0.9525" x2="0.9525" y2="1.905" width="0.127" layer="21"/>
+<wire x1="0.9525" y1="1.905" x2="-0.9525" y2="1.905" width="0.127" layer="21"/>
+<wire x1="-0.9525" y1="1.905" x2="-1.905" y2="0.9525" width="0.127" layer="21"/>
+<wire x1="-1.905" y1="0.9525" x2="-1.905" y2="-0.9525" width="0.127" layer="21"/>
+<wire x1="-1.905" y1="-0.9525" x2="-0.9525" y2="-1.905" width="0.127" layer="21"/>
+<wire x1="-2.54" y1="-1.27" x2="-1.5875" y2="-2.2225" width="0.127" layer="51"/>
+<wire x1="2.54" y1="-1.27" x2="1.5875" y2="-2.2225" width="0.127" layer="51"/>
+<wire x1="1.5875" y1="2.2225" x2="2.54" y2="1.27" width="0.127" layer="51"/>
+<wire x1="-1.5875" y1="2.2225" x2="-2.54" y2="1.27" width="0.127" layer="51"/>
+<wire x1="-1.27" y1="2.54" x2="-1.5875" y2="2.2225" width="0.127" layer="21"/>
+<wire x1="1.27" y1="2.54" x2="1.5875" y2="2.2225" width="0.127" layer="21"/>
+<wire x1="1.5875" y1="-2.2225" x2="1.27" y2="-2.54" width="0.127" layer="21"/>
+<wire x1="-1.27" y1="-2.54" x2="-1.5875" y2="-2.2225" width="0.127" layer="21"/>
+<circle x="0" y="0" radius="0.9525" width="0.127" layer="51"/>
+<smd name="3" x="-2.8575" y="-1.905" dx="1.9304" dy="0.9652" layer="1"/>
+<smd name="1" x="-2.8575" y="1.905" dx="1.9304" dy="0.9652" layer="1"/>
+<smd name="4" x="2.8575" y="-1.905" dx="1.9304" dy="0.9652" layer="1"/>
+<smd name="2" x="2.8575" y="1.905" dx="1.9304" dy="0.9652" layer="1"/>
+<text x="0.3175" y="-2.2225" size="0.254" layer="100" rot="R180">PaJa</text>
+<text x="-1.5875" y="2.8575" size="1.016" layer="25">&gt;Name</text>
+<text x="-2.54" y="-3.81" size="1.016" layer="27">&gt;Value</text>
+<polygon width="0.127" layer="51">
+<vertex x="-1.5875" y="2.2225"/>
+<vertex x="-2.2225" y="1.5875"/>
+<vertex x="-3.175" y="1.5875"/>
+<vertex x="-3.175" y="2.2225"/>
+</polygon>
+<polygon width="0.127" layer="51">
+<vertex x="1.5875" y="2.2225"/>
+<vertex x="3.175" y="2.2225"/>
+<vertex x="3.175" y="1.5875"/>
+<vertex x="2.2225" y="1.5875"/>
+</polygon>
+<polygon width="0.127" layer="51">
+<vertex x="2.2225" y="-1.5875"/>
+<vertex x="3.175" y="-1.5875"/>
+<vertex x="3.175" y="-2.2225"/>
+<vertex x="1.5875" y="-2.2225"/>
+</polygon>
+<polygon width="0.127" layer="51">
+<vertex x="-3.175" y="-1.5875"/>
+<vertex x="-2.2225" y="-1.5875"/>
+<vertex x="-1.5875" y="-2.2225"/>
+<vertex x="-3.175" y="-2.2225"/>
+</polygon>
 </package>
 </packages>
 <symbols>
@@ -10907,18 +10932,19 @@ paja@paja-trb.cz
 </symbol>
 </symbols>
 <devicesets>
-<deviceset name="P-B1720" prefix="SW">
-<description>&lt;B&gt;&amp;micro;-tlacitko&lt;/B&gt;</description>
+<deviceset name="TACTB-64K-F" prefix="SW">
+<description>microSWITCH - 0,5A/12V&lt;br&gt;
+SMD</description>
 <gates>
-<gate name="TLAC" symbol="TLACIT_2" x="0" y="0" swaplevel="1"/>
+<gate name="TL" symbol="TLACIT_2" x="0" y="0"/>
 </gates>
 <devices>
-<device name="" package="P-B1720">
+<device name="" package="TACTB-64K-F">
 <connects>
-<connect gate="TLAC" pin="1" pad="1"/>
-<connect gate="TLAC" pin="1A" pad="3"/>
-<connect gate="TLAC" pin="2" pad="2"/>
-<connect gate="TLAC" pin="2A" pad="4"/>
+<connect gate="TL" pin="1" pad="1"/>
+<connect gate="TL" pin="1A" pad="2"/>
+<connect gate="TL" pin="2" pad="3"/>
+<connect gate="TL" pin="2A" pad="4"/>
 </connects>
 <technologies>
 <technology name=""/>
@@ -10943,8 +10969,8 @@ paja@paja-trb.cz
 <part name="K1" library="#PaJa_konektory" deviceset="ARK550/2" device=""/>
 <part name="K2" library="#PaJa_konektory" deviceset="ARK550/2" device=""/>
 <part name="U2" library="AMS1117-3.3" deviceset="AMS1117-3.3" device=""/>
-<part name="C1" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-EU" device="C0805" package3d_urn="urn:adsk.eagle:package:23617/2" value="100n"/>
-<part name="C2" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-EU" device="C0805" package3d_urn="urn:adsk.eagle:package:23617/2" value="100n"/>
+<part name="C1" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-EU" device="C0805" package3d_urn="urn:adsk.eagle:package:23617/2" value="100uF"/>
+<part name="C2" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-EU" device="C0805" package3d_urn="urn:adsk.eagle:package:23617/2" value="100uF"/>
 <part name="GND1" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="R2" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="1.5k"/>
 <part name="Q1" library="SamacSys_Parts" deviceset="AP2012P3C-P22" device=""/>
@@ -10969,12 +10995,12 @@ paja@paja-trb.cz
 <part name="LED1" library="led" library_urn="urn:adsk.eagle:library:259" deviceset="LED" device="CHIP-LED0805" package3d_urn="urn:adsk.eagle:package:15818/2"/>
 <part name="R9" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="150"/>
 <part name="GND7" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
-<part name="SW1" library="#PaJa_prepinace" deviceset="P-B1720" device=""/>
+<part name="SW1" library="#PaJa_prepinace" deviceset="TACTB-64K-F" device=""/>
 <part name="R10" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="10k"/>
 <part name="R11" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="10k"/>
-<part name="SW2" library="#PaJa_prepinace" deviceset="P-B1720" device=""/>
+<part name="SW2" library="#PaJa_prepinace" deviceset="TACTB-64K-F" device=""/>
 <part name="R12" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="10k"/>
-<part name="SW3" library="#PaJa_prepinace" deviceset="P-B1720" device=""/>
+<part name="SW3" library="#PaJa_prepinace" deviceset="TACTB-64K-F" device=""/>
 <part name="GND8" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="U$5" library="myParts" deviceset="HTU21D" device=""/>
 </parts>
@@ -11005,7 +11031,7 @@ paja@paja-trb.cz
 <wire x1="76.2" y1="40.64" x2="149.86" y2="40.64" width="0.1524" layer="94" style="longdash"/>
 <wire x1="149.86" y1="40.64" x2="149.86" y2="12.7" width="0.1524" layer="94" style="longdash"/>
 <wire x1="149.86" y1="12.7" x2="76.2" y2="12.7" width="0.1524" layer="94" style="longdash"/>
-<text x="101.6" y="35.56" size="1.778" layer="94">Uživatelské tlačítko</text>
+<text x="96.52" y="35.56" size="2.54" layer="94">Uživatelské tlačítko</text>
 </plain>
 <instances>
 <instance part="U1" gate="G$1" x="104.14" y="81.28" smashed="yes">
@@ -11068,7 +11094,7 @@ paja@paja-trb.cz
 <instance part="GND5" gate="1" x="137.16" y="45.72" smashed="yes">
 <attribute name="VALUE" x="134.62" y="43.18" size="1.778" layer="96"/>
 </instance>
-<instance part="SW1" gate="TLAC" x="71.12" y="109.22" smashed="yes">
+<instance part="SW1" gate="TL" x="71.12" y="109.22" smashed="yes">
 <attribute name="NAME" x="71.755" y="111.125" size="1.778" layer="95"/>
 <attribute name="VALUE" x="76.2" y="107.95" size="1.778" layer="96" rot="R180"/>
 </instance>
@@ -11080,7 +11106,7 @@ paja@paja-trb.cz
 <attribute name="NAME" x="135.89" y="125.5014" size="1.778" layer="95" rot="R180"/>
 <attribute name="VALUE" x="135.89" y="122.682" size="1.778" layer="96" rot="R180"/>
 </instance>
-<instance part="SW2" gate="TLAC" x="147.32" y="109.22" smashed="yes">
+<instance part="SW2" gate="TL" x="147.32" y="109.22" smashed="yes">
 <attribute name="NAME" x="147.955" y="111.125" size="1.778" layer="95"/>
 <attribute name="VALUE" x="152.4" y="107.95" size="1.778" layer="96" rot="R180"/>
 </instance>
@@ -11088,7 +11114,7 @@ paja@paja-trb.cz
 <attribute name="NAME" x="102.87" y="24.3586" size="1.778" layer="95"/>
 <attribute name="VALUE" x="102.87" y="22.098" size="1.778" layer="96"/>
 </instance>
-<instance part="SW3" gate="TLAC" x="124.46" y="27.94" smashed="yes">
+<instance part="SW3" gate="TL" x="124.46" y="27.94" smashed="yes">
 <attribute name="NAME" x="125.095" y="29.845" size="1.778" layer="95"/>
 <attribute name="VALUE" x="129.54" y="26.67" size="1.778" layer="96" rot="R180"/>
 </instance>
@@ -11140,18 +11166,18 @@ paja@paja-trb.cz
 <label x="48.26" y="154.94" size="1.778" layer="95" xref="yes"/>
 </segment>
 <segment>
-<pinref part="SW1" gate="TLAC" pin="1"/>
+<pinref part="SW1" gate="TL" pin="1"/>
 <wire x1="66.04" y1="109.22" x2="58.42" y2="109.22" width="0.1524" layer="91"/>
 <label x="58.42" y="109.22" size="1.778" layer="95" rot="R180" xref="yes"/>
 </segment>
 <segment>
-<pinref part="SW2" gate="TLAC" pin="2"/>
+<pinref part="SW2" gate="TL" pin="2"/>
 <wire x1="152.4" y1="109.22" x2="154.94" y2="109.22" width="0.1524" layer="91"/>
 <label x="154.94" y="109.22" size="1.778" layer="95" xref="yes"/>
 </segment>
 <segment>
 <pinref part="GND8" gate="1" pin="GND"/>
-<pinref part="SW3" gate="TLAC" pin="2"/>
+<pinref part="SW3" gate="TL" pin="2"/>
 <wire x1="137.16" y1="27.94" x2="129.54" y2="27.94" width="0.1524" layer="91"/>
 </segment>
 <segment>
@@ -11328,7 +11354,7 @@ paja@paja-trb.cz
 </net>
 <net name="N$7" class="0">
 <segment>
-<pinref part="SW1" gate="TLAC" pin="2"/>
+<pinref part="SW1" gate="TL" pin="2"/>
 <pinref part="R10" gate="G$1" pin="1"/>
 <wire x1="76.2" y1="109.22" x2="78.74" y2="109.22" width="0.1524" layer="91"/>
 <wire x1="78.74" y1="109.22" x2="78.74" y2="111.76" width="0.1524" layer="91"/>
@@ -11343,14 +11369,14 @@ paja@paja-trb.cz
 <wire x1="129.54" y1="116.84" x2="129.54" y2="109.22" width="0.1524" layer="91"/>
 <pinref part="U1" gate="G$1" pin="IO0"/>
 <wire x1="129.54" y1="109.22" x2="124.46" y2="109.22" width="0.1524" layer="91"/>
-<pinref part="SW2" gate="TLAC" pin="1"/>
+<pinref part="SW2" gate="TL" pin="1"/>
 <wire x1="129.54" y1="109.22" x2="142.24" y2="109.22" width="0.1524" layer="91"/>
 <junction x="129.54" y="109.22"/>
 </segment>
 </net>
 <net name="BTN_OUTPUT" class="0">
 <segment>
-<pinref part="SW3" gate="TLAC" pin="1"/>
+<pinref part="SW3" gate="TL" pin="1"/>
 <pinref part="R12" gate="G$1" pin="1"/>
 <wire x1="119.38" y1="27.94" x2="114.3" y2="27.94" width="0.1524" layer="91"/>
 <wire x1="114.3" y1="27.94" x2="109.22" y2="27.94" width="0.1524" layer="91"/>

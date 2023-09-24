@@ -2051,8 +2051,6 @@ design rules under a new name.</description>
 <contactref element="Q1" pad="1"/>
 <contactref element="JUM1" pad="4"/>
 <contactref element="U$3" pad="VCC"/>
-<contactref element="R9" pad="2"/>
-<wire x1="-66.548" y1="-9.906" x2="-80.33" y2="-41.91" width="0" layer="19" extent="1-1"/>
 <wire x1="-31.36" y1="20.5" x2="-66.548" y2="-9.906" width="0" layer="19" extent="1-1"/>
 <wire x1="-59.225" y1="39.37" x2="-31.36" y2="20.5" width="0" layer="19" extent="1-1"/>
 <wire x1="-41.91" y1="62.23" x2="-59.225" y2="39.37" width="0" layer="19" extent="1-1"/>
@@ -2125,11 +2123,18 @@ design rules under a new name.</description>
 </signal>
 <signal name="BUZZER_CONTROL">
 <contactref element="R8" pad="1"/>
+<contactref element="U1" pad="12"/>
+<wire x1="-31.36" y1="7.8" x2="-75.88" y2="-36.83" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="N$5">
 <contactref element="LED1" pad="A"/>
 <contactref element="R9" pad="1"/>
 <wire x1="-81.28" y1="-36.61" x2="-82.23" y2="-41.91" width="0" layer="19" extent="1-1"/>
+</signal>
+<signal name="LED_CONTROL">
+<contactref element="U1" pad="11"/>
+<contactref element="R9" pad="2"/>
+<wire x1="-31.36" y1="9.07" x2="-80.33" y2="-41.91" width="0" layer="19" extent="1-1"/>
 </signal>
 </signals>
 <mfgpreviewcolors>
