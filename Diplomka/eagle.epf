@@ -1,6 +1,6 @@
 [Eagle]
 Version="09 06 02"
-Platform="Windows"
+Platform="Mac OS X"
 Globals="Globals"
 Desktop="Desktop"
 
@@ -265,6 +265,10 @@ UsedLibraryUrn="urn:adsk.eagle:library:196"
 UsedLibraryUrn="urn:adsk.eagle:library:197"
 UsedLibraryUrn="urn:adsk.eagle:library:198"
 UsedLibraryUrn="urn:adsk.eagle:library:199"
+UsedLibrary="paja_lbr_506/#PaJa_31.lbr"
+UsedLibrary="paja_lbr_506/#PaJa_displeje.lbr"
+UsedLibrary="paja_lbr_506/#PaJa_konektory.lbr"
+UsedLibrary="paja_lbr_506/#PaJa_prepinace.lbr"
 UsedLibrary="AMS1117-3.3.lbr"
 UsedLibrary="ESP32-WROOM-32.lbr"
 UsedLibrary="Eagle_WR-USB (rev22c).lbr"
@@ -273,12 +277,12 @@ UsedLibrary="Sensors_PIR_Lux.lbr"
 UsedLibrary="gas-sensor.lbr"
 UsedLibrary="myParts.lbr"
 UsedLibrary="texas-instruments.lbr"
-UsedLibrary="paja_lbr_506/#PaJa_31.lbr"
-UsedLibrary="paja_lbr_506/#PaJa_displeje.lbr"
-UsedLibrary="paja_lbr_506/#PaJa_konektory.lbr"
-UsedLibrary="paja_lbr_506/#PaJa_prepinace.lbr"
 
 [Win_1]
+Type="Control Panel"
+Number=0
+
+[Win_2]
 Type="Board Editor"
 Number=2
 File="MainBoard.brd"
@@ -322,11 +326,7 @@ AddLevel=2
 PadsSameType=0
 Layer=1
 
-[Win_2]
-Type="Control Panel"
-Number=0
-
 [Desktop]
-Screen="3440 1440"
+Screen="1440 900"
 Window="Win_1"
 Window="Win_2"

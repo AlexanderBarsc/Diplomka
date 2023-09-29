@@ -11005,7 +11005,7 @@ paja@paja-trb.cz
 <wire x1="76.2" y1="40.64" x2="149.86" y2="40.64" width="0.1524" layer="94" style="longdash"/>
 <wire x1="149.86" y1="40.64" x2="149.86" y2="12.7" width="0.1524" layer="94" style="longdash"/>
 <wire x1="149.86" y1="12.7" x2="76.2" y2="12.7" width="0.1524" layer="94" style="longdash"/>
-<text x="101.6" y="35.56" size="1.778" layer="94">Uživatelské tlačítko</text>
+<text x="96.52" y="35.56" size="2.54" layer="94">Uživatelské tlačítko</text>
 </plain>
 <instances>
 <instance part="U1" gate="G$1" x="104.14" y="81.28" smashed="yes">

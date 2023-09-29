@@ -10987,7 +10987,7 @@ paja@paja-trb.cz
 <wire x1="10.16" y1="81.28" x2="63.5" y2="81.28" width="0.1524" layer="94" style="longdash"/>
 <wire x1="63.5" y1="81.28" x2="63.5" y2="15.24" width="0.1524" layer="94" style="longdash"/>
 <wire x1="63.5" y1="15.24" x2="10.16" y2="15.24" width="0.1524" layer="94" style="longdash"/>
-<text x="200.66" y="106.68" size="2.54" layer="94">PIR čidlo</text>
+<text x="205.74" y="106.68" size="2.54" layer="94">PIR čidlo</text>
 <wire x1="139.7" y1="124.46" x2="139.7" y2="170.18" width="0.1524" layer="94" style="longdash"/>
 <wire x1="139.7" y1="170.18" x2="241.3" y2="170.18" width="0.1524" layer="94" style="longdash"/>
 <wire x1="241.3" y1="170.18" x2="241.3" y2="124.46" width="0.1524" layer="94" style="longdash"/>

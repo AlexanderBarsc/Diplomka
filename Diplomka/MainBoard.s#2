@@ -8683,8 +8683,8 @@ http://www.s6z.de&lt;br&gt;&lt;br&gt;
 <wire x1="7.62" y1="-10.16" x2="-2.54" y2="0" width="0.254" layer="94" curve="-90"/>
 <wire x1="-7.62" y1="-2.54" x2="-2.54" y2="-2.54" width="0.254" layer="94"/>
 <wire x1="-7.62" y1="2.54" x2="-2.54" y2="2.54" width="0.254" layer="94"/>
-<pin name="+" x="-7.62" y="12.7" length="middle" rot="R270"/>
-<pin name="-" x="-7.62" y="-12.7" length="middle" rot="R90"/>
+<pin name="+" x="-7.62" y="12.7" visible="pad" length="middle" rot="R270"/>
+<pin name="-" x="-7.62" y="-12.7" visible="pad" length="middle" rot="R90"/>
 </symbol>
 <symbol name="HTU21D">
 <description>HTU21D</description>
