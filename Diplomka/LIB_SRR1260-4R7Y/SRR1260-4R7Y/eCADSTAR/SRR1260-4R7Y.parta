@@ -1,0 +1,66 @@
+(Japanese_coding: sjis)
+(function "ECS_259708"
+    (uver 1)
+    (cuser "SamacSys")
+    (uuser "SamacSys")
+    (ctime 2019-10-23-11:36:59)
+    (utime 2023-03-07-16:10:32)
+    (interface
+        (port "1" (symbPinId 1) (portType INOUT))
+        (port "2" (symbPinId 2) (portType INOUT))
+    )
+    (property "symbolName" "SRR1260-4R7Y")
+)
+
+
+(pinAssign "ECS_259708"
+    (uver 1)
+    (cuser "SamacSys")
+    (uuser "SamacSys")
+    (ctime 2019-10-23-11:36:59)
+    (utime 2023-03-07-16:10:32)
+    (interface
+        (port "1" (symbPinId 1) (portName "1") (portType INOUT))
+        (port "2" (symbPinId 2) (portName "2") (portType INOUT))
+    )
+    (internal
+        (funcInst (functionRef "ECS_259708")
+                (port "1" (match "1"))
+                (port "2" (match "2"))
+        )
+    )
+    (property "usePowerBox" "No")
+    (property "symbolName" "SRR1260-4R7Y")
+)
+
+
+(part "SRR1260-4R7Y"
+    (uver 1)
+    (cuser "SamacSys")
+    (uuser "SamacSys")
+    (ctime 2019-10-23-11:36:59)
+    (utime 2023-03-07-16:10:32)
+    (packageRef "SRR1260-4R7Y")
+    (pinAssignRef "ECS_259708")
+    (interface
+        (port "1" (symbPinId 1) (portName "1") (portType INOUT))
+        (port "2" (symbPinId 2) (portName "2") (portType INOUT))
+    )
+    (partClass UNDEF)
+    (useInSchema Y)
+    (useInLayout Y)
+    (inPartsList Y)
+    (partType NORMAL)
+    (placeRestriction FREE)
+    (property "enetNonSeries" "NO")
+    (property "refDesPrefix" "L")
+    (property "description" "Inductor Power Shielded Wirewound 4.7uH 30% 100KHz 19Q-Factor Ferrite 6.8A 15.5mOhm DCR T/R")
+    (property "Mouser_Part_Number" "652-SRR1260-4R7Y")
+    (property "Mouser_Price/Stock" "https://www.mouser.co.uk/ProductDetail/Bourns/SRR1260-4R7Y?qs=meVWcSOgEr6HGQUyq2JiMQ%3D%3D")
+    (property "Manufacturer_Name" "Bourns")
+    (property "Manufacturer_Part_Number" "SRR1260-4R7Y")
+    (property "Datasheet_Link" "https://componentsearchengine.com/Datasheets/1/SRR1260-4R7Y.pdf")
+    (property "compAreaTopHeight" 6.5)
+)
+
+
