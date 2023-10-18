@@ -8709,7 +8709,7 @@ http://www.s6z.de&lt;br&gt;&lt;br&gt;
 <pad name="VCC" x="1.19" y="13.54" drill="0.6" shape="octagon"/>
 <pad name="GND" x="1.19" y="11" drill="0.6" shape="octagon"/>
 <pad name="DO" x="1.19" y="8.46" drill="0.6" shape="octagon"/>
-<pad name="AO" x="1.19" y="5.54" drill="0.6" shape="octagon"/>
+<pad name="AO" x="1.19" y="5.92" drill="0.6" shape="octagon"/>
 <wire x1="0" y1="0" x2="32" y2="0" width="0.127" layer="21"/>
 <wire x1="32" y1="0" x2="32" y2="20" width="0.127" layer="21"/>
 <wire x1="32" y1="20" x2="0" y2="20" width="0.127" layer="21"/>
