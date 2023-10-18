@@ -8706,10 +8706,10 @@ http://www.s6z.de&lt;br&gt;&lt;br&gt;
 <library name="myParts">
 <packages>
 <package name="MQ2">
-<pad name="VCC" x="1.19" y="13.54" drill="0.6" shape="octagon"/>
-<pad name="GND" x="1.19" y="11" drill="0.6" shape="octagon"/>
-<pad name="DO" x="1.19" y="8.46" drill="0.6" shape="octagon"/>
-<pad name="AO" x="1.19" y="5.92" drill="0.6" shape="octagon"/>
+<pad name="VCC" x="1.19" y="13.54" drill="1" diameter="1.9304" shape="octagon"/>
+<pad name="GND" x="1.19" y="11" drill="1" diameter="1.9304" shape="octagon"/>
+<pad name="DO" x="1.19" y="8.46" drill="1" diameter="1.9304" shape="octagon"/>
+<pad name="AO" x="1.19" y="5.92" drill="1" diameter="1.9304" shape="octagon"/>
 <wire x1="0" y1="0" x2="32" y2="0" width="0.127" layer="21"/>
 <wire x1="32" y1="0" x2="32" y2="20" width="0.127" layer="21"/>
 <wire x1="32" y1="20" x2="0" y2="20" width="0.127" layer="21"/>
@@ -8723,9 +8723,9 @@ http://www.s6z.de&lt;br&gt;&lt;br&gt;
 <wire x1="14" y1="0" x2="14" y2="21.59" width="0.127" layer="21"/>
 <wire x1="14" y1="0" x2="0.03" y2="0" width="0.127" layer="21"/>
 <wire x1="0.03" y1="0" x2="0.03" y2="21.59" width="0.127" layer="21"/>
-<pad name="GND" x="7.112" y="1.524" drill="1" diameter="1.778" shape="octagon"/>
-<pad name="VCC" x="9.652" y="1.524" drill="1" diameter="1.778" shape="octagon"/>
-<pad name="OUT" x="4.572" y="1.524" drill="1" diameter="1.778" shape="octagon"/>
+<pad name="GND" x="7.112" y="1.524" drill="1" diameter="1.9304" shape="octagon"/>
+<pad name="VCC" x="9.652" y="1.524" drill="1" diameter="1.9304" shape="octagon"/>
+<pad name="OUT" x="4.572" y="1.524" drill="1" diameter="1.9304" shape="octagon"/>
 <circle x="6.85" y="16.01" radius="3.81" width="0.127" layer="21"/>
 </package>
 <package name="BUZZER">

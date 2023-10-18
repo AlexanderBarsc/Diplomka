@@ -2219,9 +2219,9 @@ http://www.s6z.de&lt;br&gt;&lt;br&gt;
 <wire x1="28.401" y1="73.59125625" x2="28.401" y2="74.93014375" width="1.27" layer="16"/>
 <wire x1="26.495" y1="53.34" x2="24.34" y2="53.34" width="1.27" layer="16"/>
 <wire x1="24.34" y1="53.34" x2="21" y2="50" width="1.27" layer="16"/>
-<wire x1="21" y1="50" x2="21" y2="46.97944375" width="1.27" layer="16"/>
-<wire x1="46.2" y1="20.77944375" x2="46.2" y2="17.96" width="1.27" layer="16"/>
-<wire x1="46.2" y1="20.77944375" x2="21" y2="46.97944375" width="1.27" layer="16"/>
+<wire x1="21" y1="50" x2="21" y2="46.209603125" width="1.27" layer="16"/>
+<wire x1="46.2" y1="20.009603125" x2="46.2" y2="17.96" width="1.27" layer="16"/>
+<wire x1="46.2" y1="20.009603125" x2="21" y2="46.209603125" width="1.27" layer="16"/>
 <contactref element="R13" pad="2"/>
 <contactref element="C7" pad="1"/>
 <contactref element="L1" pad="2"/>

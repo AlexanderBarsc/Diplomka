@@ -12141,6 +12141,11 @@ vlhkostní senzor HTU21D</text>
 </sheet>
 <sheet>
 <plain>
+<wire x1="20.32" y1="60.96" x2="20.32" y2="157.48" width="0.1524" layer="94" style="longdash"/>
+<wire x1="20.32" y1="157.48" x2="147.32" y2="157.48" width="0.1524" layer="94" style="longdash"/>
+<wire x1="147.32" y1="157.48" x2="147.32" y2="60.96" width="0.1524" layer="94" style="longdash"/>
+<wire x1="147.32" y1="60.96" x2="20.32" y2="60.96" width="0.1524" layer="94" style="longdash"/>
+<text x="33.02" y="144.78" size="6.4516" layer="94">ESP32 programmer reset</text>
 </plain>
 <instances>
 <instance part="FRAME3" gate="G$1" x="0" y="0" smashed="yes">

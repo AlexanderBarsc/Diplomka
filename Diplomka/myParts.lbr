@@ -6,7 +6,7 @@
 <setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="1" unitdist="mm" unit="mm" style="lines" multiple="1" display="yes" altdistance="5" altunitdist="mil" altunit="mil"/>
+<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="yes" altdistance="0.01" altunitdist="inch" altunit="inch"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="yes" active="yes"/>
 <layer number="16" name="Bottom" color="1" fill="1" visible="yes" active="yes"/>
@@ -131,6 +131,14 @@
 <wire x1="1.5" y1="-0.75" x2="1.5" y2="0.75" width="0.1524" layer="21"/>
 <circle x="-1" y="-0.2" radius="0.2" width="0.1524" layer="21"/>
 </package>
+<package name="PT15-21C/TR8">
+<smd name="E" x="1.6" y="0" dx="1.5" dy="1.5" layer="1"/>
+<smd name="C" x="-1.6" y="0" dx="1.5" dy="1.5" layer="1"/>
+<wire x1="0.85" y1="0.75" x2="-0.85" y2="0.75" width="0.0762" layer="21"/>
+<wire x1="0.85" y1="-0.75" x2="-0.85" y2="-0.75" width="0.0762" layer="21"/>
+<wire x1="-0.85" y1="-0.75" x2="-0.85" y2="0.75" width="0.0762" layer="21"/>
+<wire x1="0.85" y1="-0.75" x2="0.85" y2="0.75" width="0.0762" layer="21"/>
+</package>
 </packages>
 <symbols>
 <symbol name="MQ2">
@@ -224,6 +232,25 @@
 <pin name="SW" x="12.7" y="5.08" length="middle" rot="R180"/>
 <pin name="IN" x="12.7" y="0" length="middle" rot="R180"/>
 <pin name="EN" x="12.7" y="-5.08" length="middle" rot="R180"/>
+</symbol>
+<symbol name="PT15-21C/TR8">
+<circle x="0" y="0" radius="5.6796125" width="0.1524" layer="94"/>
+<wire x1="-2.54" y1="-2.54" x2="-2.54" y2="0" width="0.1524" layer="94"/>
+<wire x1="-2.54" y1="0" x2="-2.54" y2="2.54" width="0.1524" layer="94"/>
+<wire x1="2.54" y1="-2.54" x2="-2.54" y2="0" width="0.1524" layer="94"/>
+<wire x1="-2.54" y1="0" x2="2.54" y2="2.54" width="0.1524" layer="94"/>
+<wire x1="2.54" y1="-2.54" x2="0" y2="0" width="0.1524" layer="94"/>
+<wire x1="2.54" y1="-2.54" x2="0" y2="-2.54" width="0.1524" layer="94"/>
+<wire x1="2.54" y1="2.54" x2="2.54" y2="10.16" width="0.1524" layer="94"/>
+<wire x1="2.54" y1="-2.54" x2="2.54" y2="-10.16" width="0.1524" layer="94"/>
+<wire x1="-10.16" y1="10.16" x2="-7.62" y2="7.62" width="0.1524" layer="94"/>
+<wire x1="-7.62" y1="7.62" x2="-7.62" y2="10.16" width="0.1524" layer="94"/>
+<wire x1="-7.62" y1="7.62" x2="-10.16" y2="7.62" width="0.1524" layer="94"/>
+<wire x1="-10.16" y1="5.08" x2="-7.62" y2="2.54" width="0.1524" layer="94"/>
+<wire x1="-7.62" y1="2.54" x2="-7.62" y2="5.08" width="0.1524" layer="94"/>
+<wire x1="-7.62" y1="2.54" x2="-10.16" y2="2.54" width="0.1524" layer="94"/>
+<pin name="C" x="2.54" y="10.16" length="middle" rot="R270"/>
+<pin name="E" x="2.54" y="-10.16" length="middle" rot="R90"/>
 </symbol>
 </symbols>
 <devicesets>
@@ -330,6 +357,22 @@
 <connect gate="G$1" pin="GND" pad="GND"/>
 <connect gate="G$1" pin="IN" pad="IN"/>
 <connect gate="G$1" pin="SW" pad="SW"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="PT15-21C/TR8">
+<gates>
+<gate name="G$1" symbol="PT15-21C/TR8" x="2.54" y="0"/>
+</gates>
+<devices>
+<device name="" package="PT15-21C/TR8">
+<connects>
+<connect gate="G$1" pin="C" pad="C"/>
+<connect gate="G$1" pin="E" pad="E"/>
 </connects>
 <technologies>
 <technology name=""/>
