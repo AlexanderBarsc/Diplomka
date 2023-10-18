@@ -2288,24 +2288,6 @@ http://www.s6z.de&lt;br&gt;&lt;br&gt;
 <wire x1="31" y1="16.08" x2="32.04" y2="37.97" width="0" layer="19" extent="1-1"/>
 <wire x1="14.35" y1="-3.5" x2="31" y2="16.08" width="0" layer="19" extent="1-1"/>
 </signal>
-<signal name="TXD0">
-<contactref element="U1" pad="35"/>
-<wire x1="67" y1="60.359140625" x2="67" y2="52" width="0.508" layer="16"/>
-<wire x1="67" y1="52" x2="66.5" y2="51.5" width="0.508" layer="16"/>
-<wire x1="66.5" y1="51.5" x2="61" y2="51.5" width="0.508" layer="16"/>
-<via x="61" y="51.5" extent="1-16" drill="0.35" shape="octagon"/>
-<wire x1="61" y1="51.5" x2="60.95" y2="51.45" width="0.508" layer="1"/>
-<wire x1="60.95" y1="51.45" x2="58.5" y2="51.45" width="0.508" layer="1"/>
-</signal>
-<signal name="RXD0">
-<contactref element="U1" pad="34"/>
-<wire x1="68.5" y1="56.92" x2="68.5" y2="51" width="0.508" layer="16"/>
-<wire x1="68.5" y1="51" x2="67.5" y2="50" width="0.508" layer="16"/>
-<wire x1="67.5" y1="50" x2="61" y2="50" width="0.508" layer="16"/>
-<via x="61" y="50" extent="1-16" drill="0.35" shape="octagon"/>
-<wire x1="58.5" y1="50.18" x2="60.82" y2="50.18" width="0.508" layer="1"/>
-<wire x1="60.82" y1="50.18" x2="61" y2="50" width="0.508" layer="1"/>
-</signal>
 <signal name="3V3">
 <contactref element="U2" pad="2"/>
 <contactref element="C2" pad="1"/>
@@ -2594,9 +2576,13 @@ http://www.s6z.de&lt;br&gt;&lt;br&gt;
 </signal>
 <signal name="UART_PC_RX">
 <contactref element="JUM1" pad="2"/>
+<contactref element="U1" pad="35"/>
+<wire x1="4.19" y1="-3.5" x2="58.5" y2="51.45" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="UART_PC_TX">
 <contactref element="JUM1" pad="3"/>
+<contactref element="U1" pad="34"/>
+<wire x1="6.73" y1="-3.5" x2="58.5" y2="50.18" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="VCC">
 <contactref element="JUM1" pad="4"/>
