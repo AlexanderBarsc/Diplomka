@@ -11268,10 +11268,13 @@ Source: &lt;a href="https://datasheet.datasheetarchive.com/originals/distributor
 <part name="GND9" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="FRAME3" library="frames" library_urn="urn:adsk.eagle:library:229" deviceset="A4L-LOC" device=""/>
 <part name="JUM1" library="#PaJa_konektory" deviceset="S1G6_JUMP" device=""/>
+<<<<<<< Updated upstream
 <part name="Q3" library="SS8050-G" deviceset="SS8050-G" device=""/>
 <part name="Q4" library="SS8050-G" deviceset="SS8050-G" device=""/>
 <part name="R16" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2"/>
 <part name="R17" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2"/>
+=======
+>>>>>>> Stashed changes
 </parts>
 <sheets>
 <sheet>
@@ -11480,6 +11483,18 @@ Source: &lt;a href="https://datasheet.datasheetarchive.com/originals/distributor
 <wire x1="60.96" y1="109.22" x2="53.34" y2="109.22" width="0.1524" layer="91"/>
 <label x="53.34" y="109.22" size="1.778" layer="95" rot="R180" xref="yes"/>
 </segment>
+<<<<<<< Updated upstream
+=======
+<segment>
+<pinref part="JUM1" gate="JUM" pin="6"/>
+<wire x1="25.4" y1="139.7" x2="33.02" y2="139.7" width="0.1524" layer="91"/>
+<wire x1="33.02" y1="139.7" x2="33.02" y2="147.32" width="0.1524" layer="91"/>
+<wire x1="33.02" y1="147.32" x2="48.26" y2="147.32" width="0.1524" layer="91"/>
+<label x="48.26" y="147.32" size="1.778" layer="95" xref="yes"/>
+</segment>
+</net>
+<net name="TXD0" class="0">
+>>>>>>> Stashed changes
 <segment>
 <pinref part="JUM1" gate="JUM" pin="6"/>
 <wire x1="25.4" y1="139.7" x2="33.02" y2="139.7" width="0.1524" layer="91"/>
@@ -11703,11 +11718,14 @@ Source: &lt;a href="https://datasheet.datasheetarchive.com/originals/distributor
 <wire x1="25.4" y1="129.54" x2="43.18" y2="129.54" width="0.1524" layer="91"/>
 <label x="43.18" y="129.54" size="1.778" layer="95" xref="yes"/>
 </segment>
+<<<<<<< Updated upstream
 <segment>
 <pinref part="U1" gate="G$1" pin="TXD0"/>
 <wire x1="83.82" y1="86.36" x2="73.66" y2="86.36" width="0.1524" layer="91"/>
 <label x="73.66" y="86.36" size="1.778" layer="95" rot="R180" xref="yes"/>
 </segment>
+=======
+>>>>>>> Stashed changes
 </net>
 <net name="UART_PC_TX" class="0">
 <segment>
@@ -11716,6 +11734,7 @@ Source: &lt;a href="https://datasheet.datasheetarchive.com/originals/distributor
 <wire x1="43.18" y1="132.08" x2="43.18" y2="134.62" width="0.1524" layer="91"/>
 <label x="43.18" y="134.62" size="1.778" layer="95" xref="yes"/>
 </segment>
+<<<<<<< Updated upstream
 <segment>
 <pinref part="U1" gate="G$1" pin="RXD0"/>
 <wire x1="83.82" y1="83.82" x2="78.74" y2="83.82" width="0.1524" layer="91"/>
@@ -11723,6 +11742,8 @@ Source: &lt;a href="https://datasheet.datasheetarchive.com/originals/distributor
 <wire x1="78.74" y1="81.28" x2="76.2" y2="81.28" width="0.1524" layer="91"/>
 <label x="76.2" y="81.28" size="1.778" layer="95" rot="R180" xref="yes"/>
 </segment>
+=======
+>>>>>>> Stashed changes
 </net>
 <net name="VCC" class="0">
 <segment>

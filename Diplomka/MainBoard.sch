@@ -11654,6 +11654,7 @@ vlhkostní senzor HTU21D</text>
 <wire x1="152.4" y1="254" x2="2.54" y2="254" width="0.1524" layer="94" style="longdash"/>
 <wire x1="2.54" y1="254" x2="2.54" y2="172.72" width="0.1524" layer="94" style="longdash"/>
 <text x="60.96" y="246.38" size="1.778" layer="94">Step down převodník pro 5V</text>
+<text x="43.18" y="218.44" size="1.778" layer="95">SD8942</text>
 </plain>
 <instances>
 <instance part="FRAME2" gate="G$1" x="-30.48" y="-15.24" smashed="yes">
