@@ -15,3 +15,5 @@
 
 void TestMicrophoneWithBuzzer();
 void SetupPins();
+void GetWifiPasswordFromAp();
+

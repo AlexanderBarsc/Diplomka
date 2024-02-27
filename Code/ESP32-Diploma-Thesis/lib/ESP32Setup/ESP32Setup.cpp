@@ -2,6 +2,7 @@
 #include "ESP32Setup.h"
 #include <Wire.h>
 #include <Adafruit_HTU21DF.h>
+#include <WiFi.h>
 
 void Test()
 {
@@ -124,4 +125,13 @@ void TestMicrophoneWithBuzzer()
   {
     Serial.println(arr[i]);
   }
+}
+
+void GetWifiPasswordFromAp(const char* ssid, const char* password)
+{
+  WiFi.softAP(ssid, password);
+  Serial.println("AP IP address: ");
+  Serial.println(WiFi.softAPIP());
+
+  
 }
