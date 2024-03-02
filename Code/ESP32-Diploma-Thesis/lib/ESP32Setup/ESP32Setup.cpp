@@ -98,6 +98,12 @@ void SetupPins()
   pinMode(LED_CONTROL, OUTPUT);
   pinMode(PHOTOTRAN_CONTROL, OUTPUT);
   pinMode(MIC_CONTROL, OUTPUT);
+  pinMode(PIR_OUTPUT, INPUT);
+  
+  // Powers up sensors on board which have their voltage pin connected to GPIO
+  digitalWrite(MIC_CONTROL, HIGH);
+  digitalWrite(PHOTOTRAN_CONTROL, HIGH);
+  digitalWrite(TEMP_CONTROL, HIGH);
 }
 
 /// @brief Test Microphone if it works with buzzer
