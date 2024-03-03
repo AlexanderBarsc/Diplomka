@@ -6,8 +6,14 @@
 #include "Adafruit_HTU21DF.h"
 #include "ESP32Setup.h"
 #include "ESP32WebCommunication.h"
+#include "time.h"
 
 #define DEBUG
+
+const char* ntpServer = "pool.ntp.org";
+const long  gmtOffset_sec = 3600;
+const int   daylightOffset_sec = 3600;
+boolean pirUpdate = false;
 
 
 enum OutputPins
@@ -17,14 +23,17 @@ enum OutputPins
   BUZZER = 27
 };
 
+void printLocalTime();
 
 OutputPins parseIntToOutputPin(int value);
-    
 
+    
 typedef struct measurement {
     float temperature;
     float humidity;
     uint16_t audio;
+    char* pirDetection;
+    
 } Measurement;
 
 Measurement meas;
@@ -64,11 +73,20 @@ void addJsonObject(char *name, float value, char *unit) {
   obj["unit"] = unit; 
 }
 
+void addTimeJsonObject(char *name, char* str, char *unit) {
+  JsonObject obj = jsonDocument.createNestedObject();
+  obj["name"] = name;
+  obj["value"] = str;
+  obj["unit"] = unit; 
+}
+
 
 void getValues() {
   Serial.println("Get all values");
   jsonDocument.clear(); // Clear json buffer
   addJsonObject("audio", meas.audio, "raw");
+  addJsonObject("temp", meas.temperature, "°C");
+  addTimeJsonObject("lastPirDetection", meas.pirDetection, "time");
 
   serializeJson(jsonDocument, buffer);
   server.send(200, "application/json", buffer);
@@ -114,7 +132,7 @@ void setDigitalPin()
   StaticJsonDocument<200> doc;
   deserializeJson(doc,server.arg("plain"));
 
-  // TODO - replace String with int
+  // TODO - Works but maybe think about undefined behaviour
   uint8_t pinNumber = doc["pin"];
   uint8_t value = doc["value"];
 
@@ -141,6 +159,14 @@ void setupApi() {
   server.begin();
 }
 
+//TODO - asi prasárna tohle dávat do přerušení ale co už 
+void IRAM_ATTR pirInterrupt() {
+    Serial.println("PIR noticed something");
+    pirUpdate = true;
+    detachInterrupt(PIR_OUTPUT);
+    
+}
+
 
 
 void setup() {
@@ -159,6 +185,8 @@ void setup() {
     Serial.println("HTU21D module not found");
     esp_restart();
   }
+
+  attachInterrupt(PIR_OUTPUT, pirInterrupt, RISING);
 
  
   WiFi.mode(WIFI_STA); // explicitly set mode, esp defaults to STA+AP
@@ -191,13 +219,27 @@ void setup() {
 
   setupApi();
 
+  configTime(gmtOffset_sec, daylightOffset_sec, ntpServer);
+  printLocalTime();
+
 }
 
 void loop() {
   // put your main code here, to run repeatedly:
   server.handleClient();
 
+  if(pirUpdate)
+  {
+    struct tm timeinfo;
+    getLocalTime(&timeinfo);
+    meas.pirDetection = asctime(&timeinfo);
+    Serial.println(meas.pirDetection);
+    pirUpdate = false;
+    attachInterrupt(PIR_OUTPUT, pirInterrupt, RISING);
+  }
+
   meas.audio = analogRead(MIC_OUTPUT);
+ // meas.temperature = htu.readTemperature(); 
   delay(DEFAULT_DELAY);
 
 }
@@ -213,3 +255,39 @@ OutputPins parseIntToOutputPin(int value)
       return UNDEFINED;
   }
 }
+
+void printLocalTime(){
+  struct tm timeinfo;
+  if(!getLocalTime(&timeinfo)){
+    Serial.println("Failed to obtain time");
+    return;
+  }
+  Serial.println(&timeinfo, "%A, %B %d %Y %H:%M:%S");
+  Serial.print("Day of week: ");
+  Serial.println(&timeinfo, "%A");
+  Serial.print("Month: ");
+  Serial.println(&timeinfo, "%B");
+  Serial.print("Day of Month: ");
+  Serial.println(&timeinfo, "%d");
+  Serial.print("Year: ");
+  Serial.println(&timeinfo, "%Y");
+  Serial.print("Hour: ");
+  Serial.println(&timeinfo, "%H");
+  Serial.print("Hour (12 hour format): ");
+  Serial.println(&timeinfo, "%I");
+  Serial.print("Minute: ");
+  Serial.println(&timeinfo, "%M");
+  Serial.print("Second: ");
+  Serial.println(&timeinfo, "%S");
+
+  Serial.println("Time variables");
+  char timeHour[3];
+  strftime(timeHour,3, "%H", &timeinfo);
+  Serial.println(timeHour);
+  char timeWeekDay[10];
+  strftime(timeWeekDay,10, "%A", &timeinfo);
+  Serial.println(timeWeekDay);
+  Serial.println();
+}
+
+
