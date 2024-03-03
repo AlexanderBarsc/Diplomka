@@ -4,6 +4,7 @@
 #include <Adafruit_HTU21DF.h>
 #include <WiFi.h>
 
+
 void Test()
 {
   Adafruit_HTU21DF htu = Adafruit_HTU21DF();
@@ -90,6 +91,7 @@ void Test()
   Serial.println("Vse otestovano, nyni pokracuji v behu programu");
 }
 
+/// @brief Setups pins which are required for the system to work correctly.
 void SetupPins()
 {
   pinMode(TEMP_CONTROL, OUTPUT);
@@ -106,38 +108,18 @@ void SetupPins()
   digitalWrite(TEMP_CONTROL, HIGH);
 }
 
-/// @brief Test Microphone if it works with buzzer
-void TestMicrophoneWithBuzzer()
+
+OutputPins parseIntToOutputPin(int value)
 {
-  uint16_t micValue;
-  uint16_t arr[20];
-  digitalWrite(MIC_CONTROL, HIGH);
-  digitalWrite(BUZZER_CONTROL, HIGH);
-  
-  for(int i = 0; i < 10; i++)
+  switch (value)
   {
-    arr[i] = analogRead(MIC_OUTPUT);
-    delay(DEFAULT_DELAY);
-  }
-
-  digitalWrite(BUZZER_CONTROL, LOW);
-  for(int i = 10; i < 20; i++)
-  {
-    arr[i] = analogRead(MIC_OUTPUT);
-    delay(DEFAULT_DELAY);
-  }
-
-  for(int i = 0; i < 20; i++)
-  {
-    Serial.println(arr[i]);
+    case LED:
+    case BUZZER:
+      return static_cast<OutputPins>(value);
+    default:
+      return UNDEFINED;
   }
 }
 
-void GetWifiPasswordFromAp(const char* ssid, const char* password)
-{
-  WiFi.softAP(ssid, password);
-  Serial.println("AP IP address: ");
-  Serial.println(WiFi.softAPIP());
 
-  
-}
+

@@ -13,7 +13,24 @@
 #define I2C_SDA 22
 #define I2C_SCL 21
 
-void TestMicrophoneWithBuzzer();
+enum OutputPins
+{
+  UNDEFINED = -1,
+  LED = 13,
+  BUZZER = 27
+};
+
+typedef struct measurement {
+    char timestamp[50];
+    float temperature;
+    float humidity;
+    uint16_t audio;
+    uint16_t gas;
+    uint16_t photoTransistor;
+    char pirDetection[50];
+    
+} Measurement;
+
 void SetupPins();
-void GetWifiPasswordFromAp();
+OutputPins parseIntToOutputPin(int value);
 
