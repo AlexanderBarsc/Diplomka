@@ -194,6 +194,8 @@ void loop() {
   char* timeStamp = asctime(&timeinfo);
   strcpy(meas.timestamp, timeStamp);
 
+  meas.humidity = htu.readHumidity();
+
   if(pirUpdate)
   {
     strcpy(meas.pirDetection, timeStamp);
