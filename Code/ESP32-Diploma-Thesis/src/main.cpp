@@ -9,10 +9,17 @@
 #include "time.h"
 
 #define DEBUG
+#define HTU21DF_I2CADDR (0x40)
+#define HTU21DF_RESET (0xFE)
+
+void readTemp();
 
 // Web server running on port 80
 WebServer server(80);
 StaticJsonDocument<1024> jsonDocument;
+
+TwoWire I2CBME = TwoWire(0);
+
 
 const char* ntpServer = "pool.ntp.org";
 const long  gmtOffset_sec = 3600;
@@ -151,22 +158,25 @@ void setup() {
   // put your setup code here, to run once:
   SetupPins();
   
-  // Creation of own TwoWire object due to mismatched pins on the HTU21D module 
-  TwoWire I2CBME = TwoWire(0);
+  /*
+  if(Wire.begin(I2C_SDA, I2C_SCL) == false)
+  {
+    Serial.println("I2C init failed");
+    esp_restart();
+  }
+  */
   I2CBME.begin(I2C_SDA, I2C_SCL, 400000);
+  htu.begin(&I2CBME);
+  // Creation of own TwoWire object due to mismatched pins on the HTU21D module 
+
   Serial.begin(115200);
   // Inicialization delay
   delay(1500); 
 
-  if(!htu.begin(&I2CBME))
-  {
-    Serial.println("HTU21D module not found");
-    esp_restart();
-  }
 
   attachInterrupt(PIR_OUTPUT, pirInterrupt, RISING);
 
- 
+
   WiFi.mode(WIFI_STA); 
   WiFiManager wm;
   bool res;
@@ -194,8 +204,6 @@ void loop() {
   char* timeStamp = asctime(&timeinfo);
   strcpy(meas.timestamp, timeStamp);
 
-  meas.humidity = htu.readHumidity();
-
   if(pirUpdate)
   {
     strcpy(meas.pirDetection, timeStamp);
@@ -205,8 +213,53 @@ void loop() {
   meas.audio = analogRead(MIC_OUTPUT);
   meas.gas = analogRead(MQ2_OUTPUT);
   meas.photoTransistor = analogRead(PHOTOTRAN_OUTPUT_AD);
-  
+  meas.temperature = htu.readTemperature();
+  Serial.println(meas.temperature);  
   delay(100);
+
+}
+
+void readTemp()
+{
+
+  Wire.write(HTU21DF_RESET);
+  Wire.beginTransmission(HTU21DF_I2CADDR);
+  Wire.endTransmission();
+
+  delay(20);
+
+ uint8_t val = Wire.read();
+
+  Serial.println(val);
+  Serial.println(val == 0x2);
+
+  uint8_t readTemp = 0xE3;
+
+  Wire.write(readTemp);
+  Wire.beginTransmission(HTU21DF_I2CADDR);
+  Wire.endTransmission();
+  delay(50);
+
+  uint8_t buf[3];
+
+  Wire.readBytes(buf, 3);
+
+  for(int i = 0; i < 3; i++)
+  {
+    Serial.println(buf[i]);
+  }
+
+  uint16_t t = buf[0];
+  t <<= 8;
+  t |= buf[1] & 0b11111100;
+
+   float temp = t;
+  temp *= 175.72f;
+  temp /= 65536.0f;
+  temp -= 46.85f;
+
+  /* Track the value internally in case we need to access it later. */
+  Serial.println(temp);
 
 }
 
