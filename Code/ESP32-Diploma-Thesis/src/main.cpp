@@ -73,6 +73,8 @@ void getValues() {
   addJsonObject("gas", meas.gas, "raw");
   addJsonObject("photoTransistor", meas.photoTransistor, "raw");
   addTimeJsonObject("lastPirDetection", meas.pirDetection, "time");
+  addJsonObject("temperature", meas.temperature, "°C");
+  addJsonObject("relative humidity", meas.humidity, "%");
 
   serializeJson(jsonDocument, buffer);
   server.send(200, "application/json", buffer);
@@ -214,52 +216,8 @@ void loop() {
   meas.gas = analogRead(MQ2_OUTPUT);
   meas.photoTransistor = analogRead(PHOTOTRAN_OUTPUT_AD);
   meas.temperature = htu.readTemperature();
-  Serial.println(meas.temperature);  
+  meas.humidity = htu.readHumidity(); 
   delay(100);
-
-}
-
-void readTemp()
-{
-
-  Wire.write(HTU21DF_RESET);
-  Wire.beginTransmission(HTU21DF_I2CADDR);
-  Wire.endTransmission();
-
-  delay(20);
-
- uint8_t val = Wire.read();
-
-  Serial.println(val);
-  Serial.println(val == 0x2);
-
-  uint8_t readTemp = 0xE3;
-
-  Wire.write(readTemp);
-  Wire.beginTransmission(HTU21DF_I2CADDR);
-  Wire.endTransmission();
-  delay(50);
-
-  uint8_t buf[3];
-
-  Wire.readBytes(buf, 3);
-
-  for(int i = 0; i < 3; i++)
-  {
-    Serial.println(buf[i]);
-  }
-
-  uint16_t t = buf[0];
-  t <<= 8;
-  t |= buf[1] & 0b11111100;
-
-   float temp = t;
-  temp *= 175.72f;
-  temp /= 65536.0f;
-  temp -= 46.85f;
-
-  /* Track the value internally in case we need to access it later. */
-  Serial.println(temp);
 
 }
 
