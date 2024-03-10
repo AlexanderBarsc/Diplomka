@@ -7,6 +7,7 @@
 #include "ESP32Setup.h"
 #include "ESP32WebCommunication.h"
 #include "time.h"
+#include "ThingSpeak.h"
 
 #define DEBUG
 #define HTU21DF_I2CADDR (0x40)
@@ -17,6 +18,7 @@ void readTemp();
 // Web server running on port 80
 WebServer server(80);
 TwoWire I2CBME = TwoWire(0);
+WiFiClient myClient;
 
 const char *ntpServer = "pool.ntp.org";
 const long gmtOffset_sec = 3600;
@@ -27,6 +29,9 @@ Measurement meas;
 Adafruit_HTU21DF htu = Adafruit_HTU21DF();
 
 char buffer[1024];
+
+unsigned long myChannelNumber = 2463153;
+const char * myWriteAPIKey = "AXMLMV4283OWJT1Z";
 
 
 
@@ -63,7 +68,7 @@ void getValues()
   server.send(200, "application/json", buffer);
 }
 
-void getDigitalPinState()
+void getDigitalPinValue()
 {
   StaticJsonDocument<20> jsonDocument;
   if (server.args() == 0)
@@ -87,8 +92,8 @@ void getDigitalPinState()
 
   jsonDocument.clear();
   JsonObject obj = jsonDocument.createNestedObject();
-  obj["name"] = pin;
-  obj["state"] = digitalRead(pin);
+  obj["pin"] = pin;
+  obj["value"] = digitalRead(pin);
 
   serializeJson(obj, buffer);
   server.send(OK, "application/json", buffer);
@@ -123,7 +128,7 @@ void setDigitalPin()
 void setupApi()
 {
   server.on("/getValues", getValues);
-  server.on("/getDigitalPinState", getDigitalPinState);
+  server.on("/getDigitalPinState", getDigitalPinValue);
   server.on("/setDigitalPin", HTTP_POST, setDigitalPin);
 
   server.begin();
@@ -145,20 +150,18 @@ void setup()
   // put your setup code here, to run once:
   SetupPins();
 
-  /*
-  if(Wire.begin(I2C_SDA, I2C_SCL) == false)
-  {
-    Serial.println("I2C init failed");
-    esp_restart();
-  }
-  */
   I2CBME.begin(I2C_SDA, I2C_SCL, 400000);
   htu.begin(&I2CBME);
-  // Creation of own TwoWire object due to mismatched pins on the HTU21D module
+
+  if(htu.begin(&I2CBME) == false)
+  {
+     Serial.println("HTU INIT FAILED");
+     esp_restart();
+  }
 
   Serial.begin(115200);
   // Inicialization delay
-  delay(1500);
+  delay(2000);
 
   attachInterrupt(PIR_OUTPUT, pirInterrupt, RISING);
 
@@ -178,8 +181,11 @@ void setup()
     Serial.println("Connected to WiFi");
   }
 
+  ThingSpeak.begin(myClient);
+
   setupApi();
   configTime(gmtOffset_sec, daylightOffset_sec, ntpServer);
+  Serial.println("Start loop: ");
 }
 
 void loop()
@@ -191,16 +197,27 @@ void loop()
   char *timeStamp = asctime(&timeinfo);
   strcpy(meas.timestamp, timeStamp);
 
-  if (pirUpdate)
-  {
-    strcpy(meas.pirDetection, timeStamp);
-    pirUpdate = false;
-    attachInterrupt(PIR_OUTPUT, pirInterrupt, RISING);
-  }
+  Serial.println("Reading values:");
   meas.audio = analogRead(MIC_OUTPUT);
   meas.gas = analogRead(MQ2_OUTPUT);
   meas.photoTransistor = analogRead(PHOTOTRAN_OUTPUT_AD);
   meas.temperature = htu.readTemperature();
-  meas.humidity = htu.readHumidity();
-  delay(100);
+  meas.humidity = htu.readHumidity(); 
+  delay(500);
+
+  if (pirUpdate)
+  {
+    strcpy(meas.pirDetection, timeStamp);
+    pirUpdate = false;
+    ThingSpeak.setField(1, meas.temperature);
+    ThingSpeak.setField(2, meas.humidity);
+    ThingSpeak.setField(3, meas.audio);
+    ThingSpeak.setField(4, meas.gas);
+    ThingSpeak.setField(5, meas.photoTransistor);
+    ThingSpeak.setField(6, true);
+    int result = ThingSpeak.writeFields(myChannelNumber, myWriteAPIKey);
+    Serial.println(result);
+    attachInterrupt(PIR_OUTPUT, pirInterrupt, RISING);
+  }
+  
 }
