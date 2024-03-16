@@ -27,6 +27,7 @@ const int daylightOffset_sec = 3600;
 boolean pirUpdate = false;
 Measurement meas;
 Adafruit_HTU21DF htu = Adafruit_HTU21DF();
+hw_timer_t *My_timer = NULL;
 
 char buffer[1024];
 
@@ -134,6 +135,11 @@ void setupApi()
   server.begin();
 }
 
+void IRAM_ATTR onTimer(){
+digitalWrite(LED_CONTROL, !digitalRead(LED_CONTROL));
+}
+
+
 /// @brief Interrupt which handles rising edge signals from PIR Module
 /// @return
 void IRAM_ATTR pirInterrupt()
@@ -163,7 +169,17 @@ void setup()
   // Inicialization delay
   delay(2000);
 
+  My_timer = timerBegin(0, 80, true);
+  timerAttachInterrupt(My_timer, &onTimer, true);
+  timerAlarmWrite(My_timer, 1000000, true);
+  timerAlarmEnable(My_timer);
+
   attachInterrupt(PIR_OUTPUT, pirInterrupt, RISING);
+
+  My_timer = timerBegin(0, 80, true);
+  timerAttachInterrupt(My_timer, &onTimer, true);
+  timerAlarmWrite(My_timer, 1000000, true);
+  timerAlarmEnable(My_timer);
 
   WiFi.mode(WIFI_STA);
   WiFiManager wm;
@@ -181,6 +197,8 @@ void setup()
     Serial.println("Connected to WiFi");
   }
 
+  timerStop(My_timer);
+  digitalWrite(LED_CONTROL, HIGH);
   ThingSpeak.begin(myClient);
 
   setupApi();
@@ -203,6 +221,7 @@ void loop()
   meas.photoTransistor = analogRead(PHOTOTRAN_OUTPUT_AD);
   meas.temperature = htu.readTemperature();
   meas.humidity = htu.readHumidity(); 
+
   delay(500);
 
   if (pirUpdate)
