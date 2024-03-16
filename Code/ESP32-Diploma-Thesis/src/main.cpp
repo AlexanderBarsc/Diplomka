@@ -19,12 +19,15 @@ void readTemp();
 WebServer server(80);
 TwoWire I2CBME = TwoWire(0);
 WiFiClient myClient;
+hw_timer_t *My_timer = NULL;
+WiFiManager wm;
 
 const char *ntpServer = "pool.ntp.org";
 const long gmtOffset_sec = 3600;
 const int daylightOffset_sec = 3600;
 
 boolean pirUpdate = false;
+boolean eraseWifiConfig = false;
 Measurement meas;
 Adafruit_HTU21DF htu = Adafruit_HTU21DF();
 
@@ -134,6 +137,15 @@ void setupApi()
   server.begin();
 }
 
+void IRAM_ATTR onTimer(){
+digitalWrite(LED_CONTROL, !digitalRead(LED_CONTROL));
+}
+
+void IRAM_ATTR buttonPress()
+{
+  eraseWifiConfig = true;
+}
+
 /// @brief Interrupt which handles rising edge signals from PIR Module
 /// @return
 void IRAM_ATTR pirInterrupt()
@@ -164,9 +176,15 @@ void setup()
   delay(2000);
 
   attachInterrupt(PIR_OUTPUT, pirInterrupt, RISING);
+  attachInterrupt(BUTTON_OUTPUT, buttonPress, FALLING);
+
+  My_timer = timerBegin(0, 80, true);
+  timerAttachInterrupt(My_timer, &onTimer, true);
+  timerAlarmWrite(My_timer, 1000000, true);
+  timerAlarmEnable(My_timer);
 
   WiFi.mode(WIFI_STA);
-  WiFiManager wm;
+
   bool res;
 
   res = wm.autoConnect("AutoConnectAP", "password"); // password protected ap
@@ -181,7 +199,11 @@ void setup()
     Serial.println("Connected to WiFi");
   }
 
+  timerAlarmDisable(My_timer);
   ThingSpeak.begin(myClient);
+
+  *(volatile uint32_t *)(GPIO_OUT_REG) |= ((1 << LED_CONTROL));
+
 
   setupApi();
   configTime(gmtOffset_sec, daylightOffset_sec, ntpServer);
@@ -197,7 +219,10 @@ void loop()
   char *timeStamp = asctime(&timeinfo);
   strcpy(meas.timestamp, timeStamp);
 
+  #ifdef DEBUG
   Serial.println("Reading values:");
+  #endif
+
   meas.audio = analogRead(MIC_OUTPUT);
   meas.gas = analogRead(MQ2_OUTPUT);
   meas.photoTransistor = analogRead(PHOTOTRAN_OUTPUT_AD);
@@ -218,6 +243,12 @@ void loop()
     int result = ThingSpeak.writeFields(myChannelNumber, myWriteAPIKey);
     Serial.println(result);
     attachInterrupt(PIR_OUTPUT, pirInterrupt, RISING);
+  }
+
+  if(eraseWifiConfig)
+  {
+    wm.erase();
+    esp_restart();
   }
   
 }
