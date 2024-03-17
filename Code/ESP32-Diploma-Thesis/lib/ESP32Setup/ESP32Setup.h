@@ -8,6 +8,7 @@
 #define MIC_CONTROL 4
 #define MIC_OUTPUT 39
 #define MQ2_OUTPUT 36
+#define MQ2_DIGITAL_OUTPUT 23
 #define PIR_OUTPUT 34
 
 #define I2C_SDA 22

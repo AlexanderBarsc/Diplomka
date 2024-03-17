@@ -228,6 +228,8 @@ void loop()
   meas.photoTransistor = analogRead(PHOTOTRAN_OUTPUT_AD);
   meas.temperature = htu.readTemperature();
   meas.humidity = htu.readHumidity(); 
+  Serial.println(meas.gas);
+  Serial.println(digitalRead(MQ2_DIGITAL_OUTPUT));
   delay(500);
 
   if (pirUpdate)
