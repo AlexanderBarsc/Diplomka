@@ -23,19 +23,19 @@
 <layer number="13" name="Route13" color="4" fill="5" visible="no" active="no"/>
 <layer number="14" name="Route14" color="1" fill="6" visible="no" active="no"/>
 <layer number="15" name="Route15" color="4" fill="6" visible="no" active="no"/>
-<layer number="16" name="Bottom" color="1" fill="1" visible="yes" active="yes"/>
+<layer number="16" name="Bottom" color="1" fill="1" visible="no" active="yes"/>
 <layer number="17" name="Pads" color="2" fill="1" visible="yes" active="yes"/>
 <layer number="18" name="Vias" color="2" fill="1" visible="yes" active="yes"/>
 <layer number="19" name="Unrouted" color="6" fill="1" visible="yes" active="yes"/>
 <layer number="20" name="Dimension" color="24" fill="1" visible="yes" active="yes"/>
 <layer number="21" name="tPlace" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="22" name="bPlace" color="7" fill="1" visible="yes" active="yes"/>
-<layer number="23" name="tOrigins" color="15" fill="1" visible="yes" active="yes"/>
-<layer number="24" name="bOrigins" color="15" fill="1" visible="yes" active="yes"/>
+<layer number="23" name="tOrigins" color="15" fill="1" visible="no" active="yes"/>
+<layer number="24" name="bOrigins" color="15" fill="1" visible="no" active="yes"/>
 <layer number="25" name="tNames" color="7" fill="1" visible="yes" active="yes"/>
-<layer number="26" name="bNames" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="26" name="bNames" color="7" fill="1" visible="no" active="yes"/>
 <layer number="27" name="tValues" color="7" fill="1" visible="yes" active="yes"/>
-<layer number="28" name="bValues" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="28" name="bValues" color="7" fill="1" visible="no" active="yes"/>
 <layer number="29" name="tStop" color="7" fill="3" visible="no" active="yes"/>
 <layer number="30" name="bStop" color="7" fill="6" visible="no" active="yes"/>
 <layer number="31" name="tCream" color="7" fill="4" visible="no" active="yes"/>
@@ -90,7 +90,7 @@
 <layer number="111" name="wago-cervena" color="12" fill="8" visible="yes" active="yes"/>
 <layer number="112" name="wago-zelena" color="2" fill="8" visible="yes" active="yes"/>
 <layer number="113" name="wago-modra" color="1" fill="8" visible="yes" active="yes"/>
-<layer number="114" name="bText" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="114" name="bText" color="7" fill="1" visible="no" active="yes"/>
 <layer number="115" name="topText" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="116" name="Patch_BOT" color="9" fill="4" visible="yes" active="yes"/>
 <layer number="121" name="_tsilk" color="7" fill="1" visible="yes" active="yes"/>
@@ -111,15 +111,15 @@
 <layer number="154" name="FabDoc2" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="155" name="FabDoc3" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="199" name="Contour" color="7" fill="1" visible="yes" active="yes"/>
-<layer number="200" name="200bmp" color="1" fill="10" visible="yes" active="yes"/>
-<layer number="201" name="201bmp" color="2" fill="10" visible="yes" active="yes"/>
-<layer number="202" name="202bmp" color="3" fill="10" visible="yes" active="yes"/>
-<layer number="203" name="203bmp" color="4" fill="10" visible="yes" active="yes"/>
-<layer number="204" name="204bmp" color="5" fill="10" visible="yes" active="yes"/>
-<layer number="205" name="205bmp" color="6" fill="10" visible="yes" active="yes"/>
-<layer number="206" name="206bmp" color="7" fill="10" visible="yes" active="yes"/>
-<layer number="207" name="207bmp" color="8" fill="10" visible="yes" active="yes"/>
-<layer number="208" name="208bmp" color="9" fill="10" visible="yes" active="yes"/>
+<layer number="200" name="200bmp" color="1" fill="10" visible="no" active="yes"/>
+<layer number="201" name="201bmp" color="2" fill="10" visible="no" active="yes"/>
+<layer number="202" name="202bmp" color="3" fill="10" visible="no" active="yes"/>
+<layer number="203" name="203bmp" color="4" fill="10" visible="no" active="yes"/>
+<layer number="204" name="204bmp" color="5" fill="10" visible="no" active="yes"/>
+<layer number="205" name="205bmp" color="6" fill="10" visible="no" active="yes"/>
+<layer number="206" name="206bmp" color="7" fill="10" visible="no" active="yes"/>
+<layer number="207" name="207bmp" color="8" fill="10" visible="no" active="yes"/>
+<layer number="208" name="208bmp" color="9" fill="10" visible="no" active="yes"/>
 <layer number="209" name="209bmp" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="210" name="210bmp" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="211" name="211bmp" color="7" fill="1" visible="yes" active="yes"/>
@@ -14225,6 +14225,14 @@ And Radim Hercik</text>
 <rectangle x1="28.80045" y1="23.74995" x2="41.79255" y2="23.76265" layer="201"/>
 <rectangle x1="28.80045" y1="23.76265" x2="41.79255" y2="23.77535" layer="201"/>
 <text x="28.8068" y="10.7261" size="0.0254" layer="201" font="vector">C:/Users/Alex/Documents/GitHub/Diplomka/Diplomka/Diplomka/QRCode.bmp</text>
+<text x="80" y="28" size="1.778" layer="27">MIC</text>
+<text x="88" y="52" size="1.778" layer="27">HTU21D</text>
+<text x="13" y="31" size="1.778" layer="27">PIR</text>
+<text x="41" y="78" size="1.778" layer="27">SMOKE
+SENSOR</text>
+<text x="46" y="8" size="1.778" layer="27">BUZZER</text>
+<text x="31" y="9" size="1.778" layer="27">PUSH
+BUTTON</text>
 </plain>
 <libraries>
 <library name="rcl" urn="urn:adsk.eagle:library:334">
@@ -16175,10 +16183,7 @@ http://www.s6z.de&lt;br&gt;&lt;br&gt;
 <attribute name="NAME" x="53.055" y="93.705" size="1.27" layer="26" rot="MR0"/>
 <attribute name="VALUE" x="53.055" y="88.625" size="1.27" layer="28" rot="MR0"/>
 </element>
-<element name="JUM1" library="#PaJa_konektory" package="S1G6_JUM" value="S1G6_JUMP" x="85" y="72.5" smashed="yes" rot="R90">
-<attribute name="NAME" x="83.508" y="69.642" size="1.27" layer="25" rot="R90"/>
-<attribute name="VALUE" x="87.762" y="69.4825" size="1.27" layer="27" rot="R90"/>
-</element>
+<element name="JUM1" library="#PaJa_konektory" package="S1G6_JUM" value="S1G6_JUMP" x="85" y="72.5" smashed="yes" rot="R90"/>
 <element name="Q3" library="SS8050-G" package="SOT95P240X115-3N" value="SS8050-G" x="33.5" y="53" smashed="yes">
 <attribute name="DESCRIPTION" value="Bipolar Transistors - BJT NPN TRANSISTOR 1.5A 40V" x="33.5" y="53" size="1.778" layer="27" display="off"/>
 <attribute name="HEIGHT" value="1.15mm" x="33.5" y="53" size="1.778" layer="27" display="off"/>

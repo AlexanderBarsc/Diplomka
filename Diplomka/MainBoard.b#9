@@ -3,7 +3,7 @@
 <eagle version="9.6.2">
 <drawing>
 <settings>
-<setting alwaysvectorfont="no"/>
+<setting alwaysvectorfont="yes"/>
 <setting verticaltext="up"/>
 </settings>
 <grid distance="0.25" unitdist="mm" unit="mm" style="lines" multiple="1" display="yes" altdistance="5" altunitdist="mil" altunit="mil"/>
@@ -156,6 +156,14 @@
 <hole x="25" y="75" drill="3.5"/>
 <hole x="75" y="25" drill="3.5"/>
 <hole x="25" y="25" drill="3.5"/>
+<text x="78.75" y="65.25" size="1.778" layer="21" font="vector">DTR</text>
+<text x="78.75" y="67.75" size="1.778" layer="21" font="vector">TX</text>
+<text x="78.75" y="70.25" size="1.778" layer="21" font="vector">RX</text>
+<text x="78.75" y="72.75" size="1.778" layer="21" font="vector">VCC</text>
+<text x="78.75" y="75.25" size="1.778" layer="21" font="vector">CTS</text>
+<text x="78.75" y="77.75" size="1.778" layer="21" font="vector">GND</text>
+<text x="29.5" y="80.75" size="1.778" layer="21" font="vector" rot="R45">VIN</text>
+<text x="32.75" y="84" size="1.778" layer="21" font="vector" rot="R45">GND</text>
 </plain>
 <libraries>
 <library name="rcl" urn="urn:adsk.eagle:library:334">

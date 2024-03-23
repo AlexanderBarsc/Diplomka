@@ -199,25 +199,33 @@ void setup()
     Serial.println("Connected to WiFi");
   }
 
+  #ifdef WIFI
   timerAlarmDisable(My_timer);
   ThingSpeak.begin(myClient);
+  #endif
 
   *(volatile uint32_t *)(GPIO_OUT_REG) |= ((1 << LED_CONTROL));
 
-
+  #ifdef WIFI
   setupApi();
   configTime(gmtOffset_sec, daylightOffset_sec, ntpServer);
+  #endif
+
+  #ifdef DEBUG
   Serial.println("Start loop: ");
+  #endif
 }
 
 void loop()
 {
+  #ifdef WIFI
   server.handleClient();
 
   struct tm timeinfo;
   getLocalTime(&timeinfo);
   char *timeStamp = asctime(&timeinfo);
   strcpy(meas.timestamp, timeStamp);
+  #endif
 
   #ifdef DEBUG
   Serial.println("Reading values:");
@@ -228,10 +236,12 @@ void loop()
   meas.photoTransistor = analogRead(PHOTOTRAN_OUTPUT_AD);
   meas.temperature = htu.readTemperature();
   meas.humidity = htu.readHumidity(); 
+  Serial.println(meas.photoTransistor);
   Serial.println(meas.gas);
   Serial.println(digitalRead(MQ2_DIGITAL_OUTPUT));
   delay(500);
 
+  #ifdef WIFI
   if (pirUpdate)
   {
     strcpy(meas.pirDetection, timeStamp);
@@ -246,11 +256,12 @@ void loop()
     Serial.println(result);
     attachInterrupt(PIR_OUTPUT, pirInterrupt, RISING);
   }
-
+ 
   if(eraseWifiConfig)
   {
     wm.erase();
     esp_restart();
   }
+  #endif
   
 }
