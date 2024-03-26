@@ -8,35 +8,28 @@
 #include "ESP32WebCommunication.h"
 #include "time.h"
 #include "ThingSpeak.h"
+#include "Measurement.h"
 
+unsigned long time_now = 0;
+
+#define PERIOD 500
+#define WIFI
 #define DEBUG
-#define HTU21DF_I2CADDR (0x40)
-#define HTU21DF_RESET (0xFE)
-
-void readTemp();
 
 // Web server running on port 80
-WebServer server(80);
-TwoWire I2CBME = TwoWire(0);
-WiFiClient myClient;
-hw_timer_t *My_timer = NULL;
-WiFiManager wm;
 
-const char *ntpServer = "pool.ntp.org";
-const long gmtOffset_sec = 3600;
-const int daylightOffset_sec = 3600;
+Measurement meas;
+WebServer server(80);
+WiFiClient myClient;
+WiFiManager wm;
 
 boolean pirUpdate = false;
 boolean eraseWifiConfig = false;
-Measurement meas;
+
+TwoWire twoWire = TwoWire(0);
 Adafruit_HTU21DF htu = Adafruit_HTU21DF();
 
 char buffer[1024];
-
-unsigned long myChannelNumber = 2463153;
-const char * myWriteAPIKey = "AXMLMV4283OWJT1Z";
-
-
 
 void addJsonObject(JsonDocument &jsonDocument, const char *name, float value, const char *unit)
 {
@@ -54,23 +47,6 @@ void addTimeJsonObject(JsonDocument &jsonDocument, const char *name, char *str, 
   obj["unit"] = unit;
 }
 
-void getValues()
-{
-  StaticJsonDocument<50> jsonDocument;
-  Serial.println("Get all values");
-  jsonDocument.clear(); // Clear json buffer
-  addTimeJsonObject(jsonDocument,"timestamp", meas.timestamp, "date");
-  addJsonObject(jsonDocument,"audio", meas.audio, "raw");
-  addJsonObject(jsonDocument,"gas", meas.gas, "raw");
-  addJsonObject(jsonDocument,"photoTransistor", meas.photoTransistor, "raw");
-  addTimeJsonObject(jsonDocument,"lastPirDetection", meas.pirDetection, "time");
-  addJsonObject(jsonDocument,"temperature", meas.temperature, "°C");
-  addJsonObject(jsonDocument,"relative humidity", meas.humidity, "%");
-
-  serializeJson(jsonDocument, buffer);
-  server.send(200, "application/json", buffer);
-}
-
 void getDigitalPinValue()
 {
   StaticJsonDocument<20> jsonDocument;
@@ -81,7 +57,7 @@ void getDigitalPinValue()
   }
 
   String pinFromInput = server.arg(0);
-#ifdef DEBUG
+  #ifdef DEBUG
   Serial.println(pinFromInput);
 #endif
 
@@ -130,15 +106,10 @@ void setDigitalPin()
 
 void setupApi()
 {
-  server.on("/getValues", getValues);
   server.on("/getDigitalPinState", getDigitalPinValue);
   server.on("/setDigitalPin", HTTP_POST, setDigitalPin);
 
   server.begin();
-}
-
-void IRAM_ATTR onTimer(){
-digitalWrite(LED_CONTROL, !digitalRead(LED_CONTROL));
 }
 
 void IRAM_ATTR buttonPress()
@@ -150,38 +121,30 @@ void IRAM_ATTR buttonPress()
 /// @return
 void IRAM_ATTR pirInterrupt()
 {
-#ifdef DEBUG
-  Serial.println("PIR noticed something");
-#endif
   pirUpdate = true;
   detachInterrupt(PIR_OUTPUT);
 }
 
 void setup()
 {
-  // put your setup code here, to run once:
+
+  #ifdef DEBUG
+  Serial.println("Enter main");
+  #endif
+
   SetupPins();
+  // Inicialization delay
+  delay(2000);
 
-  I2CBME.begin(I2C_SDA, I2C_SCL, 400000);
-  htu.begin(&I2CBME);
-
-  if(htu.begin(&I2CBME) == false)
+  twoWire.begin(I2C_SDA, I2C_SCL, 400000);
+  if(htu.begin(&twoWire) == false)
   {
      Serial.println("HTU INIT FAILED");
      esp_restart();
   }
 
-  Serial.begin(115200);
-  // Inicialization delay
-  delay(2000);
-
   attachInterrupt(PIR_OUTPUT, pirInterrupt, RISING);
   attachInterrupt(BUTTON_OUTPUT, buttonPress, FALLING);
-
-  My_timer = timerBegin(0, 80, true);
-  timerAttachInterrupt(My_timer, &onTimer, true);
-  timerAlarmWrite(My_timer, 1000000, true);
-  timerAlarmEnable(My_timer);
 
   WiFi.mode(WIFI_STA);
 
@@ -199,17 +162,8 @@ void setup()
     Serial.println("Connected to WiFi");
   }
 
-  #ifdef WIFI
-  timerAlarmDisable(My_timer);
+  
   ThingSpeak.begin(myClient);
-  #endif
-
-  *(volatile uint32_t *)(GPIO_OUT_REG) |= ((1 << LED_CONTROL));
-
-  #ifdef WIFI
-  setupApi();
-  configTime(gmtOffset_sec, daylightOffset_sec, ntpServer);
-  #endif
 
   #ifdef DEBUG
   Serial.println("Start loop: ");
@@ -218,50 +172,26 @@ void setup()
 
 void loop()
 {
-  #ifdef WIFI
-  server.handleClient();
-
-  struct tm timeinfo;
-  getLocalTime(&timeinfo);
-  char *timeStamp = asctime(&timeinfo);
-  strcpy(meas.timestamp, timeStamp);
-  #endif
-
-  #ifdef DEBUG
-  Serial.println("Reading values:");
-  #endif
-
-  meas.audio = analogRead(MIC_OUTPUT);
-  meas.gas = analogRead(MQ2_OUTPUT);
-  meas.photoTransistor = analogRead(PHOTOTRAN_OUTPUT_AD);
-  meas.temperature = htu.readTemperature();
-  meas.humidity = htu.readHumidity(); 
-  Serial.println(meas.photoTransistor);
-  Serial.println(meas.gas);
-  Serial.println(digitalRead(MQ2_DIGITAL_OUTPUT));
-  delay(500);
-
-  #ifdef WIFI
-  if (pirUpdate)
+  //TODO - this will overflow after 50 days, fix it
+  if(millis() >= time_now + PERIOD)
   {
-    strcpy(meas.pirDetection, timeStamp);
-    pirUpdate = false;
-    ThingSpeak.setField(1, meas.temperature);
-    ThingSpeak.setField(2, meas.humidity);
-    ThingSpeak.setField(3, meas.audio);
-    ThingSpeak.setField(4, meas.gas);
-    ThingSpeak.setField(5, meas.photoTransistor);
-    ThingSpeak.setField(6, true);
-    int result = ThingSpeak.writeFields(myChannelNumber, myWriteAPIKey);
-    Serial.println(result);
-    attachInterrupt(PIR_OUTPUT, pirInterrupt, RISING);
+    #ifdef DEBUG
+    Serial.println("Reading values:");
+    #endif
+    time_now += PERIOD;
+
+    meas.Measure(htu);
+
+    if(meas.index >= ARRAY_SIZE)
+    {
+      meas.SendMeasurement();
+      meas.WipeMeasurements();
+
+    }
   }
- 
-  if(eraseWifiConfig)
-  {
-    wm.erase();
-    esp_restart();
-  }
-  #endif
+  
+
   
 }
+
+

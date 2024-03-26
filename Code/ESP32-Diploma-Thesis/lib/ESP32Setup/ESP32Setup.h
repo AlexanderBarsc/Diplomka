@@ -21,17 +21,6 @@ enum OutputPins
   BUZZER = 27
 };
 
-typedef struct measurement {
-    char timestamp[50];
-    float temperature;
-    float humidity;
-    uint16_t audio;
-    uint16_t gas;
-    uint16_t photoTransistor;
-    char pirDetection[50];
-    
-} Measurement;
-
 void SetupPins();
 OutputPins parseIntToOutputPin(int value);
 
