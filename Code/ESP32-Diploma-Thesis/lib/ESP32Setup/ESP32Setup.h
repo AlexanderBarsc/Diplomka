@@ -14,6 +14,8 @@
 #define I2C_SDA 22
 #define I2C_SCL 21
 
+#define DEBUG 
+
 enum OutputPins
 {
   UNDEFINED = -1,

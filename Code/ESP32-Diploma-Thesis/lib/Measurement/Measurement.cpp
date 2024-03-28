@@ -7,14 +7,9 @@
 #include "Measurement.h"
 
 
-
-#define DEBUG
-
 //TODO - tohle bude zadavat uzivatel
 unsigned long myChannelNumber = 2463153;
 const char *myWriteAPIKey = "AXMLMV4283OWJT1Z";
-
-#define ARRAY_SIZE 100
 
     float Measurement::CalculateAverage(uint16_t arr[])
     {

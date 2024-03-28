@@ -22,7 +22,7 @@ private:
     float CalculateAverage(float arr[]);
 
 public:
-    uint8_t index;
+    uint16_t index;
     Measurement();
     void Measure(Adafruit_HTU21DF &htu);
     void WipeMeasurements();

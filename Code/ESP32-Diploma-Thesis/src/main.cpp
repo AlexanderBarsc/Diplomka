@@ -14,7 +14,6 @@ unsigned long time_now = 0;
 
 #define PERIOD 500
 #define WIFI
-#define DEBUG
 
 // Web server running on port 80
 
@@ -162,8 +161,9 @@ void setup()
     Serial.println("Connected to WiFi");
   }
 
-  
+
   ThingSpeak.begin(myClient);
+  digitalWrite(LED_CONTROL, HIGH);
 
   #ifdef DEBUG
   Serial.println("Start loop: ");
@@ -180,7 +180,9 @@ void loop()
     #endif
     time_now += PERIOD;
 
+    digitalWrite(LED_CONTROL, LOW);
     meas.Measure(htu);
+    digitalWrite(LED_CONTROL, HIGH);
 
     if(meas.index >= ARRAY_SIZE)
     {
