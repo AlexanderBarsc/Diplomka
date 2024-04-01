@@ -20,6 +20,10 @@ void SetupPins()
   digitalWrite(MIC_CONTROL, HIGH);
   digitalWrite(PHOTOTRAN_CONTROL, HIGH);
   digitalWrite(TEMP_CONTROL, HIGH);
+
+  // Set outputs to low
+  digitalWrite(BUZZER_CONTROL, LOW);
+  digitalWrite(LED_CONTROL, LOW);
 }
 
 

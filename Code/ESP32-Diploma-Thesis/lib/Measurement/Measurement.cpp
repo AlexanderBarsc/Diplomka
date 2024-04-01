@@ -13,7 +13,7 @@ const char *myWriteAPIKey = "AXMLMV4283OWJT1Z";
 
     float Measurement::CalculateAverage(uint16_t arr[])
     {
-        float sum;
+        float sum = 0;
         if (index == 0)
         {
             return 0.0f;
@@ -43,7 +43,7 @@ const char *myWriteAPIKey = "AXMLMV4283OWJT1Z";
 
     float Measurement::CalculateAverage(float arr[])
     {
-        float sum;
+        float sum = 0;
         if (index == 0)
         {
             return 0.0f;
@@ -67,7 +67,7 @@ const char *myWriteAPIKey = "AXMLMV4283OWJT1Z";
     }
 
    
-    void Measurement::Measure(Adafruit_HTU21DF &htu)
+    void Measurement::Measure(HTU21D &htu)
     {
 
         if (index >= ARRAY_SIZE)
@@ -76,8 +76,8 @@ const char *myWriteAPIKey = "AXMLMV4283OWJT1Z";
         }
 
         audio[index] = analogRead(MIC_OUTPUT);
-        temperature[index] = htu.readTemperature();
-        humidity[index] = htu.readHumidity();
+        temperature[index] = htu.ReadTemp();
+        humidity[index] = htu.ReadHumidity();
         gas[index] = analogRead(MQ2_OUTPUT);
         photoResistor[index] = analogRead(PHOTOTRAN_OUTPUT_AD);
 
@@ -85,6 +85,23 @@ const char *myWriteAPIKey = "AXMLMV4283OWJT1Z";
         {
             wasMovementDetected = digitalRead(PIR_OUTPUT);
         }
+
+        #ifdef DEBUG
+        Serial.print("We are now measuring at index: ");
+        Serial.println(index);
+        Serial.print("Audio: ");
+        Serial.println(audio[index]);
+        Serial.print("Temperature: ");
+        Serial.println(temperature[index]);
+        Serial.print("Humidity: ");
+        Serial.println(humidity[index]);
+        Serial.print("Gas: ");
+        Serial.println(gas[index]);
+        Serial.print("Photoresistor: ");
+        Serial.println(photoResistor[index]);
+        Serial.print("Was movement detected: ");
+        Serial.println(wasMovementDetected);
+        #endif
 
         index++;
     }

@@ -5,6 +5,7 @@
 #include "Wire.h"
 #include "Adafruit_HTU21DF.h"
 #include "ThingSpeak.h"
+#include "HTU21D.h"
 
 #define ARRAY_SIZE 100
 
@@ -24,7 +25,7 @@ private:
 public:
     uint16_t index;
     Measurement();
-    void Measure(Adafruit_HTU21DF &htu);
+    void Measure(HTU21D &htu);
     void WipeMeasurements();
     void SendMeasurement();
 

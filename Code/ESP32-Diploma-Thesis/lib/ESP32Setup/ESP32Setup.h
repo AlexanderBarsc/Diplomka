@@ -1,3 +1,6 @@
+#ifndef ESP32SETUP_H
+#define ESP32SETUP_H
+
 #define PHOTOTRAN_CONTROL 25
 #define BUZZER_CONTROL 27
 #define LED_CONTROL 13
@@ -14,7 +17,7 @@
 #define I2C_SDA 22
 #define I2C_SCL 21
 
-#define DEBUG 
+#define DEBUG
 
 enum OutputPins
 {
@@ -26,3 +29,4 @@ enum OutputPins
 void SetupPins();
 OutputPins parseIntToOutputPin(int value);
 
+#endif

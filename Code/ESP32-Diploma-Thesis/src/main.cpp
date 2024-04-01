@@ -9,6 +9,8 @@
 #include "time.h"
 #include "ThingSpeak.h"
 #include "Measurement.h"
+#include "esp32-hal-i2c.h"
+#include "HTU21D.h"
 
 unsigned long time_now = 0;
 
@@ -22,11 +24,12 @@ WebServer server(80);
 WiFiClient myClient;
 WiFiManager wm;
 
-boolean pirUpdate = false;
-boolean eraseWifiConfig = false;
+// boolean pirUpdate = false;
+volatile bool buttonPressed = false;
+volatile bool mqSensorTripped = false;
 
-TwoWire twoWire = TwoWire(0);
-Adafruit_HTU21DF htu = Adafruit_HTU21DF();
+HTU21D htuNew = HTU21D();
+void EvaluateButtonPress();
 
 char buffer[1024];
 
@@ -58,7 +61,7 @@ void getDigitalPinValue()
   String pinFromInput = server.arg(0);
   #ifdef DEBUG
   Serial.println(pinFromInput);
-#endif
+  #endif
 
   OutputPins pin = parseIntToOutputPin(pinFromInput.toInt());
 
@@ -113,9 +116,18 @@ void setupApi()
 
 void IRAM_ATTR buttonPress()
 {
-  eraseWifiConfig = true;
+  detachInterrupt(BUTTON_OUTPUT);
+  buttonPressed = true;
 }
 
+void IRAM_ATTR mq2Interrupt()
+{
+  detachInterrupt(MQ2_DIGITAL_OUTPUT);
+  digitalWrite(BUZZER_CONTROL, HIGH);
+  mqSensorTripped = true;
+}
+
+/*
 /// @brief Interrupt which handles rising edge signals from PIR Module
 /// @return
 void IRAM_ATTR pirInterrupt()
@@ -123,6 +135,7 @@ void IRAM_ATTR pirInterrupt()
   pirUpdate = true;
   detachInterrupt(PIR_OUTPUT);
 }
+*/
 
 void setup()
 {
@@ -135,14 +148,16 @@ void setup()
   // Inicialization delay
   delay(2000);
 
-  twoWire.begin(I2C_SDA, I2C_SCL, 400000);
-  if(htu.begin(&twoWire) == false)
+  bool result = htuNew.Begin(0, I2C_SDA, I2C_SCL, 400000);
+
+  if(!result)
   {
-     Serial.println("HTU INIT FAILED");
-     esp_restart();
+    Serial.println("HTU21D failure");
+    esp_restart();
   }
 
-  attachInterrupt(PIR_OUTPUT, pirInterrupt, RISING);
+  attachInterrupt(MQ2_DIGITAL_OUTPUT, mq2Interrupt, FALLING);
+  //attachInterrupt(PIR_OUTPUT, pirInterrupt, RISING);
   attachInterrupt(BUTTON_OUTPUT, buttonPress, FALLING);
 
   WiFi.mode(WIFI_STA);
@@ -181,7 +196,7 @@ void loop()
     time_now += PERIOD;
 
     digitalWrite(LED_CONTROL, LOW);
-    meas.Measure(htu);
+    meas.Measure(htuNew);
     digitalWrite(LED_CONTROL, HIGH);
 
     if(meas.index >= ARRAY_SIZE)
@@ -191,9 +206,42 @@ void loop()
 
     }
   }
-  
 
-  
+  if(buttonPressed)
+  {
+    EvaluateButtonPress();
+  }
+
+}
+
+void EvaluateButtonPress()
+{
+    buttonPressed = false;
+    if(mqSensorTripped)
+    { 
+      mqSensorTripped = false;
+      attachInterrupt(MQ2_DIGITAL_OUTPUT, mq2Interrupt, FALLING);
+      digitalWrite(BUZZER_CONTROL, LOW); 
+    }
+    else
+    {
+      unsigned long currentTime = millis();
+      attachInterrupt(MQ2_DIGITAL_OUTPUT, mq2Interrupt, FALLING);
+      //While 2 seconds have not elapsed
+      while(!(millis() >= currentTime + 2000))
+      {
+        if(digitalRead(BUTTON_OUTPUT))
+        {
+          attachInterrupt(BUTTON_OUTPUT, buttonPress, FALLING);
+          return;
+        }
+      }
+
+      wm.erase();
+      esp_restart();
+    }
+
+    attachInterrupt(BUTTON_OUTPUT, buttonPress, FALLING);
 }
 
 
