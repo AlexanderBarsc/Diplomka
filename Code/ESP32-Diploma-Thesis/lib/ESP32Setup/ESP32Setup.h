@@ -13,6 +13,8 @@
 #define MQ2_OUTPUT 36
 #define MQ2_DIGITAL_OUTPUT 23
 #define PIR_OUTPUT 34
+#define EEPROM_SIZE 22
+#define INITIAL_DELAY 2000
 
 #define I2C_SDA 22
 #define I2C_SCL 21

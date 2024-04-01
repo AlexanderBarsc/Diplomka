@@ -27,7 +27,7 @@ public:
     Measurement();
     void Measure(HTU21D &htu);
     void WipeMeasurements();
-    void SendMeasurement();
+    void SendMeasurement(unsigned long myChannelNumber, const char* myWriteAPIKey);
 
 };
 

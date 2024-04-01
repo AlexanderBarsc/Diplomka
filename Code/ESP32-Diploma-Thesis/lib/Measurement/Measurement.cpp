@@ -1,4 +1,3 @@
-
 #include <Arduino.h>
 #include <Wire.h>
 #include "ESP32Setup.h"
@@ -8,8 +7,6 @@
 
 
 //TODO - tohle bude zadavat uzivatel
-unsigned long myChannelNumber = 2463153;
-const char *myWriteAPIKey = "AXMLMV4283OWJT1Z";
 
     float Measurement::CalculateAverage(uint16_t arr[])
     {
@@ -86,6 +83,7 @@ const char *myWriteAPIKey = "AXMLMV4283OWJT1Z";
             wasMovementDetected = digitalRead(PIR_OUTPUT);
         }
 
+        
         #ifdef DEBUG
         Serial.print("We are now measuring at index: ");
         Serial.println(index);
@@ -102,6 +100,7 @@ const char *myWriteAPIKey = "AXMLMV4283OWJT1Z";
         Serial.print("Was movement detected: ");
         Serial.println(wasMovementDetected);
         #endif
+        
 
         index++;
     }
@@ -121,7 +120,7 @@ const char *myWriteAPIKey = "AXMLMV4283OWJT1Z";
         index = 0;
     }
 
-    void Measurement::SendMeasurement()
+    void Measurement::SendMeasurement(unsigned long myChannelNumber, const char* myWriteAPIKey)
     {
 
         ThingSpeak.setField(1, CalculateAverage(temperature));
