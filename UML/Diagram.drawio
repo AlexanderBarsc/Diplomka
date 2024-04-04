@@ -1,0 +1,123 @@
+<mxfile host="app.diagrams.net" modified="2024-04-02T19:02:44.148Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36" version="24.2.1" etag="mCjQfbPGsWVoKAW5kyeg" type="device">
+  <diagram id="C5RBs43oDa-KdzZeNtuy" name="Page-1">
+    <mxGraphModel dx="1423" dy="1246" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="WIyWlLk6GJQsqaUBKTNV-0" />
+        <mxCell id="WIyWlLk6GJQsqaUBKTNV-1" parent="WIyWlLk6GJQsqaUBKTNV-0" />
+        <mxCell id="Tcy9y6LRJHT2huuJNAPD-29" value="" style="rounded=0;html=1;jettySize=auto;orthogonalLoop=1;fontSize=11;endArrow=block;endFill=0;endSize=8;strokeWidth=1;shadow=0;labelBackgroundColor=none;edgeStyle=orthogonalEdgeStyle;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="Tcy9y6LRJHT2huuJNAPD-30" target="Tcy9y6LRJHT2huuJNAPD-33">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Tcy9y6LRJHT2huuJNAPD-30" value="Zapnutní zařízení" style="rounded=1;whiteSpace=wrap;html=1;fontSize=12;glass=0;strokeWidth=1;shadow=0;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="250" y="70" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="Tcy9y6LRJHT2huuJNAPD-31" value="Úspěšný" style="rounded=0;html=1;jettySize=auto;orthogonalLoop=1;fontSize=11;endArrow=block;endFill=0;endSize=8;strokeWidth=1;shadow=0;labelBackgroundColor=none;edgeStyle=orthogonalEdgeStyle;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="Tcy9y6LRJHT2huuJNAPD-33" target="Tcy9y6LRJHT2huuJNAPD-38">
+          <mxGeometry x="0.2" y="-40" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Tcy9y6LRJHT2huuJNAPD-32" value="Neúspěšný" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;jettySize=auto;orthogonalLoop=1;fontSize=11;endArrow=block;endFill=0;endSize=8;strokeWidth=1;shadow=0;labelBackgroundColor=none;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="Tcy9y6LRJHT2huuJNAPD-33" target="Tcy9y6LRJHT2huuJNAPD-35">
+          <mxGeometry x="-0.4" y="20" relative="1" as="geometry">
+            <mxPoint as="offset" />
+            <Array as="points">
+              <mxPoint x="480" y="200" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Tcy9y6LRJHT2huuJNAPD-33" value="Pokus připojení k WiFi síťi." style="rhombus;whiteSpace=wrap;html=1;shadow=0;fontFamily=Helvetica;fontSize=12;align=center;strokeWidth=1;spacing=6;spacingTop=-4;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="220" y="150" width="180" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="Tcy9y6LRJHT2huuJNAPD-34" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="Tcy9y6LRJHT2huuJNAPD-35">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="310" y="289.80952380952374" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Tcy9y6LRJHT2huuJNAPD-35" value="Vytvořím přístupový bod, přes který je nutné zadat konfiguraci k připojení k WiFi." style="rounded=1;whiteSpace=wrap;html=1;fontSize=12;glass=0;strokeWidth=1;shadow=0;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="420" y="220" width="140" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="Tcy9y6LRJHT2huuJNAPD-36" value="Úspěšné" style="rounded=0;html=1;jettySize=auto;orthogonalLoop=1;fontSize=11;endArrow=block;endFill=0;endSize=8;strokeWidth=1;shadow=0;labelBackgroundColor=none;edgeStyle=orthogonalEdgeStyle;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="Tcy9y6LRJHT2huuJNAPD-38" target="Tcy9y6LRJHT2huuJNAPD-40">
+          <mxGeometry x="-0.8667" y="30" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Tcy9y6LRJHT2huuJNAPD-37" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;jettySize=auto;orthogonalLoop=1;fontSize=11;endArrow=block;endFill=0;endSize=8;strokeWidth=1;shadow=0;labelBackgroundColor=none;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="Tcy9y6LRJHT2huuJNAPD-38" target="Tcy9y6LRJHT2huuJNAPD-42">
+          <mxGeometry y="10" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Tcy9y6LRJHT2huuJNAPD-38" value="Otestuji připojení na ThingSpeak." style="rhombus;whiteSpace=wrap;html=1;shadow=0;fontFamily=Helvetica;fontSize=12;align=center;strokeWidth=1;spacing=6;spacingTop=-4;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="230" y="330" width="160" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="Tcy9y6LRJHT2huuJNAPD-39" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="Tcy9y6LRJHT2huuJNAPD-40" target="Tcy9y6LRJHT2huuJNAPD-47">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Tcy9y6LRJHT2huuJNAPD-40" value="Spustím měřící smyčku." style="rounded=1;whiteSpace=wrap;html=1;fontSize=12;glass=0;strokeWidth=1;shadow=0;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="250" y="640" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="Tcy9y6LRJHT2huuJNAPD-41" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="Tcy9y6LRJHT2huuJNAPD-42">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="310" y="610" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="565" y="610" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Tcy9y6LRJHT2huuJNAPD-42" value="Začnu blikat LEDkou a budu čekat než uživatel zadá nové přístupové údaje přes HTTP požadavek" style="rounded=1;whiteSpace=wrap;html=1;fontSize=12;glass=0;strokeWidth=1;shadow=0;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="490" y="480" width="150" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="Tcy9y6LRJHT2huuJNAPD-43" value="Chyba" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="400" y="350" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="Tcy9y6LRJHT2huuJNAPD-44" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="Tcy9y6LRJHT2huuJNAPD-45" target="Tcy9y6LRJHT2huuJNAPD-50">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Tcy9y6LRJHT2huuJNAPD-45" value="Provedu měření po zvolené časové periodě a zapíšu data do pole." style="rounded=1;whiteSpace=wrap;html=1;fontSize=12;glass=0;strokeWidth=1;shadow=0;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="230" y="830" width="160" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="Tcy9y6LRJHT2huuJNAPD-46" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="Tcy9y6LRJHT2huuJNAPD-47" target="Tcy9y6LRJHT2huuJNAPD-45">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Tcy9y6LRJHT2huuJNAPD-47" value="Reaguji na uživatelské vstupy (HTTP požadavky, zmáčknutí tlačítka)." style="rounded=1;whiteSpace=wrap;html=1;fontSize=12;glass=0;strokeWidth=1;shadow=0;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="230" y="720" width="160" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="Tcy9y6LRJHT2huuJNAPD-48" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="Tcy9y6LRJHT2huuJNAPD-50">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="310" y="690" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="140" y="965" />
+              <mxPoint x="140" y="690" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Tcy9y6LRJHT2huuJNAPD-49" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="Tcy9y6LRJHT2huuJNAPD-50" target="Tcy9y6LRJHT2huuJNAPD-54">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Tcy9y6LRJHT2huuJNAPD-50" value="Došlo ke 100 měřením?" style="rhombus;whiteSpace=wrap;html=1;shadow=0;fontFamily=Helvetica;fontSize=12;align=center;strokeWidth=1;spacing=6;spacingTop=-4;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="230" y="910" width="160" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="Tcy9y6LRJHT2huuJNAPD-51" value="&lt;span style=&quot;color: rgb(0, 0, 0); font-family: Helvetica; font-size: 11px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: center; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: nowrap; background-color: rgb(251, 251, 251); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; display: inline !important; float: none;&quot;&gt;Ne&lt;/span&gt;" style="text;whiteSpace=wrap;html=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="220" y="920" width="80" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="Tcy9y6LRJHT2huuJNAPD-52" value="&lt;span style=&quot;color: rgb(0, 0, 0); font-family: Helvetica; font-size: 11px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: center; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: nowrap; background-color: rgb(251, 251, 251); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; display: inline !important; float: none;&quot;&gt;Ano&lt;/span&gt;" style="text;whiteSpace=wrap;html=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="380" y="920" width="80" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="Tcy9y6LRJHT2huuJNAPD-53" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="Tcy9y6LRJHT2huuJNAPD-54" target="Tcy9y6LRJHT2huuJNAPD-56">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Tcy9y6LRJHT2huuJNAPD-54" value="Pošlu relevantní data (vypočtené průměry, detekování pohybu) na ThingSpeak" style="rounded=1;whiteSpace=wrap;html=1;fontSize=12;glass=0;strokeWidth=1;shadow=0;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="470" y="830" width="160" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="Tcy9y6LRJHT2huuJNAPD-55" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="Tcy9y6LRJHT2huuJNAPD-56">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="310" y="690" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="550" y="690" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Tcy9y6LRJHT2huuJNAPD-56" value="Vynuluji pole dat a nastavím index zpátky na 0." style="rounded=1;whiteSpace=wrap;html=1;fontSize=12;glass=0;strokeWidth=1;shadow=0;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="470" y="730" width="160" height="50" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
