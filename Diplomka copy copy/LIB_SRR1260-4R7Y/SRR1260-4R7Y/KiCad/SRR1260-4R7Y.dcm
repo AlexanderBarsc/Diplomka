@@ -1,9 +1,0 @@
-EESchema-DOCLIB  Version 2.0
-#
-$CMP SRR1260-4R7Y
-D Inductor Power Shielded Wirewound 4.7uH 30% 100KHz 19Q-Factor Ferrite 6.8A 15.5mOhm DCR T/R
-K
-F https://componentsearchengine.com/Datasheets/1/SRR1260-4R7Y.pdf
-$ENDCMP
-#
-#End Doc Library
