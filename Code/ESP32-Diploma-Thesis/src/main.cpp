@@ -131,8 +131,6 @@ void setThingSpeakCredentials()
   EEPROM.writeULong(0, channelNumber);
   EEPROM.writeString(4, apiKey);
 
-  
-
   int result = 0;
 
   result = ThingSpeak.writeField(channelNumber, 6, digitalRead(PIR_OUTPUT), apiKey);
@@ -193,9 +191,7 @@ void setup()
   //Init of EEPROM
   EEPROM.begin(EEPROM_SIZE);
 
-  bool result = htuNew.Begin(0, I2C_SDA, I2C_SCL, 400000);
-
-  if(!result)
+  if(!htuNew.Begin(0, I2C_SDA, I2C_SCL, 400000))
   {
     Serial.println("HTU21D failure");
     esp_restart();
@@ -207,6 +203,7 @@ void setup()
 
   res = wm.autoConnect("AutoConnectAP", "password"); // password protected ap
 
+  pinMode(LED_CONTROL, HIGH);
   if (!res)
   {
     Serial.println("Failed to connect");
@@ -216,6 +213,7 @@ void setup()
   {
     Serial.println("Connected to WiFi");
   }
+  pinMode(LED_CONTROL, LOW);
 
   setupApi();
   ThingSpeak.begin(myClient);
