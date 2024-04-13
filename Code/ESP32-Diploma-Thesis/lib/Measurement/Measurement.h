@@ -7,7 +7,7 @@
 #include "ThingSpeak.h"
 #include "HTU21D.h"
 
-#define ARRAY_SIZE 100
+#define ARRAY_SIZE 200
 
 class Measurement {
 private:

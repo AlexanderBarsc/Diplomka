@@ -19,7 +19,7 @@ String existingApiKey = "";
 unsigned long existingChannelNumber = 0;
 boolean succesfullCredentials = false;
 
-#define PERIOD 500
+#define PERIOD 100
 
 // Web server running on port 80
 Measurement meas;
@@ -245,7 +245,7 @@ void setup()
   }
 
 
-  digitalWrite(LED_CONTROL, HIGH);
+  digitalWrite(LED_CONTROL, LOW);
 
   attachInterrupt(MQ2_DIGITAL_OUTPUT, mq2Interrupt, FALLING);
   attachInterrupt(BUTTON_OUTPUT, buttonPress, FALLING);
@@ -267,9 +267,7 @@ void loop()
     #endif
     time_now += PERIOD;
 
-    digitalWrite(LED_CONTROL, LOW);
     meas.Measure(htuNew);
-    digitalWrite(LED_CONTROL, HIGH);
 
     if(meas.index >= ARRAY_SIZE)
     {
