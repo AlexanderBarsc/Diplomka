@@ -16,12 +16,12 @@ void SetupPins()
   pinMode(PIR_OUTPUT, INPUT);
   pinMode(MQ2_DIGITAL_OUTPUT, INPUT);
   
-  // Powers up sensors on board which have their voltage pin connected to GPIO
+  // Zapne napájení senzorům na desce jenž jsou napájeny přes GPIO
   digitalWrite(MIC_CONTROL, HIGH);
   digitalWrite(PHOTOTRAN_CONTROL, HIGH);
   digitalWrite(TEMP_CONTROL, HIGH);
 
-  // Set outputs to low
+  // Nastaví výstupy na logickou nulu
   digitalWrite(BUZZER_CONTROL, LOW);
   digitalWrite(LED_CONTROL, LOW);
 }

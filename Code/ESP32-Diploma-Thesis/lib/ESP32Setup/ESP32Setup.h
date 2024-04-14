@@ -19,7 +19,7 @@
 #define I2C_SDA 22
 #define I2C_SCL 21
 
-#define PERIOD 100
+#define MEASURING_PERIOD 100
 
 #define DEBUG
 

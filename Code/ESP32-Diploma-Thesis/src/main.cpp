@@ -19,8 +19,6 @@ String existingApiKey = "";
 unsigned long existingChannelNumber = 0;
 boolean succesfullCredentials = false;
 
-#define PERIOD 100
-
 // Web server running on port 80
 Measurement meas;
 WebServer server(80);
@@ -30,7 +28,7 @@ WiFiManager wm;
 volatile bool buttonPressed = false;
 volatile bool mqSensorTripped = false;
 
-HTU21D htuNew = HTU21D();
+HTU21D htu21 = HTU21D();
 void EvaluateButtonPress();
 
 char buffer[1024];
@@ -191,19 +189,17 @@ void setup()
   //Init of EEPROM
   EEPROM.begin(EEPROM_SIZE);
 
-  if(!htuNew.Begin(0, I2C_SDA, I2C_SCL, 400000))
+  if(!htu21.Begin(0, I2C_SDA, I2C_SCL, 400000))
   {
     Serial.println("HTU21D failure");
     esp_restart();
   }
 
+  digitalWrite(LED_CONTROL, HIGH);
   WiFi.mode(WIFI_STA);
-
   bool res;
-
   res = wm.autoConnect("AutoConnectAP", "password"); // password protected ap
 
-  pinMode(LED_CONTROL, HIGH);
   if (!res)
   {
     Serial.println("Failed to connect");
@@ -213,7 +209,6 @@ void setup()
   {
     Serial.println("Connected to WiFi");
   }
-  pinMode(LED_CONTROL, LOW);
 
   setupApi();
   ThingSpeak.begin(myClient);
@@ -227,7 +222,7 @@ void setup()
   #endif 
 
   time_now = millis();
-  while(!(ThingSpeak.writeField(existingChannelNumber, 6, digitalRead(PIR_OUTPUT), &existingApiKey[0]) == 200))
+  while(!(ThingSpeak.writeField(existingChannelNumber, , digitalRead(PIR_OUTPUT), &existingApiKey[0]) == 200))
   {
     Serial.println("Cannot send message to ThingSpeak, try to reenter your credentials");
     while(!succesfullCredentials)
@@ -242,9 +237,7 @@ void setup()
       break;
   }
 
-
   digitalWrite(LED_CONTROL, LOW);
-
   attachInterrupt(MQ2_DIGITAL_OUTPUT, mq2Interrupt, FALLING);
   attachInterrupt(BUTTON_OUTPUT, buttonPress, FALLING);
 
@@ -258,14 +251,14 @@ void loop()
 
   server.handleClient();
   //TODO - this will overflow after 50 days, fix it
-  if(millis() >= time_now + PERIOD)
+  if(millis() >= time_now + MEASURING_PERIOD)
   {
     #ifdef DEBUG
     Serial.println("Reading values:");
     #endif
-    time_now += PERIOD;
+    time_now += MEASURING_PERIOD;
 
-    meas.Measure(htuNew);
+    meas.Measure(htu21);
 
     if(meas.index >= ARRAY_SIZE)
     {
