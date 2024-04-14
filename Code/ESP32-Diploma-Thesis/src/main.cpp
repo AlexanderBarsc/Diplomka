@@ -14,13 +14,13 @@
 #include "HTU21D.h"
 
 
-unsigned long time_now = 0;
+unsigned long previousMillis = 0;
 String existingApiKey = "";
 unsigned long existingChannelNumber = 0;
 boolean succesfullCredentials = false;
 
 // Web server running on port 80
-Measurement meas;
+Measurement measurement;
 WebServer server(80);
 WiFiClient myClient;
 WiFiManager wm;
@@ -221,16 +221,16 @@ void setup()
   Serial.println(existingApiKey);
   #endif 
 
-  time_now = millis();
-  while(!(ThingSpeak.writeField(existingChannelNumber, , digitalRead(PIR_OUTPUT), &existingApiKey[0]) == 200))
+  previousMillis = millis();
+  while(!(ThingSpeak.writeField(existingChannelNumber, PIR_DETECTION_FIELD, digitalRead(PIR_OUTPUT), &existingApiKey[0]) == OK))
   {
     Serial.println("Cannot send message to ThingSpeak, try to reenter your credentials");
     while(!succesfullCredentials)
     {
       server.handleClient();
-      if(millis() >= time_now + 100)
+      if(millis() >= previousMillis + 100)
       { 
-        time_now += 100;
+        previousMillis += 100;
         *(uint32_t*)(GPIO_OUT_REG) ^= (1 << LED_CONTROL);
       }
     }
@@ -250,20 +250,20 @@ void loop()
 {
 
   server.handleClient();
-  //TODO - this will overflow after 50 days, fix it
-  if(millis() >= time_now + MEASURING_PERIOD)
+
+  if(millis() - previousMillis >= MEASURING_PERIOD)
   {
     #ifdef DEBUG
     Serial.println("Reading values:");
     #endif
-    time_now += MEASURING_PERIOD;
+    previousMillis = millis();
 
-    meas.Measure(htu21);
+    measurement.Measure(htu21);
 
-    if(meas.index >= ARRAY_SIZE)
+    if(measurement.index >= ARRAY_SIZE)
     {
-      meas.SendMeasurement(existingChannelNumber, &existingApiKey[0]);
-      meas.WipeMeasurements();
+      measurement.SendMeasurement(existingChannelNumber, &existingApiKey[0]);
+      measurement.WipeMeasurements();
 
     }
   }
