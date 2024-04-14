@@ -24,7 +24,7 @@
 
 class HTU21D{
 public:
-  boolean Begin(uint8_t i2c_num, int8_t sda, int8_t scl, uint32_t clk_speed);
+  boolean Begin(uint8_t i2c_num, uint8_t sda, uint8_t scl, uint32_t clk_speed);
   boolean Reset();
   uint8_t ReadUserRegister();
   boolean TurnOnOffHeater(boolean value);

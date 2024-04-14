@@ -4,7 +4,7 @@
 #include <Adafruit_HTU21DF.h>
 #include <WiFi.h>
 
-/// @brief Setups pins which are required for the system to work correctly.
+/// @brief Nastaví piny jenž jsou požadovány pro korektní funkcionalitu.
 void SetupPins()
 {
   pinMode(TEMP_CONTROL, OUTPUT);

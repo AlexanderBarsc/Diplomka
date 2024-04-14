@@ -248,8 +248,12 @@ void setup()
 
 void loop()
 {
-
   server.handleClient();
+
+  if(buttonPressed)
+  {
+    EvaluateButtonPress();
+  }
 
   if(millis() - previousMillis >= MEASURING_PERIOD)
   {
@@ -266,11 +270,6 @@ void loop()
       measurement.WipeMeasurements();
 
     }
-  }
-
-  if(buttonPressed)
-  {
-    EvaluateButtonPress();
   }
 
 }

@@ -5,7 +5,7 @@
 
 uint8_t _i2c_num;
 
-boolean HTU21D::Begin(uint8_t i2c_num, int8_t sda, int8_t scl, uint32_t clk_speed)
+boolean HTU21D::Begin(uint8_t i2c_num, uint8_t sda, uint8_t scl, uint32_t clk_speed)
 {
     esp_err_t result = i2cInit(i2c_num, sda, scl, clk_speed);
     boolean resetResult;
