@@ -9,6 +9,14 @@
 
 #define ARRAY_SIZE 200
 
+#define TEMPERATURE_FIELD 1
+#define HUMIDITY_FIELD 2
+#define AUDIO_FIELD 3
+#define GAS_FIELD 4
+#define PHOTORESISTOR_FIELD 5
+#define PIR_DETECTION_FIELD 6
+
+
 class Measurement {
 private:
     float temperature[ARRAY_SIZE];
