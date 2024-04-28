@@ -25,7 +25,6 @@ private:
     uint16_t gas[ARRAY_SIZE];
     uint16_t photoResistor[ARRAY_SIZE];
     boolean wasMovementDetected;
-    Adafruit_HTU21DF htu;
 
     float CalculateAverage(uint16_t arr[]);
     float CalculateAverage(float arr[]);
