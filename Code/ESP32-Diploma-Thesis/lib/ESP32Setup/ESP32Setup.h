@@ -21,7 +21,6 @@
 
 #define MEASURING_PERIOD 100
 
-#define DEBUG
 
 enum OutputPins
 {

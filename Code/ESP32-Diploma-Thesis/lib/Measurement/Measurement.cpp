@@ -83,25 +83,7 @@
             wasMovementDetected = digitalRead(PIR_OUTPUT);
         }
 
-        
-        #ifdef DEBUG
-        Serial.print("We are now measuring at index: ");
-        Serial.println(index);
-        Serial.print("Audio: ");
-        Serial.println(audio[index]);
-        Serial.print("Temperature: ");
-        Serial.println(temperature[index]);
-        Serial.print("Humidity: ");
-        Serial.println(humidity[index]);
-        Serial.print("Gas: ");
-        Serial.println(gas[index]);
-        Serial.print("Photoresistor: ");
-        Serial.println(photoResistor[index]);
-        Serial.print("Was movement detected: ");
-        Serial.println(wasMovementDetected);
-        #endif
-        
-
+    
         index++;
     }
 
