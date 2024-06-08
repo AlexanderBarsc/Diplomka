@@ -8534,92 +8534,6 @@ Source: http://www.mouser.com/ds/2/392/products_18-2245.pdf</description>
 </deviceset>
 </devicesets>
 </library>
-<library name="SamacSys_Parts">
-<description>&lt;b&gt;https://componentsearchengine.com&lt;/b&gt;&lt;p&gt;
-&lt;author&gt;Created by SamacSys&lt;/author&gt;</description>
-<packages>
-<package name="AP2012P3CP22">
-<description>&lt;b&gt;AP2012P3C-P22-8&lt;/b&gt;&lt;br&gt;
-</description>
-<smd name="1" x="-1.175" y="0" dx="1.25" dy="1.1" layer="1"/>
-<smd name="2" x="1.175" y="0" dx="1.25" dy="1.1" layer="1"/>
-<text x="0" y="0" size="1.27" layer="25" align="center">&gt;NAME</text>
-<text x="0" y="0" size="1.27" layer="27" align="center">&gt;VALUE</text>
-<wire x1="-1" y1="0.625" x2="1" y2="0.625" width="0.2" layer="51"/>
-<wire x1="1" y1="0.625" x2="1" y2="-0.625" width="0.2" layer="51"/>
-<wire x1="1" y1="-0.625" x2="-1" y2="-0.625" width="0.2" layer="51"/>
-<wire x1="-1" y1="-0.625" x2="-1" y2="0.625" width="0.2" layer="51"/>
-<wire x1="-2.8" y1="1.625" x2="2.8" y2="1.625" width="0.1" layer="51"/>
-<wire x1="2.8" y1="1.625" x2="2.8" y2="-1.625" width="0.1" layer="51"/>
-<wire x1="2.8" y1="-1.625" x2="-2.8" y2="-1.625" width="0.1" layer="51"/>
-<wire x1="-2.8" y1="-1.625" x2="-2.8" y2="1.625" width="0.1" layer="51"/>
-<wire x1="-0.4" y1="0.625" x2="0.4" y2="0.625" width="0.1" layer="21"/>
-<wire x1="-0.4" y1="-0.625" x2="0.4" y2="-0.625" width="0.1" layer="21"/>
-<wire x1="-2.2" y1="0.1" x2="-2.2" y2="0.1" width="0.2" layer="21"/>
-<wire x1="-2.2" y1="0.1" x2="-2.2" y2="-0.1" width="0.2" layer="21" curve="180"/>
-<wire x1="-2.2" y1="-0.1" x2="-2.2" y2="-0.1" width="0.2" layer="21"/>
-<wire x1="-2.2" y1="-0.1" x2="-2.2" y2="0.1" width="0.2" layer="21" curve="180"/>
-</package>
-</packages>
-<symbols>
-<symbol name="AP2012P3C-P22">
-<wire x1="-2.54" y1="-5.08" x2="-2.54" y2="-10.16" width="0.508" layer="94"/>
-<wire x1="-2.54" y1="-6.35" x2="0" y2="-3.81" width="0.254" layer="94"/>
-<wire x1="0" y1="-11.43" x2="0" y2="-12.7" width="0.254" layer="94"/>
-<wire x1="0" y1="-3.81" x2="0" y2="-2.54" width="0.254" layer="94"/>
-<wire x1="-2.54" y1="-8.89" x2="0" y2="-11.43" width="0.254" layer="94"/>
-<wire x1="-7.62" y1="-2.032" x2="-5.08" y2="-4.572" width="0.254" layer="94"/>
-<wire x1="-9.144" y1="-3.556" x2="-6.604" y2="-6.096" width="0.254" layer="94"/>
-<circle x="-1.27" y="-7.62" radius="4.016" width="0.254" layer="94"/>
-<text x="3.81" y="-6.35" size="1.778" layer="95" align="center-left">&gt;NAME</text>
-<text x="3.81" y="-8.89" size="1.778" layer="96" align="center-left">&gt;VALUE</text>
-<pin name="E" x="0" y="-15.24" length="short" rot="R90"/>
-<pin name="C" x="0" y="0" length="short" rot="R270"/>
-<polygon width="0.254" layer="94">
-<vertex x="-1.778" y="-10.16"/>
-<vertex x="-1.27" y="-9.652"/>
-<vertex x="-0.762" y="-10.668"/>
-</polygon>
-<polygon width="0.254" layer="94">
-<vertex x="-8.128" y="-5.334"/>
-<vertex x="-7.366" y="-4.572"/>
-<vertex x="-6.604" y="-6.096"/>
-</polygon>
-<polygon width="0.254" layer="94">
-<vertex x="-6.604" y="-3.81"/>
-<vertex x="-5.842" y="-3.048"/>
-<vertex x="-5.08" y="-4.572"/>
-</polygon>
-</symbol>
-</symbols>
-<devicesets>
-<deviceset name="AP2012P3C-P22" prefix="Q">
-<description>&lt;b&gt;Phototransistors 2x1.2mm PHOTOTRANS SMD LED&lt;/b&gt;&lt;p&gt;
-Source: &lt;a href="https://componentsearchengine.com/Datasheets/1/AP2012P3C-P22.pdf"&gt; Datasheet &lt;/a&gt;</description>
-<gates>
-<gate name="G$1" symbol="AP2012P3C-P22" x="0" y="0"/>
-</gates>
-<devices>
-<device name="" package="AP2012P3CP22">
-<connects>
-<connect gate="G$1" pin="C" pad="1"/>
-<connect gate="G$1" pin="E" pad="2"/>
-</connects>
-<technologies>
-<technology name="">
-<attribute name="DESCRIPTION" value="Phototransistors 2x1.2mm PHOTOTRANS SMD LED" constant="no"/>
-<attribute name="HEIGHT" value="1.1mm" constant="no"/>
-<attribute name="MANUFACTURER_NAME" value="Kingbright" constant="no"/>
-<attribute name="MANUFACTURER_PART_NUMBER" value="AP2012P3C-P22" constant="no"/>
-<attribute name="MOUSER_PART_NUMBER" value="604-AP2012P3C-P22" constant="no"/>
-<attribute name="MOUSER_PRICE-STOCK" value="https://www.mouser.com/Search/Refine.aspx?Keyword=604-AP2012P3C-P22" constant="no"/>
-</technology>
-</technologies>
-</device>
-</devices>
-</deviceset>
-</devicesets>
-</library>
 <library name="Sensors_PIR_Lux">
 <description>&lt;b&gt;Sensors&lt;/b&gt;
 &lt;p&gt;
@@ -8706,10 +8620,10 @@ http://www.s6z.de&lt;br&gt;&lt;br&gt;
 <library name="myParts">
 <packages>
 <package name="MQ2">
-<pad name="VCC" x="1.19" y="13.54" drill="0.6" shape="octagon"/>
-<pad name="GND" x="1.19" y="11" drill="0.6" shape="octagon"/>
-<pad name="DO" x="1.19" y="8.46" drill="0.6" shape="octagon"/>
-<pad name="AO" x="1.19" y="5.54" drill="0.6" shape="octagon"/>
+<pad name="VCC" x="1.19" y="13.54" drill="1" diameter="1.9304" shape="octagon"/>
+<pad name="GND" x="1.19" y="11" drill="1" diameter="1.9304" shape="octagon"/>
+<pad name="DO" x="1.19" y="8.46" drill="1" diameter="1.9304" shape="octagon"/>
+<pad name="AO" x="1.19" y="5.92" drill="1" diameter="1.9304" shape="octagon"/>
 <wire x1="0" y1="0" x2="32" y2="0" width="0.127" layer="21"/>
 <wire x1="32" y1="0" x2="32" y2="20" width="0.127" layer="21"/>
 <wire x1="32" y1="20" x2="0" y2="20" width="0.127" layer="21"/>
@@ -8723,9 +8637,9 @@ http://www.s6z.de&lt;br&gt;&lt;br&gt;
 <wire x1="14" y1="0" x2="14" y2="21.59" width="0.127" layer="21"/>
 <wire x1="14" y1="0" x2="0.03" y2="0" width="0.127" layer="21"/>
 <wire x1="0.03" y1="0" x2="0.03" y2="21.59" width="0.127" layer="21"/>
-<pad name="GND" x="7.112" y="1.524" drill="1" diameter="1.778" shape="octagon"/>
-<pad name="VCC" x="9.652" y="1.524" drill="1" diameter="1.778" shape="octagon"/>
-<pad name="OUT" x="4.572" y="1.524" drill="1" diameter="1.778" shape="octagon"/>
+<pad name="GND" x="7.112" y="1.524" drill="1" diameter="1.9304" shape="octagon"/>
+<pad name="VCC" x="9.652" y="1.524" drill="1" diameter="1.9304" shape="octagon"/>
+<pad name="OUT" x="4.572" y="1.524" drill="1" diameter="1.9304" shape="octagon"/>
 <circle x="6.85" y="16.01" radius="3.81" width="0.127" layer="21"/>
 </package>
 <package name="BUZZER">
@@ -8776,6 +8690,14 @@ http://www.s6z.de&lt;br&gt;&lt;br&gt;
 <wire x1="-1.5" y1="-0.75" x2="1.5" y2="-0.75" width="0.1524" layer="21"/>
 <wire x1="1.5" y1="-0.75" x2="1.5" y2="0.75" width="0.1524" layer="21"/>
 <circle x="-1" y="-0.2" radius="0.2" width="0.1524" layer="21"/>
+</package>
+<package name="PT15-21C/TR8">
+<smd name="E" x="1.6" y="0" dx="1.5" dy="1.5" layer="1"/>
+<smd name="C" x="-1.6" y="0" dx="1.5" dy="1.5" layer="1"/>
+<wire x1="0.85" y1="0.75" x2="-0.85" y2="0.75" width="0.0762" layer="21"/>
+<wire x1="0.85" y1="-0.75" x2="-0.85" y2="-0.75" width="0.0762" layer="21"/>
+<wire x1="-0.85" y1="-0.75" x2="-0.85" y2="0.75" width="0.0762" layer="21"/>
+<wire x1="0.85" y1="-0.75" x2="0.85" y2="0.75" width="0.0762" layer="21"/>
 </package>
 </packages>
 <symbols>
@@ -8870,6 +8792,25 @@ http://www.s6z.de&lt;br&gt;&lt;br&gt;
 <pin name="SW" x="12.7" y="5.08" length="middle" rot="R180"/>
 <pin name="IN" x="12.7" y="0" length="middle" rot="R180"/>
 <pin name="EN" x="12.7" y="-5.08" length="middle" rot="R180"/>
+</symbol>
+<symbol name="PT15-21C/TR8">
+<circle x="0" y="0" radius="5.6796125" width="0.1524" layer="94"/>
+<wire x1="-2.54" y1="-2.54" x2="-2.54" y2="0" width="0.1524" layer="94"/>
+<wire x1="-2.54" y1="0" x2="-2.54" y2="2.54" width="0.1524" layer="94"/>
+<wire x1="2.54" y1="-2.54" x2="-2.54" y2="0" width="0.1524" layer="94"/>
+<wire x1="-2.54" y1="0" x2="2.54" y2="2.54" width="0.1524" layer="94"/>
+<wire x1="2.54" y1="-2.54" x2="0" y2="0" width="0.1524" layer="94"/>
+<wire x1="2.54" y1="-2.54" x2="0" y2="-2.54" width="0.1524" layer="94"/>
+<wire x1="2.54" y1="2.54" x2="2.54" y2="10.16" width="0.1524" layer="94"/>
+<wire x1="2.54" y1="-2.54" x2="2.54" y2="-10.16" width="0.1524" layer="94"/>
+<wire x1="-10.16" y1="10.16" x2="-7.62" y2="7.62" width="0.1524" layer="94"/>
+<wire x1="-7.62" y1="7.62" x2="-7.62" y2="10.16" width="0.1524" layer="94"/>
+<wire x1="-7.62" y1="7.62" x2="-10.16" y2="7.62" width="0.1524" layer="94"/>
+<wire x1="-10.16" y1="5.08" x2="-7.62" y2="2.54" width="0.1524" layer="94"/>
+<wire x1="-7.62" y1="2.54" x2="-7.62" y2="5.08" width="0.1524" layer="94"/>
+<wire x1="-7.62" y1="2.54" x2="-10.16" y2="2.54" width="0.1524" layer="94"/>
+<pin name="C" x="2.54" y="10.16" length="middle" rot="R270"/>
+<pin name="E" x="2.54" y="-10.16" length="middle" rot="R90"/>
 </symbol>
 </symbols>
 <devicesets>
@@ -8976,6 +8917,22 @@ http://www.s6z.de&lt;br&gt;&lt;br&gt;
 <connect gate="G$1" pin="GND" pad="GND"/>
 <connect gate="G$1" pin="IN" pad="IN"/>
 <connect gate="G$1" pin="SW" pad="SW"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="PT15-21C/TR8">
+<gates>
+<gate name="G$1" symbol="PT15-21C/TR8" x="2.54" y="0"/>
+</gates>
+<devices>
+<device name="" package="PT15-21C/TR8">
+<connects>
+<connect gate="G$1" pin="C" pad="C"/>
+<connect gate="G$1" pin="E" pad="E"/>
 </connects>
 <technologies>
 <technology name=""/>
@@ -11224,7 +11181,7 @@ Source: &lt;a href="https://datasheet.datasheetarchive.com/originals/distributor
 <part name="C2" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-EU" device="C0805" package3d_urn="urn:adsk.eagle:package:23617/2" value="10uF"/>
 <part name="GND1" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="R2" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="1.5k"/>
-<part name="Q1" library="SamacSys_Parts" deviceset="AP2012P3C-P22" device=""/>
+<part name="Q1" library="myParts" deviceset="PT15-21C/TR8" device=""/>
 <part name="GND2" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="U$1" library="Sensors_PIR_Lux" deviceset="HC-SR501" device=""/>
 <part name="GND3" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
@@ -11268,13 +11225,10 @@ Source: &lt;a href="https://datasheet.datasheetarchive.com/originals/distributor
 <part name="GND9" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="FRAME3" library="frames" library_urn="urn:adsk.eagle:library:229" deviceset="A4L-LOC" device=""/>
 <part name="JUM1" library="#PaJa_konektory" deviceset="S1G6_JUMP" device=""/>
-<<<<<<< Updated upstream
 <part name="Q3" library="SS8050-G" deviceset="SS8050-G" device=""/>
 <part name="Q4" library="SS8050-G" deviceset="SS8050-G" device=""/>
-<part name="R16" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2"/>
-<part name="R17" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2"/>
-=======
->>>>>>> Stashed changes
+<part name="R16" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="10k"/>
+<part name="R17" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="10k"/>
 </parts>
 <sheets>
 <sheet>
@@ -11338,9 +11292,9 @@ Source: &lt;a href="https://datasheet.datasheetarchive.com/originals/distributor
 <attribute name="NAME" x="26.67" y="31.5214" size="1.778" layer="95" rot="R180"/>
 <attribute name="VALUE" x="26.67" y="28.702" size="1.778" layer="96" rot="R180"/>
 </instance>
-<instance part="Q1" gate="G$1" x="20.32" y="60.96" smashed="yes">
-<attribute name="NAME" x="24.13" y="54.61" size="1.778" layer="95" align="center-left"/>
-<attribute name="VALUE" x="24.13" y="52.07" size="1.778" layer="96" align="center-left"/>
+<instance part="Q1" gate="G$1" x="17.78" y="53.34" smashed="yes">
+<attribute name="NAME" x="21.59" y="46.99" size="1.778" layer="95" align="center-left"/>
+<attribute name="VALUE" x="21.59" y="44.45" size="1.778" layer="96" align="center-left"/>
 </instance>
 <instance part="GND2" gate="1" x="20.32" y="17.78" smashed="yes">
 <attribute name="VALUE" x="17.78" y="15.24" size="1.778" layer="96"/>
@@ -11483,18 +11437,6 @@ Source: &lt;a href="https://datasheet.datasheetarchive.com/originals/distributor
 <wire x1="60.96" y1="109.22" x2="53.34" y2="109.22" width="0.1524" layer="91"/>
 <label x="53.34" y="109.22" size="1.778" layer="95" rot="R180" xref="yes"/>
 </segment>
-<<<<<<< Updated upstream
-=======
-<segment>
-<pinref part="JUM1" gate="JUM" pin="6"/>
-<wire x1="25.4" y1="139.7" x2="33.02" y2="139.7" width="0.1524" layer="91"/>
-<wire x1="33.02" y1="139.7" x2="33.02" y2="147.32" width="0.1524" layer="91"/>
-<wire x1="33.02" y1="147.32" x2="48.26" y2="147.32" width="0.1524" layer="91"/>
-<label x="48.26" y="147.32" size="1.778" layer="95" xref="yes"/>
-</segment>
-</net>
-<net name="TXD0" class="0">
->>>>>>> Stashed changes
 <segment>
 <pinref part="JUM1" gate="JUM" pin="6"/>
 <wire x1="25.4" y1="139.7" x2="33.02" y2="139.7" width="0.1524" layer="91"/>
@@ -11545,7 +11487,7 @@ Source: &lt;a href="https://datasheet.datasheetarchive.com/originals/distributor
 <pinref part="R2" gate="G$1" pin="2"/>
 <wire x1="20.32" y1="35.56" x2="20.32" y2="40.64" width="0.1524" layer="91"/>
 <pinref part="Q1" gate="G$1" pin="E"/>
-<wire x1="20.32" y1="40.64" x2="20.32" y2="45.72" width="0.1524" layer="91"/>
+<wire x1="20.32" y1="40.64" x2="20.32" y2="43.18" width="0.1524" layer="91"/>
 <junction x="20.32" y="40.64"/>
 </segment>
 <segment>
@@ -11654,7 +11596,7 @@ Source: &lt;a href="https://datasheet.datasheetarchive.com/originals/distributor
 <net name="PHOTOTRAN_CONTROL" class="0">
 <segment>
 <pinref part="Q1" gate="G$1" pin="C"/>
-<wire x1="20.32" y1="60.96" x2="20.32" y2="66.04" width="0.1524" layer="91"/>
+<wire x1="20.32" y1="63.5" x2="20.32" y2="66.04" width="0.1524" layer="91"/>
 <label x="20.32" y="66.04" size="1.778" layer="95" xref="yes"/>
 </segment>
 <segment>
@@ -11718,14 +11660,11 @@ Source: &lt;a href="https://datasheet.datasheetarchive.com/originals/distributor
 <wire x1="25.4" y1="129.54" x2="43.18" y2="129.54" width="0.1524" layer="91"/>
 <label x="43.18" y="129.54" size="1.778" layer="95" xref="yes"/>
 </segment>
-<<<<<<< Updated upstream
 <segment>
 <pinref part="U1" gate="G$1" pin="TXD0"/>
 <wire x1="83.82" y1="86.36" x2="73.66" y2="86.36" width="0.1524" layer="91"/>
 <label x="73.66" y="86.36" size="1.778" layer="95" rot="R180" xref="yes"/>
 </segment>
-=======
->>>>>>> Stashed changes
 </net>
 <net name="UART_PC_TX" class="0">
 <segment>
@@ -11734,7 +11673,6 @@ Source: &lt;a href="https://datasheet.datasheetarchive.com/originals/distributor
 <wire x1="43.18" y1="132.08" x2="43.18" y2="134.62" width="0.1524" layer="91"/>
 <label x="43.18" y="134.62" size="1.778" layer="95" xref="yes"/>
 </segment>
-<<<<<<< Updated upstream
 <segment>
 <pinref part="U1" gate="G$1" pin="RXD0"/>
 <wire x1="83.82" y1="83.82" x2="78.74" y2="83.82" width="0.1524" layer="91"/>
@@ -11742,8 +11680,6 @@ Source: &lt;a href="https://datasheet.datasheetarchive.com/originals/distributor
 <wire x1="78.74" y1="81.28" x2="76.2" y2="81.28" width="0.1524" layer="91"/>
 <label x="76.2" y="81.28" size="1.778" layer="95" rot="R180" xref="yes"/>
 </segment>
-=======
->>>>>>> Stashed changes
 </net>
 <net name="VCC" class="0">
 <segment>
@@ -12162,6 +12098,11 @@ vlhkostní senzor HTU21D</text>
 </sheet>
 <sheet>
 <plain>
+<wire x1="20.32" y1="60.96" x2="20.32" y2="157.48" width="0.1524" layer="94" style="longdash"/>
+<wire x1="20.32" y1="157.48" x2="147.32" y2="157.48" width="0.1524" layer="94" style="longdash"/>
+<wire x1="147.32" y1="157.48" x2="147.32" y2="60.96" width="0.1524" layer="94" style="longdash"/>
+<wire x1="147.32" y1="60.96" x2="20.32" y2="60.96" width="0.1524" layer="94" style="longdash"/>
+<text x="33.02" y="144.78" size="6.4516" layer="94">ESP32 programmer reset</text>
 </plain>
 <instances>
 <instance part="FRAME3" gate="G$1" x="0" y="0" smashed="yes">

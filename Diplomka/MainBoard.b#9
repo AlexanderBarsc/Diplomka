@@ -164,6 +164,9 @@
 <text x="78.75" y="77.75" size="1.778" layer="21" font="vector">GND</text>
 <text x="29.5" y="80.75" size="1.778" layer="21" font="vector" rot="R45">VIN</text>
 <text x="32.75" y="84" size="1.778" layer="21" font="vector" rot="R45">GND</text>
+<text x="60" y="3.25" size="1.778" layer="26" font="vector" rot="MR0">Created at VSB 
+By Alexander Barsc
+And Radim Hercik</text>
 </plain>
 <libraries>
 <library name="rcl" urn="urn:adsk.eagle:library:334">
@@ -2082,7 +2085,7 @@ http://www.s6z.de&lt;br&gt;&lt;br&gt;
 </element>
 <element name="U$2" library="myParts" package="MQ2" value="MQ2" x="36.77" y="69.02" smashed="yes"/>
 <element name="U$3" library="myParts" package="GY4466" value="GY4466" x="73.02" y="44.94" smashed="yes" rot="R270"/>
-<element name="U$4" library="myParts" package="BUZZER" value="BUZZER" x="51" y="17.96" smashed="yes"/>
+<element name="U$4" library="myParts" package="BUZZER" value="BUZZER" x="50" y="17.96" smashed="yes"/>
 <element name="U$5" library="myParts" package="HTU21D" value="HTU21D" x="73.13" y="47.88" smashed="yes"/>
 <element name="U$6" library="myParts" package="TS6604B" value="TS6604B" x="29.5" y="56.08" smashed="yes"/>
 <element name="U$7" library="myParts" package="TS6604B" value="TS6604B" x="61.17" y="33.58" smashed="yes"/>
@@ -2216,8 +2219,9 @@ http://www.s6z.de&lt;br&gt;&lt;br&gt;
 <wire x1="28.401" y1="73.59125625" x2="28.401" y2="74.93014375" width="1.27" layer="16"/>
 <wire x1="26.495" y1="53.34" x2="24.34" y2="53.34" width="1.27" layer="16"/>
 <wire x1="24.34" y1="53.34" x2="21" y2="50" width="1.27" layer="16"/>
-<wire x1="21" y1="50" x2="21" y2="44.16" width="1.27" layer="16"/>
-<wire x1="21" y1="44.16" x2="47.2" y2="17.96" width="1.27" layer="16"/>
+<wire x1="21" y1="50" x2="21" y2="46.209603125" width="1.27" layer="16"/>
+<wire x1="46.2" y1="20.009603125" x2="46.2" y2="17.96" width="1.27" layer="16"/>
+<wire x1="46.2" y1="20.009603125" x2="21" y2="46.209603125" width="1.27" layer="16"/>
 <contactref element="R13" pad="2"/>
 <contactref element="C7" pad="1"/>
 <contactref element="L1" pad="2"/>
@@ -2344,13 +2348,13 @@ http://www.s6z.de&lt;br&gt;&lt;br&gt;
 <wire x1="19.55" y1="70.95" x2="18.87" y2="71.63" width="1.016" layer="1"/>
 <wire x1="22.6" y1="70.95" x2="28.75" y2="70.95" width="1.016" layer="1"/>
 <wire x1="28.75" y1="70.95" x2="28.88" y2="70.82" width="1.016" layer="1"/>
-<wire x1="37.3" y1="25.2" x2="48" y2="14.5" width="1.016" layer="16"/>
-<wire x1="48" y1="14.5" x2="49.5" y2="14.5" width="1.016" layer="16"/>
+<wire x1="36.05" y1="25.2" x2="46.75" y2="14.5" width="1.016" layer="16"/>
+<wire x1="46.75" y1="14.5" x2="49.5" y2="14.5" width="1.016" layer="16"/>
 <wire x1="49.5" y1="14.5" x2="51" y2="16" width="1.016" layer="16"/>
-<wire x1="51" y1="21" x2="58.5" y2="28.5" width="1.016" layer="16"/>
-<wire x1="58.5" y1="28.5" x2="58.5" y2="30" width="1.016" layer="16"/>
-<wire x1="31.1" y1="25.2" x2="37.3" y2="25.2" width="1.016" layer="16"/>
-<wire x1="51" y1="16" x2="51" y2="21" width="1.016" layer="16"/>
+<wire x1="51" y1="21.25" x2="58.5" y2="28.75" width="1.016" layer="16"/>
+<wire x1="58.5" y1="28.75" x2="58.5" y2="30" width="1.016" layer="16"/>
+<wire x1="31.1" y1="25.2" x2="36.05" y2="25.2" width="1.016" layer="16"/>
+<wire x1="51" y1="16" x2="51" y2="21.25" width="1.016" layer="16"/>
 <via x="58.5" y="30" extent="1-16" drill="0.35" diameter="1.2" shape="octagon"/>
 <wire x1="58.5" y1="30" x2="58.47" y2="30.03" width="1.016" layer="1"/>
 <wire x1="58.47" y1="30.03" x2="58.47" y2="32.34" width="1.016" layer="1"/>
@@ -2520,9 +2524,8 @@ http://www.s6z.de&lt;br&gt;&lt;br&gt;
 <signal name="N$1">
 <contactref element="Q2" pad="C"/>
 <contactref element="U$4" pad="-"/>
-<wire x1="54.8" y1="17.96" x2="54.8" y2="23.96" width="1.27" layer="1"/>
-<wire x1="54.8" y1="23.96" x2="51.39" y2="27.37" width="1.27" layer="1"/>
-<wire x1="51.39" y1="27.37" x2="51.39" y2="28.48" width="1.27" layer="1"/>
+<wire x1="53.8" y1="17.96" x2="51.39" y2="20.37" width="1.27" layer="1"/>
+<wire x1="51.39" y1="20.37" x2="51.39" y2="28.48" width="1.27" layer="1"/>
 </signal>
 <signal name="N$2">
 <contactref element="R8" pad="2"/>
@@ -2709,6 +2712,10 @@ http://www.s6z.de&lt;br&gt;&lt;br&gt;
 </board>
 </drawing>
 <compatibility>
+<note version="6.3" minversion="6.2.2" severity="warning">
+Since Version 6.2.2 text objects can contain more than one line,
+which will not be processed correctly with this version.
+</note>
 <note version="8.2" severity="warning">
 Since Version 8.2, EAGLE supports online libraries. The ids
 of those online libraries will not be understood (or retained)

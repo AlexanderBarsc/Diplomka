@@ -8,7 +8,7 @@
 </settings>
 <grid distance="1" unitdist="mm" unit="mm" style="lines" multiple="1" display="yes" altdistance="5" altunitdist="mil" altunit="mil"/>
 <layers>
-<layer number="1" name="Top" color="4" fill="1" visible="no" active="yes"/>
+<layer number="1" name="Top" color="4" fill="1" visible="yes" active="yes"/>
 <layer number="2" name="Route2" color="1" fill="3" visible="no" active="no"/>
 <layer number="3" name="Route3" color="4" fill="3" visible="no" active="no"/>
 <layer number="4" name="Route4" color="1" fill="4" visible="no" active="no"/>
@@ -23,7 +23,7 @@
 <layer number="13" name="Route13" color="4" fill="5" visible="no" active="no"/>
 <layer number="14" name="Route14" color="1" fill="6" visible="no" active="no"/>
 <layer number="15" name="Route15" color="4" fill="6" visible="no" active="no"/>
-<layer number="16" name="Bottom" color="1" fill="1" visible="no" active="yes"/>
+<layer number="16" name="Bottom" color="1" fill="1" visible="yes" active="yes"/>
 <layer number="17" name="Pads" color="2" fill="1" visible="yes" active="yes"/>
 <layer number="18" name="Vias" color="2" fill="1" visible="yes" active="yes"/>
 <layer number="19" name="Unrouted" color="6" fill="1" visible="yes" active="yes"/>
@@ -90,6 +90,8 @@
 <layer number="111" name="wago-cervena" color="12" fill="8" visible="yes" active="yes"/>
 <layer number="112" name="wago-zelena" color="2" fill="8" visible="yes" active="yes"/>
 <layer number="113" name="wago-modra" color="1" fill="8" visible="yes" active="yes"/>
+<layer number="114" name="bText" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="115" name="topText" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="116" name="Patch_BOT" color="9" fill="4" visible="yes" active="yes"/>
 <layer number="121" name="_tsilk" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="122" name="_bsilk" color="7" fill="1" visible="yes" active="yes"/>
@@ -156,15 +158,15 @@
 <hole x="25" y="75" drill="3.5"/>
 <hole x="75" y="25" drill="3.5"/>
 <hole x="25" y="25" drill="3.5"/>
-<text x="78.75" y="65.25" size="1.778" layer="51" font="vector">DTR</text>
-<text x="78.75" y="67.75" size="1.778" layer="51" font="vector">TX</text>
-<text x="78.75" y="70.25" size="1.778" layer="51" font="vector">RX</text>
-<text x="78.75" y="72.75" size="1.778" layer="51" font="vector">VCC</text>
-<text x="78.75" y="75.25" size="1.778" layer="51" font="vector">CTS</text>
-<text x="78.75" y="77.75" size="1.778" layer="51" font="vector">GND</text>
-<text x="29.5" y="80.75" size="1.778" layer="51" font="vector" rot="R45">VIN</text>
-<text x="32.75" y="84" size="1.778" layer="51" font="vector" rot="R45">GND</text>
-<text x="60" y="3.25" size="1.778" layer="52" font="vector" rot="MR0">Created at VSB 
+<text x="78.75" y="65.25" size="1.778" layer="115" font="vector">DTR</text>
+<text x="78.75" y="67.75" size="1.778" layer="115" font="vector">TX</text>
+<text x="78.75" y="70.25" size="1.778" layer="115" font="vector">RX</text>
+<text x="78.75" y="72.75" size="1.778" layer="115" font="vector">VCC</text>
+<text x="78.75" y="75.25" size="1.778" layer="115" font="vector">CTS</text>
+<text x="78.75" y="77.75" size="1.778" layer="115" font="vector">GND</text>
+<text x="29.5" y="80.75" size="1.778" layer="115" font="vector" rot="R45">VIN</text>
+<text x="32.75" y="84" size="1.778" layer="115" font="vector" rot="R45">GND</text>
+<text x="60" y="3.25" size="1.778" layer="114" font="vector" rot="MR0">Created at VSB 
 By Alexander Barsc
 And Radim Hercik</text>
 <rectangle x1="28.80045" y1="10.78325" x2="41.79255" y2="10.79595" layer="201"/>
@@ -15470,34 +15472,6 @@ Source: http://www.osram.convergy.de/ ... lb_r99a.pdf</description>
 </package3d>
 </packages3d>
 </library>
-<library name="SamacSys_Parts">
-<description>&lt;b&gt;https://componentsearchengine.com&lt;/b&gt;&lt;p&gt;
-&lt;author&gt;Created by SamacSys&lt;/author&gt;</description>
-<packages>
-<package name="AP2012P3CP22">
-<description>&lt;b&gt;AP2012P3C-P22-8&lt;/b&gt;&lt;br&gt;
-</description>
-<smd name="1" x="-1.175" y="0" dx="1.25" dy="1.1" layer="1"/>
-<smd name="2" x="1.175" y="0" dx="1.25" dy="1.1" layer="1"/>
-<text x="0" y="0" size="1.27" layer="25" align="center">&gt;NAME</text>
-<text x="0" y="0" size="1.27" layer="27" align="center">&gt;VALUE</text>
-<wire x1="-1" y1="0.625" x2="1" y2="0.625" width="0.2" layer="51"/>
-<wire x1="1" y1="0.625" x2="1" y2="-0.625" width="0.2" layer="51"/>
-<wire x1="1" y1="-0.625" x2="-1" y2="-0.625" width="0.2" layer="51"/>
-<wire x1="-1" y1="-0.625" x2="-1" y2="0.625" width="0.2" layer="51"/>
-<wire x1="-2.8" y1="1.625" x2="2.8" y2="1.625" width="0.1" layer="51"/>
-<wire x1="2.8" y1="1.625" x2="2.8" y2="-1.625" width="0.1" layer="51"/>
-<wire x1="2.8" y1="-1.625" x2="-2.8" y2="-1.625" width="0.1" layer="51"/>
-<wire x1="-2.8" y1="-1.625" x2="-2.8" y2="1.625" width="0.1" layer="51"/>
-<wire x1="-0.4" y1="0.625" x2="0.4" y2="0.625" width="0.1" layer="21"/>
-<wire x1="-0.4" y1="-0.625" x2="0.4" y2="-0.625" width="0.1" layer="21"/>
-<wire x1="-2.2" y1="0.1" x2="-2.2" y2="0.1" width="0.2" layer="21"/>
-<wire x1="-2.2" y1="0.1" x2="-2.2" y2="-0.1" width="0.2" layer="21" curve="180"/>
-<wire x1="-2.2" y1="-0.1" x2="-2.2" y2="-0.1" width="0.2" layer="21"/>
-<wire x1="-2.2" y1="-0.1" x2="-2.2" y2="0.1" width="0.2" layer="21" curve="180"/>
-</package>
-</packages>
-</library>
 <library name="transistor-npn" urn="urn:adsk.eagle:library:398">
 <description>&lt;b&gt;NPN Transistors&lt;/b&gt;&lt;p&gt;
 &lt;author&gt;Created by librarian@cadsoft.de&lt;/author&gt;</description>
@@ -15649,6 +15623,14 @@ http://www.s6z.de&lt;br&gt;&lt;br&gt;
 <wire x1="-1.5" y1="-0.75" x2="1.5" y2="-0.75" width="0.1524" layer="21"/>
 <wire x1="1.5" y1="-0.75" x2="1.5" y2="0.75" width="0.1524" layer="21"/>
 <circle x="-1" y="-0.2" radius="0.2" width="0.1524" layer="21"/>
+</package>
+<package name="PT15-21C/TR8">
+<smd name="E" x="1.6" y="0" dx="1.5" dy="1.5" layer="1"/>
+<smd name="C" x="-1.6" y="0" dx="1.5" dy="1.5" layer="1"/>
+<wire x1="0.85" y1="0.75" x2="-0.85" y2="0.75" width="0.0762" layer="21"/>
+<wire x1="0.85" y1="-0.75" x2="-0.85" y2="-0.75" width="0.0762" layer="21"/>
+<wire x1="-0.85" y1="-0.75" x2="-0.85" y2="0.75" width="0.0762" layer="21"/>
+<wire x1="0.85" y1="-0.75" x2="0.85" y2="0.75" width="0.0762" layer="21"/>
 </package>
 </packages>
 </library>
@@ -16049,13 +16031,7 @@ http://www.s6z.de&lt;br&gt;&lt;br&gt;
 <attribute name="POPULARITY" value="68" x="47.5" y="100.55" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="VALUE" x="58.93" y="19.27" size="1.27" layer="27" rot="R270"/>
 </element>
-<element name="Q1" library="SamacSys_Parts" package="AP2012P3CP22" value="AP2012P3C-P22" x="33.4" y="41.45" smashed="yes" rot="R180">
-<attribute name="DESCRIPTION" value="Phototransistors 2x1.2mm PHOTOTRANS SMD LED" x="8" y="124" size="1.778" layer="27" rot="R180" display="off"/>
-<attribute name="HEIGHT" value="1.1mm" x="8" y="124" size="1.778" layer="27" rot="R180" display="off"/>
-<attribute name="MANUFACTURER_NAME" value="Kingbright" x="8" y="124" size="1.778" layer="27" rot="R180" display="off"/>
-<attribute name="MANUFACTURER_PART_NUMBER" value="AP2012P3C-P22" x="8" y="124" size="1.778" layer="27" rot="R180" display="off"/>
-<attribute name="MOUSER_PART_NUMBER" value="604-AP2012P3C-P22" x="8" y="124" size="1.778" layer="27" rot="R180" display="off"/>
-<attribute name="MOUSER_PRICE-STOCK" value="https://www.mouser.com/Search/Refine.aspx?Keyword=604-AP2012P3C-P22" x="8" y="124" size="1.778" layer="27" rot="R180" display="off"/>
+<element name="Q1" library="myParts" package="PT15-21C/TR8" value="PT15-21C/TR8" x="33.4" y="41.45" smashed="yes" rot="R180">
 <attribute name="NAME" x="33.4" y="37.45" size="1.27" layer="25" rot="R180" align="center"/>
 <attribute name="VALUE" x="33.4" y="44.45" size="1.27" layer="27" rot="R180" align="center"/>
 </element>
@@ -16417,13 +16393,13 @@ http://www.s6z.de&lt;br&gt;&lt;br&gt;
 </signal>
 <signal name="PHOTOTRAN">
 <contactref element="R2" pad="2"/>
-<contactref element="Q1" pad="2"/>
+<contactref element="Q1" pad="E"/>
 <contactref element="U1" pad="8"/>
 <wire x1="33.94" y1="37.97" x2="38" y2="42.03" width="0.508" layer="1"/>
 <wire x1="38" y1="42.03" x2="38" y2="45.5" width="0.508" layer="1"/>
 <wire x1="38" y1="45.5" x2="38.87" y2="46.37" width="0.508" layer="1"/>
 <wire x1="38.87" y1="46.37" x2="41.5" y2="46.37" width="0.508" layer="1"/>
-<wire x1="32.225" y1="41.45" x2="34" y2="39.675" width="0.508" layer="1"/>
+<wire x1="31.8" y1="41.45" x2="34" y2="39.675" width="0.508" layer="1"/>
 <wire x1="34" y1="38.03" x2="33.94" y2="37.97" width="0.508" layer="1"/>
 <wire x1="34" y1="39.675" x2="34" y2="38.03" width="0.508" layer="1"/>
 </signal>
@@ -16525,13 +16501,13 @@ http://www.s6z.de&lt;br&gt;&lt;br&gt;
 <wire x1="66.712" y1="35.288" x2="61.98" y2="40.02" width="0.508" layer="1"/>
 </signal>
 <signal name="PHOTOTRAN_CONTROL">
-<contactref element="Q1" pad="1"/>
+<contactref element="Q1" pad="C"/>
 <contactref element="U1" pad="7"/>
-<wire x1="34.575" y1="41.45" x2="34.625" y2="41.5" width="0.508" layer="1"/>
+<wire x1="35" y1="41.45" x2="34.625" y2="41.5" width="0.508" layer="1"/>
 <wire x1="41.5" y1="47.64" x2="38.64" y2="47.64" width="0.508" layer="1"/>
 <wire x1="36.5" y1="45.5" x2="36.5" y2="42.5" width="0.508" layer="1"/>
 <wire x1="36.5" y1="42.5" x2="35.45" y2="41.45" width="0.508" layer="1"/>
-<wire x1="35.45" y1="41.45" x2="34.575" y2="41.45" width="0.508" layer="1"/>
+<wire x1="35.45" y1="41.45" x2="35" y2="41.45" width="0.508" layer="1"/>
 <wire x1="38.64" y1="47.64" x2="36.5" y2="45.5" width="0.508" layer="1"/>
 </signal>
 <signal name="TEMP_CONTROL">
@@ -16765,6 +16741,14 @@ http://www.s6z.de&lt;br&gt;&lt;br&gt;
 <mfgpreviewcolor name="coppercolor" color="0xFFFFBF00"/>
 <mfgpreviewcolor name="substratecolor" color="0xFF786E46"/>
 </mfgpreviewcolors>
+<errors>
+<approved hash="23,1,14adf95ff8951567"/>
+<approved hash="23,1,a94a4eb449f8ae06"/>
+<approved hash="23,1,6c5af0ebd7f884bd"/>
+<approved hash="23,1,817be0bbefb98e79"/>
+<approved hash="23,16,944ba3a09e288f96"/>
+<approved hash="23,16,8d3d60d71c91f17b"/>
+</errors>
 </board>
 </drawing>
 <compatibility>
