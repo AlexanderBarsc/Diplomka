@@ -172,7 +172,6 @@ void IRAM_ATTR buttonPress()
 void IRAM_ATTR mq2Interrupt()
 {
   detachInterrupt(MQ2_DIGITAL_OUTPUT);
-  digitalWrite(BUZZER_CONTROL, HIGH);
   mqSensorTripped = true;
 }
 
