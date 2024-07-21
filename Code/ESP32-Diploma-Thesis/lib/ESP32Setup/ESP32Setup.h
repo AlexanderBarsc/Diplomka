@@ -21,6 +21,9 @@
 
 #define MEASURING_PERIOD 100
 
+#define BAREBONES_BOARD
+#define WDT_TIMEOUT 120
+
 
 enum OutputPins
 {

@@ -12,7 +12,7 @@
 #include "Measurement.h"
 #include "esp32-hal-i2c.h"
 #include "HTU21D.h"
-
+#include <esp_task_wdt.h>
 
 unsigned long previousMillis = 0;
 String existingApiKey = "";
@@ -188,16 +188,23 @@ void setup()
   //Init of EEPROM
   EEPROM.begin(EEPROM_SIZE);
 
+
+  esp_task_wdt_init(WDT_TIMEOUT, true); //enable panic so ESP32 restarts
+  esp_task_wdt_add(NULL); //add current thread to WDT watch
+
+  #ifndef BAREBONES_BOARD
   if(!htu21.Begin(0, I2C_SDA, I2C_SCL, 400000))
   {
     Serial.println("HTU21D failure");
     esp_restart();
   }
+  #endif
 
   digitalWrite(LED_CONTROL, HIGH);
   WiFi.mode(WIFI_STA);
   bool res;
   res = wm.autoConnect("AutoConnectAP", "password"); // password protected ap
+
 
   if (!res)
   {
@@ -224,6 +231,7 @@ void setup()
   while(!(ThingSpeak.writeField(existingChannelNumber, PIR_DETECTION_FIELD, digitalRead(PIR_OUTPUT), &existingApiKey[0]) == OK))
   {
     Serial.println("Cannot send message to ThingSpeak, try to reenter your credentials");
+    uint8_t counter = 0;
     while(!succesfullCredentials)
     {
       server.handleClient();
@@ -231,7 +239,9 @@ void setup()
       { 
         previousMillis += 100;
         *(uint32_t*)(GPIO_OUT_REG) ^= (1 << LED_CONTROL);
+        counter++;
       }
+
     }
       break;
   }
@@ -256,6 +266,8 @@ void loop()
 
   if(millis() - previousMillis >= MEASURING_PERIOD)
   {
+
+    esp_task_wdt_reset();
     #ifdef DEBUG
     Serial.println("Reading values:");
     #endif
@@ -265,6 +277,23 @@ void loop()
 
     if(measurement.index >= ARRAY_SIZE)
     {
+      /*
+      int readValueFromThingSpeak = ThingSpeak.read;
+
+      Serial.println("Read value from ThingSpeak channel is");
+      Serial.println(readValueFromThingSpeak);
+
+      switch (readValueFromThingSpeak)
+      {
+      case 1:
+        Serial.println("Restarted because of ThingSpeak Read");
+        esp_restart();
+        break;
+      
+      default:
+        break;
+      }
+      */
       measurement.SendMeasurement(existingChannelNumber, &existingApiKey[0]);
       measurement.WipeMeasurements();
 

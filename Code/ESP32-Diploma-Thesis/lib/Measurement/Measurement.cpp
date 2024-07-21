@@ -73,8 +73,15 @@
         }
 
         audio[index] = analogRead(MIC_OUTPUT);
+
+        #ifndef BAREBONES_BOARD
         temperature[index] = htu.ReadTemp();
         humidity[index] = htu.ReadHumidity();
+        #else
+        temperature[index] = 25;
+        humidity[index] = 40;
+        #endif
+
         gas[index] = analogRead(MQ2_OUTPUT);
         photoResistor[index] = analogRead(PHOTOTRAN_OUTPUT_AD);
 
