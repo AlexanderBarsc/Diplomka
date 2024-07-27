@@ -184,27 +184,66 @@ void setup()
 
   SetupPins();
   // Inicialization delay
+  digitalWrite(LED_CONTROL, HIGH);
+  esp_task_wdt_init(WDT_TIMEOUT, true); //enable panic so ESP32 restarts
+  esp_task_wdt_add(NULL); //add current thread to WDT watch
   delay(INITIAL_DELAY);
   //Init of EEPROM
   EEPROM.begin(EEPROM_SIZE);
-
-
-  esp_task_wdt_init(WDT_TIMEOUT, true); //enable panic so ESP32 restarts
-  esp_task_wdt_add(NULL); //add current thread to WDT watch
-
   #ifndef BAREBONES_BOARD
-  if(!htu21.Begin(0, I2C_SDA, I2C_SCL, 400000))
+  HTUSensorCheck();
+  #endif
+  ConnectToWifi();
+  setupApi();
+  ConnectToThingSpeak();
+
+  digitalWrite(LED_CONTROL, LOW);
+  attachInterrupt(MQ2_DIGITAL_OUTPUT, mq2Interrupt, FALLING);
+  attachInterrupt(BUTTON_OUTPUT, buttonPress, FALLING);
+
+  #ifdef DEBUG
+  Serial.println("Start loop: ");
+  #endif
+}
+
+void HTUSensorCheck()
+{
+  if (!htu21.Begin(0, I2C_SDA, I2C_SCL, 400000))
   {
     Serial.println("HTU21D failure");
     esp_restart();
   }
-  #endif
+}
 
-  digitalWrite(LED_CONTROL, HIGH);
+void ConnectToThingSpeak()
+{
+  ThingSpeak.begin(myClient);
+
+  existingChannelNumber = EEPROM.readULong(0);
+  existingApiKey = EEPROM.readString(4);
+
+  previousMillis = millis();
+  while (!(ThingSpeak.writeField(existingChannelNumber, PIR_DETECTION_FIELD, digitalRead(PIR_OUTPUT), &existingApiKey[0]) == OK))
+  {
+    Serial.println("Cannot send message to ThingSpeak, try to reenter your credentials");
+    while (!succesfullCredentials)
+    {
+      server.handleClient();
+      if (millis() >= previousMillis + 100)
+      {
+        previousMillis += 100;
+        *(uint32_t *)(GPIO_OUT_REG) ^= (1 << LED_CONTROL);
+      }
+    }
+    break;
+  }
+}
+
+void ConnectToWifi()
+{
   WiFi.mode(WIFI_STA);
   bool res;
   res = wm.autoConnect("AutoConnectAP", "password"); // password protected ap
-
 
   if (!res)
   {
@@ -215,44 +254,6 @@ void setup()
   {
     Serial.println("Connected to WiFi");
   }
-
-  setupApi();
-  ThingSpeak.begin(myClient);
-
-  existingChannelNumber = EEPROM.readULong(0);
-  existingApiKey = EEPROM.readString(4);
-
-  #ifdef DEBUG
-  Serial.println(existingChannelNumber);
-  Serial.println(existingApiKey);
-  #endif 
-
-  previousMillis = millis();
-  while(!(ThingSpeak.writeField(existingChannelNumber, PIR_DETECTION_FIELD, digitalRead(PIR_OUTPUT), &existingApiKey[0]) == OK))
-  {
-    Serial.println("Cannot send message to ThingSpeak, try to reenter your credentials");
-    uint8_t counter = 0;
-    while(!succesfullCredentials)
-    {
-      server.handleClient();
-      if(millis() >= previousMillis + 100)
-      { 
-        previousMillis += 100;
-        *(uint32_t*)(GPIO_OUT_REG) ^= (1 << LED_CONTROL);
-        counter++;
-      }
-
-    }
-      break;
-  }
-
-  digitalWrite(LED_CONTROL, LOW);
-  attachInterrupt(MQ2_DIGITAL_OUTPUT, mq2Interrupt, FALLING);
-  attachInterrupt(BUTTON_OUTPUT, buttonPress, FALLING);
-
-  #ifdef DEBUG
-  Serial.println("Start loop: ");
-  #endif
 }
 
 void loop()
@@ -331,5 +332,6 @@ void EvaluateButtonPress()
 
     attachInterrupt(BUTTON_OUTPUT, buttonPress, FALLING);
 }
+
 
 
