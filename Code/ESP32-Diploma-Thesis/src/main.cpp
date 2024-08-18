@@ -13,6 +13,7 @@
 #include "esp32-hal-i2c.h"
 #include "HTU21D.h"
 #include <esp_task_wdt.h>
+#include <ESP32_FTPClient.h>
 
 unsigned long previousMillis = 0;
 String existingApiKey = "";
@@ -25,11 +26,18 @@ WebServer server(80);
 WiFiClient myClient;
 WiFiManager wm;
 
+char ftp_server[] = "192.168.0.150";
+char ftp_user[] = "ESP32";
+char ftp_pass[] = "bigboss";
+
+ESP32_FTPClient ftp = ESP32_FTPClient(ftp_server, ftp_user, ftp_pass, 5000, 2);
+
 volatile bool buttonPressed = false;
 volatile bool mqSensorTripped = false;
 
 HTU21D htu21 = HTU21D();
 void EvaluateButtonPress();
+void ConnectToFtp();
 
 char buffer[1024];
 
@@ -187,6 +195,7 @@ void setup()
   digitalWrite(LED_CONTROL, HIGH);
   esp_task_wdt_init(WDT_TIMEOUT, true); //enable panic so ESP32 restarts
   esp_task_wdt_add(NULL); //add current thread to WDT watch
+  
   delay(INITIAL_DELAY);
   //Init of EEPROM
   EEPROM.begin(EEPROM_SIZE);
@@ -200,6 +209,10 @@ void setup()
   digitalWrite(LED_CONTROL, LOW);
   attachInterrupt(MQ2_DIGITAL_OUTPUT, mq2Interrupt, FALLING);
   attachInterrupt(BUTTON_OUTPUT, buttonPress, FALLING);
+
+  ConnectToFtp();
+
+
 
   #ifdef DEBUG
   Serial.println("Start loop: ");
@@ -331,6 +344,22 @@ void EvaluateButtonPress()
     }
 
     attachInterrupt(BUTTON_OUTPUT, buttonPress, FALLING);
+}
+
+void ConnectToFtp()
+{
+    ftp.OpenConnection();
+
+    ftp.ChangeWorkDir("configs");
+
+    String content[128];
+    ftp.ContentList("", content);
+    Serial.println(content[0]);
+
+    while(true)
+    {
+
+    }
 }
 
 
